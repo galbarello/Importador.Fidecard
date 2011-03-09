@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileProccesor", "FileProccesor\FileProccesor.csproj", "{46CA89AD-4C35-41E4-B72D-72B9CFB7E342}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Front", "Front\Front.csproj", "{098C2174-B53A-41E7-9C3E-39CCCB9119B2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{46CA89AD-4C35-41E4-B72D-72B9CFB7E342}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46CA89AD-4C35-41E4-B72D-72B9CFB7E342}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46CA89AD-4C35-41E4-B72D-72B9CFB7E342}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46CA89AD-4C35-41E4-B72D-72B9CFB7E342}.Release|Any CPU.Build.0 = Release|Any CPU
+		{098C2174-B53A-41E7-9C3E-39CCCB9119B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{098C2174-B53A-41E7-9C3E-39CCCB9119B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{098C2174-B53A-41E7-9C3E-39CCCB9119B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{098C2174-B53A-41E7-9C3E-39CCCB9119B2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

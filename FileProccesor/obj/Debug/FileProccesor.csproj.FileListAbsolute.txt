@@ -1,0 +1,40 @@
+C:\Documents and Settings\Guillermo\Mis documentos\Proyectos\Importador.Fidecard\FileProccesor\bin\Debug\FileProccesor.dll
+C:\Documents and Settings\Guillermo\Mis documentos\Proyectos\Importador.Fidecard\FileProccesor\bin\Debug\FileProccesor.pdb
+C:\Documents and Settings\Guillermo\Mis documentos\Proyectos\Importador.Fidecard\FileProccesor\bin\Debug\Castle.ActiveRecord.dll
+C:\Documents and Settings\Guillermo\Mis documentos\Proyectos\Importador.Fidecard\FileProccesor\bin\Debug\FileHelpers.dll
+C:\Documents and Settings\Guillermo\Mis documentos\Proyectos\Importador.Fidecard\FileProccesor\bin\Debug\NHibernate.Search.dll
+C:\Documents and Settings\Guillermo\Mis documentos\Proyectos\Importador.Fidecard\FileProccesor\bin\Debug\Castle.DynamicProxy2.dll
+C:\Documents and Settings\Guillermo\Mis documentos\Proyectos\Importador.Fidecard\FileProccesor\bin\Debug\log4net.dll
+C:\Documents and Settings\Guillermo\Mis documentos\Proyectos\Importador.Fidecard\FileProccesor\bin\Debug\Castle.Components.Validator.dll
+C:\Documents and Settings\Guillermo\Mis documentos\Proyectos\Importador.Fidecard\FileProccesor\bin\Debug\NHibernate.ByteCode.Castle.dll
+C:\Documents and Settings\Guillermo\Mis documentos\Proyectos\Importador.Fidecard\FileProccesor\bin\Debug\Antlr3.Runtime.dll
+C:\Documents and Settings\Guillermo\Mis documentos\Proyectos\Importador.Fidecard\FileProccesor\bin\Debug\Iesi.Collections.dll
+C:\Documents and Settings\Guillermo\Mis documentos\Proyectos\Importador.Fidecard\FileProccesor\bin\Debug\NHibernate.dll
+C:\Documents and Settings\Guillermo\Mis documentos\Proyectos\Importador.Fidecard\FileProccesor\bin\Debug\Castle.Core.dll
+C:\Documents and Settings\Guillermo\Mis documentos\Proyectos\Importador.Fidecard\FileProccesor\bin\Debug\Lucene.Net.dll
+C:\Documents and Settings\Guillermo\Mis documentos\Proyectos\Importador.Fidecard\FileProccesor\bin\Debug\Castle.ActiveRecord.xml
+C:\Documents and Settings\Guillermo\Mis documentos\Proyectos\Importador.Fidecard\FileProccesor\bin\Debug\FileHelpers.xml
+C:\Documents and Settings\Guillermo\Mis documentos\Proyectos\Importador.Fidecard\FileProccesor\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Guillermo\Mis documentos\Proyectos\Importador.Fidecard\FileProccesor\obj\Debug\FileProccesor.dll
+C:\Documents and Settings\Guillermo\Mis documentos\Proyectos\Importador.Fidecard\FileProccesor\obj\Debug\FileProccesor.pdb
+C:\Documents and Settings\Guillermo\Mis documentos\Proyectos\Importador.Fidecard\FileProccesor\bin\Debug\Retlang.dll
+D:\Documents and Settings\u187620\Desktop\Importador.Fidecard\FileProccesor\bin\Debug\FileProccesor.dll
+D:\Documents and Settings\u187620\Desktop\Importador.Fidecard\FileProccesor\bin\Debug\FileProccesor.pdb
+D:\Documents and Settings\u187620\Desktop\Importador.Fidecard\FileProccesor\bin\Debug\Castle.ActiveRecord.dll
+D:\Documents and Settings\u187620\Desktop\Importador.Fidecard\FileProccesor\bin\Debug\FileHelpers.dll
+D:\Documents and Settings\u187620\Desktop\Importador.Fidecard\FileProccesor\bin\Debug\Retlang.dll
+D:\Documents and Settings\u187620\Desktop\Importador.Fidecard\FileProccesor\bin\Debug\NHibernate.Search.dll
+D:\Documents and Settings\u187620\Desktop\Importador.Fidecard\FileProccesor\bin\Debug\Castle.DynamicProxy2.dll
+D:\Documents and Settings\u187620\Desktop\Importador.Fidecard\FileProccesor\bin\Debug\log4net.dll
+D:\Documents and Settings\u187620\Desktop\Importador.Fidecard\FileProccesor\bin\Debug\Castle.Components.Validator.dll
+D:\Documents and Settings\u187620\Desktop\Importador.Fidecard\FileProccesor\bin\Debug\NHibernate.ByteCode.Castle.dll
+D:\Documents and Settings\u187620\Desktop\Importador.Fidecard\FileProccesor\bin\Debug\Iesi.Collections.dll
+D:\Documents and Settings\u187620\Desktop\Importador.Fidecard\FileProccesor\bin\Debug\Antlr3.Runtime.dll
+D:\Documents and Settings\u187620\Desktop\Importador.Fidecard\FileProccesor\bin\Debug\NHibernate.dll
+D:\Documents and Settings\u187620\Desktop\Importador.Fidecard\FileProccesor\bin\Debug\Castle.Core.dll
+D:\Documents and Settings\u187620\Desktop\Importador.Fidecard\FileProccesor\bin\Debug\Lucene.Net.dll
+D:\Documents and Settings\u187620\Desktop\Importador.Fidecard\FileProccesor\bin\Debug\Castle.ActiveRecord.xml
+D:\Documents and Settings\u187620\Desktop\Importador.Fidecard\FileProccesor\bin\Debug\FileHelpers.xml
+D:\Documents and Settings\u187620\Desktop\Importador.Fidecard\FileProccesor\obj\Debug\ResolveAssemblyReference.cache
+D:\Documents and Settings\u187620\Desktop\Importador.Fidecard\FileProccesor\obj\Debug\FileProccesor.dll
+D:\Documents and Settings\u187620\Desktop\Importador.Fidecard\FileProccesor\obj\Debug\FileProccesor.pdb
