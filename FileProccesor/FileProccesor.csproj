@@ -39,6 +39,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\lib\FileHelpers\FileHelpers.dll</HintPath>
     </Reference>
+    <Reference Include="NHibernate, Version=2.1.2.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\AR 2.1.1\NHibernate.dll</HintPath>
+    </Reference>
     <Reference Include="Retlang, Version=0.4.4.0, Culture=neutral, PublicKeyToken=a99b3bce1dc72e93, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\lib\retlang\Retlang.dll</HintPath>
@@ -55,11 +59,16 @@
     <Compile Include="Dtos\ConsumoDto.cs" />
     <Compile Include="Dtos\CuentaCorrienteDto.cs" />
     <Compile Include="Dtos\EnumMovimientos.cs" />
+    <Compile Include="Dtos\Parentesco.cs" />
+    <Compile Include="Keys\KeyCliente.cs" />
+    <Compile Include="Services\Agrupado.cs" />
+    <Compile Include="Services\Queries\ConsultaPorEmpresa.cs" />
+    <Compile Include="Services\HelperAggregator.cs" />
     <Compile Include="Services\HelperCuenta.cs" />
     <Compile Include="Services\HelperPuntos.cs" />
     <Compile Include="Services\HelperSucursal.cs" />
     <Compile Include="Services\HelperUsuario.cs" />
-    <Compile Include="Dtos\KeyCuenta.cs" />
+    <Compile Include="Keys\KeyCuenta.cs" />
     <Compile Include="Services\HelperPersona.cs" />
     <Compile Include="Keys\KeyPersona.cs" />
     <Compile Include="Dtos\ValueTypes\FechaNacimiento.cs" />

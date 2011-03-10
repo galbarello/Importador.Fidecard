@@ -49,5 +49,8 @@ namespace FileProccesor.Dtos
 
         [Property("CodMotivoBaja")]
         public int MotivoBaja { get; set; }
+
+        [Property("Cuenta",Length = 10)]
+        public string Cuenta { get; set; }
     }
 }

@@ -1,6 +1,7 @@
 using System;
 using System.Configuration;
 using Castle.ActiveRecord;
+using FileProccesor.Keys;
 using FileProccesor.Schemes;
 using FileProccesor.Services;
 
@@ -40,29 +41,5 @@ namespace FileProccesor.Dtos
 
         [Property("cantidadPuntos")]
         public int Puntos { get; set; }
-
-        public static implicit operator CuentaCorrienteDto(TransatlanticaFile file)
-        {
-
-            return new CuentaCorrienteDto
-                       {
-                           FechaCompra = file.FechaHoraComprobante,
-                           HoraCompra = file.FechaHoraComprobante,
-                           Key =
-                               new KeyCuenta
-                                   {
-                                       CodEmpresa = Convert.ToInt32(ConfigurationManager.AppSettings["CodigoEmpresa"]),
-                                       NumeroComprobante = file.NroComprobante
-                                   },
-                           MontoCompra = file.ImportePesosNetoImpuestos,
-                           Movimiento = EnumMovimientos.SumaPuntos,
-                           NumeroCuenta = HelperCuenta.GetCuenta(file),
-                           NumeroDocumento =
-                               HelperPersona.GetPersona(file.NroDocumento, "", file.NombrePersona, Empresa),
-                           Puntos = HelperPuntos.GetPuntos(file.FechaHoraComprobante, file.ImportePesosNetoImpuestos),
-                           Sucursal = HelperSucursal.GetSucursal(),
-                           Usuario = HelperUsuario.GetUsuario()
-                       };
-        }
     }
 }

@@ -6,7 +6,19 @@ namespace FileProccesor.Keys
     [Serializable]
     public class KeyPersona : IEquatable<KeyPersona>
     {
-        [KeyProperty(Column = "NroDocumento", Length = 9)]
+        /// <summary>
+        /// solo para usar castle activerecord
+        /// </summary>
+        public KeyPersona(){}
+
+        public KeyPersona(int empresa, string documento, string tipo)
+        {
+            EmpresaPersona = empresa;
+            NroDocumento = documento;
+            TipoDocumento = tipo;
+        }
+
+        [KeyProperty(Column = "NroDocumento", Length =9)]
         public string NroDocumento { get; set; }
 
         [KeyProperty(Column = "CodEmpresa")]
