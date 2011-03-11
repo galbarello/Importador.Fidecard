@@ -16,10 +16,23 @@ namespace FileProccesor.Services
         {
             foreach (var archivo in HelperAggregator.Agrupar(FileProcessor<TransatlanticaFile>.GetData(file)))
             {
-                using (var transac = new TransactionScope())
+                var parentesco = archivo.Consumo[0].TipoCliente == "Corporativo"
+                                         ? Parentesco.Titular
+                                         : Parentesco.Empleado;
+                
+                var documento = HelperPersona.GetPersona(
+                    archivo.Consumo[0].Cuit, archivo.Consumo[0].TipoCliente,
+                    archivo.Consumo[0].RazonSocial,archivo.Consumo[0].NombrePersona,
+                    archivo.Consumo[0].NroDocumento, Empresa);
+
+                var cliente = HelperCuenta.GetCuenta(
+                    archivo.Consumo[0].Cuit, archivo.Consumo[0].NroDocumento, Empresa,parentesco);
+
+
+            using (var transac = new TransactionScope())
                     try
                     {
-                        var parentesco = archivo.Consumo[0].TipoCliente == "Corporativo" ? Parentesco.Titular : Parentesco.Empleado;
+                        
                         var cuenta = new CuentaCorrienteDto
                         {
                             FechaCompra = archivo.Consumo[0].FechaHoraComprobante.Date,
@@ -29,11 +42,10 @@ namespace FileProccesor.Services
                                 CodEmpresa = Empresa,
                                 NumeroComprobante = archivo.Consumo[0].NroComprobante
                             },
-                            MontoCompra = archivo.Consumo[0].ImportePesosNetoImpuestos,
+                            MontoCompra = archivo.ImportePesosNetoImpuestos,
                             Movimiento = EnumMovimientos.SumaPuntos,
-                            NumeroDocumento =
-                                HelperPersona.GetPersona(archivo.Consumo[0].Cuit, archivo.Consumo[0].TipoCliente, archivo.Consumo[0].RazonSocial, archivo.Consumo[0].NombrePersona, archivo.Consumo[0].NroDocumento, Empresa),
-                            NumeroCuenta = HelperCuenta.GetCuenta(archivo.Consumo[0].Cuit, archivo.Consumo[0].NroDocumento, Empresa, parentesco),
+                            NumeroDocumento =documento,
+                            NumeroCuenta = cliente,
                             Puntos = HelperPuntos.GetPuntos(archivo.Consumo[0].FechaHoraComprobante, archivo.ImportePesosNetoImpuestos),
                             Sucursal = HelperSucursal.GetSucursal(),
                             

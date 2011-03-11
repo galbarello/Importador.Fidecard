@@ -11,10 +11,10 @@ namespace FileProccesor.Dtos
         [CompositeKey]
         public KeyPersona Key { get; set; }
 
-        [Property("Nombre", Length = 50)]
+        [Property("Nombre")]
         public string Nombre { get; set; }
 
-        [Property("Apellido", Length = 50)]
+        [Property("Apellido")]
         public string Apellido { get; set; }
 
         [Property("Domicilio", Length = 50)]

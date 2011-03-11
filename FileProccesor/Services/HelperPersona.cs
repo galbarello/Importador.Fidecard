@@ -29,20 +29,27 @@ namespace FileProccesor.Services
                 return documento;
             }
             
-            var persona = ActiveRecordBase<PersonaDto>.TryFind(new KeyPersona(empresa, dni, TipoDocumento.Cuit));
-
+            
+            var persona = ActiveRecordBase<PersonaDto>.TryFind(new KeyPersona(empresa, CuitToDni(dni), TipoDocumento.DocumentoUnico));
+            
             if (persona == null)
             {
+                var tipoDoc = TipoDocumento.DocumentoUnico;
+                var componentes = apellidoynombre.Split(new[] {""}, StringSplitOptions.RemoveEmptyEntries);
+                var apellido = componentes.Last();
+                var nombre = componentes.First(); 
+
+                if (dni.Length > 9)
+                    tipoDoc = TipoDocumento.Cuit;
+
                 var nuevaPersona = new PersonaDto
                                        {
-                                           Apellido =
-                                               apellidoynombre.Split(new[] {""}, StringSplitOptions.RemoveEmptyEntries).
-                                               Last(),
-                                           Nombre = apellidoynombre,
-                                           Key = new KeyPersona(empresa, dni, TipoDocumento.Cuit),
+                                           Apellido =apellido,
+                                           Nombre = nombre,
+                                           Key = new KeyPersona(empresa, CuitToDni(dni), tipoDoc),
                                            Cuenta = HelperCuenta.GetCuenta(cuit, dni, empresa, Parentesco.Empleado).ToString()
                                        };
-                nuevaPersona.SaveAndFlush();
+                nuevaPersona.Save();
             }
             return dni;
         }

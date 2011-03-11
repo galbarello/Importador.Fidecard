@@ -29,9 +29,9 @@ namespace FileProccesor.Dtos
         public int CodExtension{ get; set;}
 	  	  	 
         [Property("fechaBaja")]
-	  	  public DateTime FechaBaja	{ get; set;}
+        public DateTime? FechaBaja	{ get; set;}
 	  
         [Property("CodMotivoBaja")]
-        public int MotivoBaja{ get; set;}
+        public int? MotivoBaja{ get; set;}
 	  }
 }
