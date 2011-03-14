@@ -4,6 +4,7 @@ using Castle.ActiveRecord;
 using FileProccesor.Dtos;
 using FileProccesor.Keys;
 using FileProccesor.Schemes;
+using FileProccesor.Services.Helpers;
 
 namespace FileProccesor.Services
 {
@@ -26,51 +27,47 @@ namespace FileProccesor.Services
                     archivo.Consumo[0].NroDocumento, Empresa);
 
                 var cliente = HelperCuenta.GetCuenta(
-                    archivo.Consumo[0].Cuit, archivo.Consumo[0].NroDocumento, Empresa,parentesco);
-
+                    archivo.Consumo[0].Cuit, archivo.Consumo[0].NroDocumento, Empresa);
 
             using (var transac = new TransactionScope())
-                    try
+                try
+                {
+                    var cuenta = new CuentaCorrienteDto
                     {
-                        
-                        var cuenta = new CuentaCorrienteDto
+                        FechaCompra = archivo.Consumo[0].FechaHoraComprobante.Date,
+                        HoraCompra = DateTime.Now,
+                        Key = new KeyCuenta
                         {
-                            FechaCompra = archivo.Consumo[0].FechaHoraComprobante.Date,
-                            HoraCompra = DateTime.Now,
-                            Key = new KeyCuenta
-                            {
-                                CodEmpresa = Empresa,
-                                NumeroComprobante = archivo.Consumo[0].NroComprobante
-                            },
-                            MontoCompra = archivo.ImportePesosNetoImpuestos,
-                            Movimiento = EnumMovimientos.SumaPuntos,
-                            NumeroDocumento =documento,
-                            NumeroCuenta = cliente,
-                            Puntos = HelperPuntos.GetPuntos(archivo.Consumo[0].FechaHoraComprobante, archivo.ImportePesosNetoImpuestos),
-                            Sucursal = HelperSucursal.GetSucursal(),
-                            
-                                             Usuario = "web"
-                                         };
-                        cuenta.Save();
-                        
-                        var consumoDb = new ConsumoDto
-                        {
-                            Cuit = archivo.Consumo[0].Cuit,
-                            FechaHoraComprobante = archivo.Consumo[0].FechaHoraComprobante,
-                            ImportePesosNetoImpuestos = archivo.ImportePesosNetoImpuestos,
-                            NombrePersona = archivo.Consumo[0].NombrePersona,
-                            NroComprobante = archivo.NroComprobante,
-                            NroDocumento = archivo.Consumo[0].NroDocumento,
-                            RazonSocial = archivo.Consumo[0].RazonSocial,
-                            TipoCliente = archivo.Consumo[0].TipoCliente
-                        };
-                        consumoDb.Save();
-                        transac.VoteCommit();
-                    }
-                    catch (Exception ex)
+                            CodEmpresa = Empresa,
+                            NumeroComprobante = archivo.Consumo[0].NroComprobante
+                        },
+                        MontoCompra = archivo.ImportePesosNetoImpuestos,
+                        Movimiento = EnumMovimientos.SumaPuntos,
+                        NumeroDocumento =documento,
+                        NumeroCuenta = cliente,
+                        Puntos = HelperPuntos.GetPuntos(archivo.Consumo[0].FechaHoraComprobante, archivo.ImportePesosNetoImpuestos),
+                        Sucursal = HelperSucursal.GetSucursal(),
+                        Usuario = "web"
+                    };
+                    cuenta.Save();
+                    var consumoDb = new ConsumoDto
                     {
-                        transac.VoteRollBack();
-                    }
+                        Cuit = archivo.Consumo[0].Cuit,
+                        FechaHoraComprobante = archivo.Consumo[0].FechaHoraComprobante,
+                        ImportePesosNetoImpuestos = archivo.ImportePesosNetoImpuestos,
+                        NombrePersona = archivo.Consumo[0].NombrePersona,
+                        NroComprobante = archivo.NroComprobante,
+                        NroDocumento = archivo.Consumo[0].NroDocumento,
+                        RazonSocial = archivo.Consumo[0].RazonSocial,
+                        TipoCliente = archivo.Consumo[0].TipoCliente
+                    };
+                    consumoDb.Save();
+                    transac.VoteCommit();
+                }
+                catch (Exception)
+                {
+                    transac.VoteRollBack();
+                }
             }
             base.Persistir(file);
         }
