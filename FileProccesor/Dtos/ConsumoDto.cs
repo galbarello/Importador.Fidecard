@@ -4,7 +4,7 @@ using FileProccesor.Schemes;
 
 namespace FileProccesor.Dtos
 {
-    [ActiveRecord]
+    [ActiveRecord("registros_archivos")]
     public class ConsumoDto : ActiveRecordBase<ConsumoDto>
     {
         [PrimaryKey]
@@ -34,6 +34,18 @@ namespace FileProccesor.Dtos
         [Property]
         public double ImportePesosNetoImpuestos { get; set; }
 
+        [Property]
+        public bool Procesado { get; set; }
+
+        [Timestamp]
+        public DateTime LastOperation { get; set; }
+
+        [Property]
+        public string Archivo { get; set; }
+
+        [Property]
+        public int Empresa{ get; set; }
+
         public static implicit operator ConsumoDto(TransatlanticaFile file)
         {
 
@@ -47,7 +59,27 @@ namespace FileProccesor.Dtos
                            NroDocumento = file.NroDocumento,
                            RazonSocial = file.RazonSocial,
                            TipoCliente = file.TipoCliente,
-                           };
+                           Procesado = false,
+                           Archivo = ""
+                       };
+        }
+
+        public static implicit operator ConsumoDto(CambioFile file)
+        {
+
+            return new ConsumoDto
+            {
+                Cuit = file.Cuit,
+                FechaHoraComprobante = file.FechaHoraComprobante,
+                ImportePesosNetoImpuestos = file.ImportePesosNetoImpuestos,
+                NombrePersona = file.NombrePersona,
+                NroComprobante = file.NroComprobante,
+                NroDocumento = file.NroDocumento,
+                RazonSocial = file.RazonSocial,
+                TipoCliente = file.TipoCliente,
+                Procesado = false,
+                Archivo = ""
+            };
         }
     }
 }

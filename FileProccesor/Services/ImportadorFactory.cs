@@ -4,7 +4,11 @@ namespace FileProccesor.Services
     {
         public static Importar ReturnImportador(string archivo)
         {
-           return new Transatlantica();
+            return archivo.Contains("OLA")
+                       ? new Transatlantica()
+                       : (archivo.Contains("CAMBIO")
+                              ? (Importar) new Cambio()
+                              : new NullFile());
         }
     }
 }

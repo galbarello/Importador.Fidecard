@@ -64,6 +64,7 @@ namespace Front
             var importador = ImportadorFactory.ReturnImportador(filepath);
 
             importador.Persistir(filepath);
+            WorkflowFidecard.Registro();
 
             ShowMessageBox(string.Format("importado {0}", archivo[archivo.GetUpperBound(0)]), "Finalizado");
         }
@@ -134,7 +135,7 @@ namespace Front
                     ActiveRecordStarter.CreateSchema();
                     break;
                 case "Testing":
-                    ActiveRecordStarter.UpdateSchema();
+                    ActiveRecordStarter.CreateSchema();
                     break;
                 default:
                     break;

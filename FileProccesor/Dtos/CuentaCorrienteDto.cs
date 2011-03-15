@@ -1,18 +1,13 @@
 using System;
-using System.Configuration;
 using Castle.ActiveRecord;
 using FileProccesor.Keys;
-using FileProccesor.Schemes;
-using FileProccesor.Services;
 
 namespace FileProccesor.Dtos
 {
     [ActiveRecord("Cuentas_Corrientes")]
     public class CuentaCorrienteDto:ActiveRecordBase<CuentaCorrienteDto>
     {
-        private static readonly int Empresa = int.Parse(ConfigurationManager.AppSettings["CodigoEmpresa"]);
-
-        [CompositeKey]
+       [CompositeKey]
         public KeyCuenta Key { get; set; }
 
         [Property("Cuenta")]

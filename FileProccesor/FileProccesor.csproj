@@ -62,6 +62,9 @@
     <Compile Include="Dtos\Parentesco.cs" />
     <Compile Include="Keys\KeyCliente.cs" />
     <Compile Include="Services\Agrupado.cs" />
+    <Compile Include="Services\Cambio.cs" />
+    <Compile Include="Schemes\CambioFile.cs" />
+    <Compile Include="Services\WorkflowFidecard.cs" />
     <Compile Include="Services\Queries\ConsultaPorEmpresa.cs" />
     <Compile Include="Services\Helpers\HelperAggregator.cs" />
     <Compile Include="Services\Helpers\HelperCuenta.cs" />
