@@ -7,6 +7,7 @@ using Castle.ActiveRecord;
 using Castle.ActiveRecord.Framework.Config;
 using FileProccesor.Services;
 using Growl.Connector;
+using log4net;
 using Retlang.Channels;
 using Retlang.Fibers;
 using Application = Growl.Connector.Application;
@@ -17,9 +18,7 @@ namespace Front
     public partial class Form1 : Form
     {
 
-        private readonly string _logFile = string.Format("{0}{1}", ConfigurationManager.AppSettings["PathToLog"], ConfigurationManager.AppSettings["logfile"]);
-        private readonly StreamWriter _fileSaver;
-        private bool _savefile, _showmess;
+        private bool  _showmess;
         private static GrowlConnector _growl;
         private static NotificationType _notificationType;
         private static Application _application;
@@ -27,10 +26,15 @@ namespace Front
         private const string ApplicationName = "ImportadorArchivos";
         private static IFiber _workerFiber;
         private static IChannel<string> _importar;
+        private static readonly ILog Log 
+            = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
+
 
         public Form1()
         {
             InitializeComponent();
+
+            log4net.Config.XmlConfigurator.Configure();
 
             textBox1.Text = ConfigurationManager.AppSettings["Path"];
             _application = new Application(ApplicationName);
@@ -40,8 +44,6 @@ namespace Front
 
             _importar = new Channel<string>();
             _importar.Subscribe(_workerFiber, Work);
-
-            _fileSaver = new StreamWriter(_logFile, true);
 
             _notificationType = new NotificationType(SampleNotificationType, "Sample Notification");
 
@@ -69,16 +71,14 @@ namespace Front
             ShowMessageBox(string.Format("importado {0}", archivo[archivo.GetUpperBound(0)]), "Finalizado");
         }
 
-        private void GrowlNotificationCallback(Response response, CallbackData callbackdata)
+        private static void GrowlNotificationCallback(Response response, CallbackData callbackdata)
         {
             SaveChangesToFile(String.Format("Response Type: {0}\r\nNotification ID: {1}\r\nCallback Data: {2}\r\nCallback Data Type: {3}\r\n", callbackdata.Result, callbackdata.NotificationID, callbackdata.Data, callbackdata.Type));
         }
 
-        private void SaveChangesToFile(string content)
+        private static void SaveChangesToFile(string content)
         {
-            if (_savefile != true) return;
-            _fileSaver.WriteLine(content);
-            _fileSaver.Flush();
+            Log.Warn(content);
         }
 
         private void FolderWatchDeleted(object sender, FileSystemEventArgs e)
@@ -158,12 +158,9 @@ namespace Front
         private void button2_Click(object sender, EventArgs e)
         {
             if (textBox1.Text == "") return;
-            _savefile = true;
             _showmess = false;
             if (checkBox1.Checked)
                 _showmess = true;
-            if (checkBox2.Checked)
-                _savefile = false;
             if (checkBox3.Checked)
             {
                 MessageBox.Show("El formulario se minimizara en el area de tareas", "El formulario sera escondido");

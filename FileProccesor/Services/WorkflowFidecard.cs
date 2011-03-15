@@ -1,21 +1,25 @@
 using System;
+using System.Reflection;
 using Castle.ActiveRecord;
 using FileProccesor.Dtos;
 using FileProccesor.Keys;
 using FileProccesor.Services.Helpers;
+using log4net;
 
 namespace FileProccesor.Services
 {
     public static class WorkflowFidecard
+    {
+        private static readonly ILog Log
+           = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
+        public static void Registro()
         {
-            public static void Registro()
+            foreach (var archivo in ActiveRecordBase<ConsumoDto>.FindAllByProperty("Procesado", false))
             {
-                foreach (var archivo in ActiveRecordBase<ConsumoDto>.FindAllByProperty("Procesado", false))
-                {
-                    var documento = HelperPersona.GetPersona(
-                        archivo.Cuit, archivo.TipoCliente,
-                        archivo.RazonSocial, archivo.NombrePersona,
-                        archivo.NroDocumento, archivo.Empresa);
+                var documento = HelperPersona.GetPersona(
+                    archivo.Cuit, archivo.TipoCliente,
+                    archivo.RazonSocial, archivo.NombrePersona,
+                    archivo.NroDocumento, archivo.Empresa);
 
                     var cliente = HelperCuenta.GetCuenta(
                         archivo.Cuit, archivo.NroDocumento, archivo.Empresa);
@@ -47,6 +51,7 @@ namespace FileProccesor.Services
                         }
                         catch (Exception ex)
                         {
+                            Log.Error(ex.Message);
                             transac.VoteRollBack();
                         }
                 }
