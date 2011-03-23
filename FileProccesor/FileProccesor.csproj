@@ -59,17 +59,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Dtos\ActividadDto.cs" />
+    <Compile Include="Keys\KeyRegla.cs" />
     <Compile Include="Dtos\ClienteDto.cs" />
     <Compile Include="Dtos\ConsumoDto.cs" />
     <Compile Include="Dtos\CuentaCorrienteDto.cs" />
     <Compile Include="Dtos\EnumMovimientos.cs" />
     <Compile Include="Dtos\Parentesco.cs" />
+    <Compile Include="Dtos\ReglasDto.cs" />
     <Compile Include="Keys\KeyCliente.cs" />
     <Compile Include="Services\Agrupado.cs" />
     <Compile Include="Services\Cambio.cs" />
     <Compile Include="Schemes\CambioFile.cs" />
     <Compile Include="Services\WorkflowFidecard.cs" />
-    <Compile Include="Services\Queries\ConsultaPorEmpresa.cs" />
     <Compile Include="Services\Helpers\HelperAggregator.cs" />
     <Compile Include="Services\Helpers\HelperCuenta.cs" />
     <Compile Include="Services\Helpers\HelperPuntos.cs" />

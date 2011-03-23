@@ -1,8 +1,5 @@
 using System;
-using System.Linq;
 using Castle.ActiveRecord;
-using FileProccesor.Dtos;
-using FileProccesor.Services;
 
 namespace FileProccesor.Keys
 {
@@ -16,7 +13,6 @@ namespace FileProccesor.Keys
 
         public KeyCliente(int empresa, string documento,int cuenta)
         {
-            
             CodEmpresa = empresa;
             NumeroDocumento = documento;
             NroCuenta = cuenta;
@@ -35,8 +31,7 @@ namespace FileProccesor.Keys
         {
             if (ReferenceEquals(null, obj)) return false;
             if (ReferenceEquals(this, obj)) return true;
-            if (obj.GetType() != typeof (KeyCliente)) return false;
-            return Equals((KeyCliente) obj);
+            return obj.GetType() == typeof (KeyCliente) && Equals((KeyCliente) obj);
         }
 
         public bool Equals(KeyCliente other)

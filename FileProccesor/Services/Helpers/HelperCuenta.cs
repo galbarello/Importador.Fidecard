@@ -19,19 +19,21 @@ namespace FileProccesor.Services.Helpers
                                : cuentas.Max(x => x.Key.NroCuenta);
 
            if (!string.IsNullOrEmpty(dni))
-               AgregarPersonaCuenta(cuit, dni, empresa,micuenta);
+               AgregarPersonaCuenta(dni, empresa,micuenta);
 
             return micuenta;
         }
 
-        private static void AgregarPersonaCuenta(string cuit, string dni, int empresa,int cuenta)
+        private static void AgregarPersonaCuenta(string dni, int empresa, int cuenta)
         {
             var cuentas = ActiveRecordBase<ClienteDto>.FindAll()
                 .Where(x => x.Key.CodEmpresa == empresa)
                 .Where(x => x.Key.NumeroDocumento == HelperPersona.CuitToDni(dni))
                 .ToList();
             if (cuentas.Count<=0)
-                new ClienteDto(new KeyCliente(empresa, HelperPersona.CuitToDni(dni), cuenta), Parentesco.Empleado, GetExtension(cuenta, empresa))
+                new ClienteDto(new KeyCliente(
+                    empresa, HelperPersona.CuitToDni(dni), cuenta), 
+                    Parentesco.Empleado, GetExtension(cuenta, empresa))
                 .Save();
         }
 

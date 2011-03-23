@@ -135,7 +135,7 @@ namespace Front
                     ActiveRecordStarter.CreateSchema();
                     break;
                 case "Testing":
-                    ActiveRecordStarter.CreateSchema();
+                    ActiveRecordStarter.UpdateSchema();
                     break;
                 default:
                     break;

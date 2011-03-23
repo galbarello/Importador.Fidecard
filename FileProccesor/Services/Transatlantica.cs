@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Specialized;
 using System.Configuration;
+using Castle.ActiveRecord;
 using FileProccesor.Dtos;
 using FileProccesor.Schemes;
 using FileProccesor.Services.Helpers;
@@ -31,7 +32,8 @@ namespace FileProccesor.Services
                                         Archivo = file,
                                         Empresa=Empresa
                                     };
-                consumoDb.Save();
+                if (ActiveRecordBase<ConsumoDto>.FindAllByProperty("NroComprobante",consumoDb.NroComprobante).Length<=0)
+                    consumoDb.Save();
             }
             base.Persistir(file);
         }

@@ -1,12 +1,29 @@
 using System;
+using System.Linq;
+using Castle.ActiveRecord;
+using FileProccesor.Dtos;
 
 namespace FileProccesor.Services.Helpers
 {
     public static class HelperPuntos
     {
-        public static int GetPuntos(DateTime comprobante, double monto)
+        public static int GetPuntos(int empresa,DateTime comprobante, double monto)
         {
-            return (int) monto;
+            var puntos = 0.00;
+
+            var reglas=ActiveRecordBase<ReglasDto>.FindAll()
+                .Where(x => x.Key.CodEmpresa == empresa)
+                .Where(x => x.Key.Sucursal == HelperSucursal.GetSucursal())
+                .Where(x=>x.Key.FechaInicio<=comprobante)
+                .ToList();
+
+            foreach (var regla in reglas)
+            {
+                var modificador = monto*regla.Multiplicador;
+                puntos = ++modificador;
+            }
+
+            return (int) puntos;
         }
     }
 }

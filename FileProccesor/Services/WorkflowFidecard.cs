@@ -40,7 +40,7 @@ namespace FileProccesor.Services
                                 Movimiento = EnumMovimientos.SumaPuntos,
                                 NumeroDocumento = documento,
                                 NumeroCuenta = cliente,
-                                Puntos = HelperPuntos.GetPuntos(archivo.FechaHoraComprobante, archivo.ImportePesosNetoImpuestos),
+                                Puntos = HelperPuntos.GetPuntos(archivo.Empresa,archivo.FechaHoraComprobante, archivo.ImportePesosNetoImpuestos),
                                 Sucursal = HelperSucursal.GetSucursal(),
                                 Usuario = "web"
                             };
