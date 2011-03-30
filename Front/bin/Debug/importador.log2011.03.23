@@ -1,0 +1,49 @@
+2011-03-23 11:26:03,053 [13] ERROR NHibernate.AdoNet.AbstractBatcher [(null)] &lt;(null)&gt; - Could not execute command: INSERT INTO registros_archivos (LastOperation, Cuit, RazonSocial, NroDocumento, NombrePersona, TipoCliente, NroComprobante, FechaHoraComprobante, ImportePesosNetoImpuestos, Procesado, Archivo, Empresa, Id) VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12)
+System.Data.SqlClient.SqlException: Violation of UNIQUE KEY constraint 'UQ__registros_archiv__056ECC6A'. Cannot insert duplicate key in object 'dbo.registros_archivos'.
+The statement has been terminated.
+   en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   en System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj)
+   en System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   en System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(DbAsyncResult result, String methodName, Boolean sendToPipe)
+   en System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   en NHibernate.AdoNet.AbstractBatcher.ExecuteNonQuery(IDbCommand cmd)
+2011-03-23 11:26:03,131 [13] ERROR NHibernate.Util.ADOExceptionReporter [(null)] &lt;(null)&gt; - Violation of UNIQUE KEY constraint 'UQ__registros_archiv__056ECC6A'. Cannot insert duplicate key in object 'dbo.registros_archivos'.
+The statement has been terminated.
+2011-03-23 11:26:03,147 [13] ERROR NHibernate.Event.Default.AbstractFlushingEventListener [(null)] &lt;(null)&gt; - Could not synchronize database state with session
+NHibernate.Exceptions.GenericADOException: could not insert: [FileProccesor.Dtos.ConsumoDto#5dd18f54-8d0e-46cd-93f4-9eaf00bc6d72][SQL: INSERT INTO registros_archivos (LastOperation, Cuit, RazonSocial, NroDocumento, NombrePersona, TipoCliente, NroComprobante, FechaHoraComprobante, ImportePesosNetoImpuestos, Procesado, Archivo, Empresa, Id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)] ---> System.Data.SqlClient.SqlException: Violation of UNIQUE KEY constraint 'UQ__registros_archiv__056ECC6A'. Cannot insert duplicate key in object 'dbo.registros_archivos'.
+The statement has been terminated.
+   en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   en System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj)
+   en System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   en System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(DbAsyncResult result, String methodName, Boolean sendToPipe)
+   en System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   en NHibernate.AdoNet.AbstractBatcher.ExecuteNonQuery(IDbCommand cmd)
+   en NHibernate.AdoNet.NonBatchingBatcher.AddToBatch(IExpectation expectation)
+   en NHibernate.Persister.Entity.AbstractEntityPersister.Insert(Object id, Object[] fields, Boolean[] notNull, Int32 j, SqlCommandInfo sql, Object obj, ISessionImplementor session)
+   --- Fin del seguimiento de la pila de la excepción interna ---
+   en NHibernate.Persister.Entity.AbstractEntityPersister.Insert(Object id, Object[] fields, Boolean[] notNull, Int32 j, SqlCommandInfo sql, Object obj, ISessionImplementor session)
+   en NHibernate.Persister.Entity.AbstractEntityPersister.Insert(Object id, Object[] fields, Object obj, ISessionImplementor session)
+   en NHibernate.Action.EntityInsertAction.Execute()
+   en NHibernate.Engine.ActionQueue.Execute(IExecutable executable)
+   en NHibernate.Engine.ActionQueue.ExecuteActions(IList list)
+   en NHibernate.Engine.ActionQueue.ExecuteActions()
+   en NHibernate.Event.Default.AbstractFlushingEventListener.PerformExecutions(IEventSource session)
+2011-03-23 11:29:37,377 [7] ERROR NHibernate.Event.Default.AbstractFlushingEventListener [(null)] &lt;(null)&gt; - Could not synchronize database state with session
+NHibernate.StaleObjectStateException: Row was updated or deleted by another transaction (or unsaved-value mapping was incorrect): [FileProccesor.Dtos.ConsumoDto#f8551ef5-895b-4e3d-964d-9eaf00bd0765]
+   en NHibernate.Persister.Entity.AbstractEntityPersister.Check(Int32 rows, Object id, Int32 tableNumber, IExpectation expectation, IDbCommand statement)
+   en NHibernate.Persister.Entity.AbstractEntityPersister.Update(Object id, Object[] fields, Object[] oldFields, Object rowId, Boolean[] includeProperty, Int32 j, Object oldVersion, Object obj, SqlCommandInfo sql, ISessionImplementor session)
+   en NHibernate.Persister.Entity.AbstractEntityPersister.UpdateOrInsert(Object id, Object[] fields, Object[] oldFields, Object rowId, Boolean[] includeProperty, Int32 j, Object oldVersion, Object obj, SqlCommandInfo sql, ISessionImplementor session)
+   en NHibernate.Persister.Entity.AbstractEntityPersister.Update(Object id, Object[] fields, Int32[] dirtyFields, Boolean hasDirtyCollection, Object[] oldFields, Object oldVersion, Object obj, Object rowId, ISessionImplementor session)
+   en NHibernate.Action.EntityUpdateAction.Execute()
+   en NHibernate.Engine.ActionQueue.Execute(IExecutable executable)
+   en NHibernate.Engine.ActionQueue.ExecuteActions(IList list)
+   en NHibernate.Engine.ActionQueue.ExecuteActions()
+   en NHibernate.Event.Default.AbstractFlushingEventListener.PerformExecutions(IEventSource session)

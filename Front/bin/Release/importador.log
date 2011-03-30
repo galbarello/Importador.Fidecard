@@ -1,0 +1,11 @@
+2011-03-30 11:47:24,691 [1] ERROR NHibernate.Tool.hbm2ddl.SchemaUpdate [(null)] &lt;(null)&gt; - Unsuccessful: alter table Personas add constraint FK1261169416022CC5 foreign key (CodPostal) references CodigosPostales
+System.Data.SqlClient.SqlException: Foreign key 'FK1261169416022CC5' has implicit reference to object 'CodigosPostales' which does not have a primary key defined on it.
+Could not create constraint. See previous errors.
+   en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   en System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj)
+   en System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   en System.Data.SqlClient.SqlCommand.RunExecuteNonQueryTds(String methodName, Boolean async)
+   en System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(DbAsyncResult result, String methodName, Boolean sendToPipe)
+   en System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   en NHibernate.Tool.hbm2ddl.SchemaUpdate.Execute(Action`1 scriptAction, Boolean doUpdate)

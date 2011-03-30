@@ -58,7 +58,9 @@ namespace FileProccesor.Services.Helpers
                 Apellido = razon,
                 Nombre = cuit,
                 Key = new KeyPersona(empresa, CuitToDni(cuit), TipoDocumento.Cuit),
-                Cuenta = HelperCuenta.GetCuenta(cuit, CuitToDni(cuit), empresa).ToString()
+                Cuenta = HelperCuenta.GetCuenta(cuit, CuitToDni(cuit), empresa).ToString(),
+                CodPostal = GetCp(),
+                ActividadPersona = GetActividad()
             };
             nuevoCorporativo.Save();
         }
@@ -70,7 +72,9 @@ namespace FileProccesor.Services.Helpers
                 Apellido = apellido,
                 Nombre = nombre,
                 Key = new KeyPersona(empresa, CuitToDni(dni), tipoDoc),
-                Cuenta = HelperCuenta.GetCuenta(cuit, dni, empresa).ToString()
+                Cuenta = HelperCuenta.GetCuenta(cuit, dni, empresa).ToString(),
+                CodPostal = GetCp(),
+                ActividadPersona = GetActividad()
             };
             nuevaPersona.Save();
         }
@@ -84,6 +88,24 @@ namespace FileProccesor.Services.Helpers
             return dni.Contains("-") 
                        ? dni.Split(new[] {"-"}, StringSplitOptions.RemoveEmptyEntries)[1] 
                        : dni.Substring(2, 8);
+        }
+
+        private static CodigoPostalDto GetCp()
+        {
+           var cp= ActiveRecordBase<CodigoPostalDto>.TryFind("2000");
+            if (cp != null) return cp;
+            var cpDefault = new CodigoPostalDto("2000", "Rosario", "Santa Fe");
+            cpDefault.Save();
+            return cpDefault;
+        }
+
+        private static ActividadDto GetActividad()
+        {
+            var actividad = ActiveRecordBase<ActividadDto>.FindAllByProperty("DescActividad","Sin Especificar");
+            if (actividad.Count() > 0) return actividad[0];
+            var actividadDefault= new ActividadDto("Sin Especificar");
+            actividadDefault.Save();
+            return actividadDefault;
         }
     }
 }

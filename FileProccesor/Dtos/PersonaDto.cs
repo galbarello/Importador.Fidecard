@@ -20,8 +20,8 @@ namespace FileProccesor.Dtos
         [Property("Domicilio", Length = 50)]
         public string Domicilio { get; set; }
 
-        [Property("CodPostal", Length = 8)]
-        public string CodPostal { get; set; }
+        [BelongsTo("CodPostal")]
+        public CodigoPostalDto CodPostal { get; set; }
 
         [Property("Telefono", Length = 14)]
         public string Telefono { get; set; }

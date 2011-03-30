@@ -59,6 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Dtos\ActividadDto.cs" />
+    <Compile Include="Dtos\CodigoPostalDto.cs" />
     <Compile Include="Keys\KeyRegla.cs" />
     <Compile Include="Dtos\ClienteDto.cs" />
     <Compile Include="Dtos\ConsumoDto.cs" />
