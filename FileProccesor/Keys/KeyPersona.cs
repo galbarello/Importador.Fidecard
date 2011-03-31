@@ -24,7 +24,7 @@ namespace FileProccesor.Keys
         [KeyProperty(Column = "CodEmpresa")]
         public int EmpresaPersona { get; set; }
 
-        [KeyProperty(Column = "TipoDocumento",Length = 4)]
+        [KeyProperty(Column = "TipoDocumento",Length = 3)]
         public string TipoDocumento{get; set;}
 
         public override bool Equals(object obj)
