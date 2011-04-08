@@ -434,30 +434,27 @@
       <File id="098C2174-B53A-41E7-9C3E-39CCCB9119B2/f:Form1.Designer.cs" caret="8660" fromTop="27" />
       <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Keys/f:KeyCuenta.cs" caret="0" fromTop="0" />
       <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Keys/f:KeyCliente.cs" caret="953" fromTop="33" />
-      <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Dtos/d:ValueTypes/f:Contacto.cs" caret="0" fromTop="0" />
       <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Dtos/f:EmpresaDto.cs" caret="0" fromTop="0" />
       <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Dtos/f:ConsumoDto.cs" caret="0" fromTop="0" />
       <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Services/d:Helpers/f:HelperCuenta.cs" caret="486" fromTop="13" />
-      <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Dtos/f:ReglasDto.cs" caret="458" fromTop="17" />
-      <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Services/f:Importar.cs" caret="878" fromTop="22" />
-      <File id="098C2174-B53A-41E7-9C3E-39CCCB9119B2/f:Program.cs" caret="0" fromTop="0" />
-      <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Services/d:Helpers/f:HelperPuntos.cs" caret="840" fromTop="23" />
-      <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Services/f:Transatlantica.cs" caret="1827" fromTop="22" />
-      <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Services/f:WorkflowFidecard.cs" caret="1092" fromTop="23" />
-      <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Dtos/f:ActividadDto.cs" caret="0" fromTop="0" />
       <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Services/f:Cambio.cs" caret="1487" fromTop="29" />
+      <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Services/f:TipoDocumento.cs" caret="389" fromTop="10" />
+      <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Services/d:Helpers/f:HelperPersona.cs" caret="2224" fromTop="20" />
       <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Dtos/f:CodigoPostalDto.cs" caret="261" fromTop="9" />
+      <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Dtos/f:PersonaDto.cs" caret="931" fromTop="31" />
+      <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Services/f:WorkflowFidecard.cs" caret="1092" fromTop="23" />
       <File id="098C2174-B53A-41E7-9C3E-39CCCB9119B2/f:Form1.cs" caret="5616" fromTop="14" />
+      <File id="098C2174-B53A-41E7-9C3E-39CCCB9119B2/f:Program.cs" caret="0" fromTop="0" />
       <File id="098C2174-B53A-41E7-9C3E-39CCCB9119B2/f:App.config" caret="649" fromTop="12" />
-      <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Services/d:Helpers/f:HelperPersona.cs" caret="3775" fromTop="14" />
-      <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Dtos/f:PersonaDto.cs" caret="931" fromTop="33" />
-      <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Keys/f:KeyPersona.cs" caret="988" fromTop="14" />
+      <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Services/f:Importar.cs" caret="878" fromTop="22" />
+      <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Services/f:Transatlantica.cs" caret="1827" fromTop="27" />
+      <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Services/d:Helpers/f:HelperPuntos.cs" caret="840" fromTop="23" />
+      <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Keys/f:KeyPersona.cs" caret="784" fromTop="27" />
+      <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Dtos/d:ValueTypes/f:Contacto.cs" caret="359" fromTop="12" />
+      <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Dtos/f:ReglasDto.cs" caret="549" fromTop="21" />
+      <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Dtos/f:ActividadDto.cs" caret="413" fromTop="16" />
     </RecentFiles>
     <RecentEdits>
-      <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Dtos/f:ReglasDto.cs" caret="205" fromTop="7" />
-      <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Services/f:WorkflowFidecard.cs" caret="1928" fromTop="18" />
-      <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Services/d:Helpers/f:HelperPuntos.cs" caret="88" fromTop="2" />
-      <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Services/d:Helpers/f:HelperPuntos.cs" caret="667" fromTop="16" />
       <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Services/d:Helpers/f:HelperCuenta.cs" caret="909" fromTop="8" />
       <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Services/d:Helpers/f:HelperCuenta.cs" caret="1360" fromTop="20" />
       <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Services/d:Helpers/f:HelperCuenta.cs" caret="486" fromTop="13" />
@@ -484,6 +481,10 @@
       <File id="098C2174-B53A-41E7-9C3E-39CCCB9119B2/f:App.config" caret="649" fromTop="12" />
       <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Services/d:Helpers/f:HelperPersona.cs" caret="3632" fromTop="22" />
       <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Services/d:Helpers/f:HelperPersona.cs" caret="3622" fromTop="15" />
+      <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Services/f:TipoDocumento.cs" caret="177" fromTop="5" />
+      <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Services/f:TipoDocumento.cs" caret="380" fromTop="9" />
+      <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Keys/f:KeyPersona.cs" caret="759" fromTop="26" />
+      <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Dtos/f:ReglasDto.cs" caret="213" fromTop="8" />
     </RecentEdits>
   </RecentFiles>
   <UnitTestRunner>

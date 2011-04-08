@@ -33,8 +33,15 @@ namespace FileProccesor.Services.Helpers
             if (cuentas.Count<=0)
                 new ClienteDto(new KeyCliente(
                     empresa, HelperPersona.CuitToDni(dni), cuenta), 
-                    Parentesco.Empleado, GetExtension(cuenta, empresa))
+                    GetParentesco("Empleado"), GetExtension(cuenta, empresa))
                 .Save();
+        }
+
+        private static ParentescoDto GetParentesco(string desc)
+        {
+            return ActiveRecordBase<ParentescoDto>
+                .FindAll()
+                .Where(x => x.Descripccion.Contains(desc)).FirstOrDefault();
         }
 
         private static int GetExtension(int cuenta, int empresa)
@@ -53,7 +60,7 @@ namespace FileProccesor.Services.Helpers
         {
             var cuentaNueva = new ClienteDto(
                     new KeyCliente(empresa, HelperPersona.CuitToDni(cuit), GetNumeroNuevo(empresa)),
-                        Parentesco.Titular, 1);
+                        GetParentesco("Titular"), 1);
             cuentaNueva.Save();
 
             return cuentaNueva.Key.NroCuenta;

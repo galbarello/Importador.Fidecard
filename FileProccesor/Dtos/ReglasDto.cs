@@ -10,7 +10,7 @@ namespace FileProccesor.Dtos
         [CompositeKey]
         public KeyRegla Key { get; set; }
 
-        [Property("Basicos")]
+        [Property("Basico")]
         public int Multiplicador { get; set; }
 
         [Property("ProductoPromo")]

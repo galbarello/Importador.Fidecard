@@ -31,7 +31,7 @@ namespace FileProccesor.Dtos
         [Property("codUsuario", Length = 9)]
         public string Usuario { get; set; }
 
-        [Property("monto")]
+        [Property("montoCompra")]
         public double MontoCompra { get; set; }
 
         [Property("cantidadPuntos")]

@@ -22,8 +22,8 @@ namespace FileProccesor.Dtos
         [Property("fax",Length = 14)]
         public string Fax{ get; set;}
 		
-        [BelongsTo("CodActividad")]
-        public ActividadDto ActividadEmpresa{ get; set;}
+        [Property]
+        public int ActividadEmpresa{ get; set;}
         
         [Nested]
         public Contacto ContactoEmpresa{ get; set;}

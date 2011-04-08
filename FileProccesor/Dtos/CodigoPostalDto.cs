@@ -16,7 +16,7 @@ namespace FileProccesor.Dtos
         {
             CodPostal = codigo;
             Localidad = ciudad;
-            Provinica = provincia;
+            Provincia = provincia;
         }
 
         [PrimaryKey(Length = 8)]
@@ -26,7 +26,7 @@ namespace FileProccesor.Dtos
         public string Localidad { get; set; }
 
         [Property(Length = 50)]
-        public string Provinica { get; set; }
+        public string Provincia { get; set; }
 
         [Property]
         public DateTime? FechaBaja { get; set; }

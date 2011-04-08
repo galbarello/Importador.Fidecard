@@ -17,7 +17,7 @@ namespace Front
 {
     public partial class Form1 : Form
     {
-
+        private bool _autostart = bool.Parse(ConfigurationManager.AppSettings["autoStart"]);
         private bool  _showmess;
         private static GrowlConnector _growl;
         private static NotificationType _notificationType;
@@ -56,6 +56,10 @@ namespace Front
             folderWatch.Deleted += FolderWatchDeleted;
 
             InitDatabase();
+
+            if (!_autostart) return;
+
+            Operar(true,true);
         }
 
         private void Work(string filepath)
@@ -157,13 +161,17 @@ namespace Front
 
         private void button2_Click(object sender, EventArgs e)
         {
+            Operar(checkBox1.Checked, checkBox3.Checked);
+        }
+
+        public void Operar(bool showMessages,bool minimize)
+        {
             if (textBox1.Text == "") return;
             _showmess = false;
-            if (checkBox1.Checked)
+            if (showMessages)
                 _showmess = true;
-            if (checkBox3.Checked)
+            if (minimize)
             {
-                MessageBox.Show("El formulario se minimizara en el area de tareas", "El formulario sera escondido");
                 WindowState = FormWindowState.Minimized;
                 Visible = false;
             }

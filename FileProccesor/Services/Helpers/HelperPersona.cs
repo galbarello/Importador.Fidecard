@@ -58,10 +58,11 @@ namespace FileProccesor.Services.Helpers
                 Apellido = razon,
                 Nombre = cuit,
                 Key = new KeyPersona(empresa, CuitToDni(cuit), TipoDocumento.Cuit),
-                Cuenta = HelperCuenta.GetCuenta(cuit, CuitToDni(cuit), empresa).ToString(),
                 CodPostal = GetCp(),
                 ActividadPersona = GetActividad()
             };
+            nuevoCorporativo.Save();
+            nuevoCorporativo.Cuenta = HelperCuenta.GetCuenta(cuit, CuitToDni(cuit), empresa).ToString();
             nuevoCorporativo.Save();
         }
 
@@ -72,10 +73,11 @@ namespace FileProccesor.Services.Helpers
                 Apellido = apellido,
                 Nombre = nombre,
                 Key = new KeyPersona(empresa, CuitToDni(dni), tipoDoc),
-                Cuenta = HelperCuenta.GetCuenta(cuit, dni, empresa).ToString(),
-                CodPostal = GetCp(),
+               CodPostal = GetCp(),
                 ActividadPersona = GetActividad()
             };
+            nuevaPersona.Save();
+            nuevaPersona.Cuenta = HelperCuenta.GetCuenta(cuit, dni, empresa).ToString();
             nuevaPersona.Save();
         }
 
@@ -99,13 +101,9 @@ namespace FileProccesor.Services.Helpers
             return cpDefault;
         }
 
-        private static ActividadDto GetActividad()
+        private static string  GetActividad()
         {
-            var actividad = ActiveRecordBase<ActividadDto>.FindAllByProperty("DescActividad","Sin Especificar");
-            if (actividad.Count() > 0) return actividad[0];
-            var actividadDefault= new ActividadDto("Sin Especificar");
-            actividadDefault.Save();
-            return actividadDefault;
+            return "Sin Especificar";
         }
     }
 }

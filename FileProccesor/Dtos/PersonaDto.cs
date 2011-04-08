@@ -41,8 +41,8 @@ namespace FileProccesor.Dtos
         [Nested]
         public FechaNacimiento FechaNacimientoPersona { get; set; }
 
-        [BelongsTo("actividad")]
-        public ActividadDto ActividadPersona { get; set; }
+        [Property("actividad")]
+        public string ActividadPersona { get; set; }
 
         [Property("FechaBaja")]
         public DateTime? FechaBaja { get; set; }

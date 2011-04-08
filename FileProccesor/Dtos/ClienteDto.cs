@@ -12,18 +12,18 @@ namespace FileProccesor.Dtos
         /// </summary>
         public ClienteDto(){}
 
-        public ClienteDto(KeyCliente cliente,Parentesco parentesco,int maxExtension)
+        public ClienteDto(KeyCliente cliente,ParentescoDto parentesco,int maxExtension)
         {
             Key = cliente;
-            CodParentesco = parentesco;
+            Parentesco = parentesco;
             CodExtension = maxExtension;
         }
 
         [CompositeKey]
         public KeyCliente Key{ get; set;}
         
-		[Property("CodParentesco")]
-  	    public Parentesco CodParentesco { get; set;}
+		[BelongsTo("CodParentesco")]
+  	    public ParentescoDto Parentesco { get; set;}
         
         [Property("CodExtension")]
         public int CodExtension{ get; set;}

@@ -24,7 +24,7 @@ namespace FileProccesor.Services.Helpers
                 puntos = puntos+modificador;
             }
 
-            return (int) puntos;
+            return (int)Math.Round(puntos);
         }
     }
 }

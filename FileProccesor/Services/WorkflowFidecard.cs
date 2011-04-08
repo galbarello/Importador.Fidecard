@@ -27,6 +27,9 @@ namespace FileProccesor.Services
                     using (var transac = new TransactionScope())
                         try
                         {
+                            var puntos = HelperPuntos.GetPuntos(archivo.Empresa, archivo.FechaHoraComprobante,
+                                                            archivo.ImportePesosNetoImpuestos);
+                           
                             var cuenta = new CuentaCorrienteDto
                             {
                                 FechaCompra = archivo.FechaHoraComprobante.Date,
@@ -37,10 +40,10 @@ namespace FileProccesor.Services
                                     NumeroComprobante = archivo.NroComprobante
                                 },
                                 MontoCompra = archivo.ImportePesosNetoImpuestos,
-                                Movimiento = EnumMovimientos.SumaPuntos,
+                                Movimiento = puntos>=0 ? EnumMovimientos.SumaPuntos : EnumMovimientos.AnulaPuntos,
                                 NumeroDocumento = documento,
                                 NumeroCuenta = cliente,
-                                Puntos = HelperPuntos.GetPuntos(archivo.Empresa,archivo.FechaHoraComprobante, archivo.ImportePesosNetoImpuestos),
+                                Puntos = Math.Abs(puntos),
                                 Sucursal = HelperSucursal.GetSucursal(),
                                 Usuario = "web"
                             };
