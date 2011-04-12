@@ -39,9 +39,13 @@ namespace FileProccesor.Services.Helpers
 
         private static ParentescoDto GetParentesco(string desc)
         {
-            return ActiveRecordBase<ParentescoDto>
-                .FindAll()
-                .Where(x => x.Descripccion.Contains(desc)).FirstOrDefault();
+            var parentesco = ActiveRecordBase<ParentescoDto>
+                .FindAllByProperty("Descripccion", desc);
+            if (parentesco.Length > 0)
+                return parentesco[0];
+            var nuevo = new ParentescoDto(desc);
+            nuevo.Save();
+            return nuevo;
         }
 
         private static int GetExtension(int cuenta, int empresa)

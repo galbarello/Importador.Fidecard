@@ -7,7 +7,7 @@ namespace FileProccesor.Services.Helpers
 {
     public static class HelperPuntos
     {
-        public static int GetPuntos(int empresa,DateTime comprobante, double monto)
+        public static double GetPuntos(int empresa,DateTime comprobante, double monto)
         {
             var puntos = 0d;
 
@@ -24,7 +24,7 @@ namespace FileProccesor.Services.Helpers
                 puntos = puntos+modificador;
             }
 
-            return (int)Math.Round(puntos);
+            return puntos;
         }
     }
 }

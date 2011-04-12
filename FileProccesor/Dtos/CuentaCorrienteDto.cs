@@ -22,8 +22,8 @@ namespace FileProccesor.Dtos
         [Property("NroDoc", Length = 9)]
         public string NumeroDocumento { get; set; }
 
-        [Property("Movimiento")]
-        public int Movimiento { get; set; }
+        [BelongsTo("Movimiento")]
+        public MovimientoDto Movimiento { get; set; }
 
         [Property("codSucursal")]
         public int Sucursal { get; set; }
@@ -35,6 +35,6 @@ namespace FileProccesor.Dtos
         public double MontoCompra { get; set; }
 
         [Property("cantidadPuntos")]
-        public int Puntos { get; set; }
+        public double Puntos { get; set; }
     }
 }

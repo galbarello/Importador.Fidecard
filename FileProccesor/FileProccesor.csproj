@@ -59,6 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Dtos\CodigoPostalDto.cs" />
+    <Compile Include="Dtos\MovimientoDto.cs" />
     <Compile Include="Keys\KeyRegla.cs" />
     <Compile Include="Dtos\ClienteDto.cs" />
     <Compile Include="Dtos\ConsumoDto.cs" />
@@ -70,6 +71,7 @@
     <Compile Include="Services\Agrupado.cs" />
     <Compile Include="Services\Cambio.cs" />
     <Compile Include="Schemes\CambioFile.cs" />
+    <Compile Include="Services\Helpers\HelperMovimiento.cs" />
     <Compile Include="Services\WorkflowFidecard.cs" />
     <Compile Include="Services\Helpers\HelperAggregator.cs" />
     <Compile Include="Services\Helpers\HelperCuenta.cs" />

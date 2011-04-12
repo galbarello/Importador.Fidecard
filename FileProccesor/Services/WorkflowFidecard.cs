@@ -40,10 +40,10 @@ namespace FileProccesor.Services
                                     NumeroComprobante = archivo.NroComprobante
                                 },
                                 MontoCompra = archivo.ImportePesosNetoImpuestos,
-                                Movimiento = puntos>=0 ? EnumMovimientos.SumaPuntos : EnumMovimientos.AnulaPuntos,
+                                Movimiento = puntos>=0 ? HelperMovimiento.FindMovimiento("SumaPuntos") : HelperMovimiento.FindMovimiento("AnulaPuntos"),
                                 NumeroDocumento = documento,
                                 NumeroCuenta = cliente,
-                                Puntos = Math.Abs(puntos),
+                                Puntos = puntos,
                                 Sucursal = HelperSucursal.GetSucursal(),
                                 Usuario = "web"
                             };

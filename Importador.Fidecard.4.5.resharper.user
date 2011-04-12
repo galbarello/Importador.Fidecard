@@ -13,26 +13,26 @@
   <CompletionStatisticsManager>
     <ItemStatistics item="Default">
       <Item value="interface" priority="0" />
-      <Item value="void" priority="3" />
+      <Item value="void" priority="4" />
       <Item value="ConsumoDto" priority="5" />
       <Item value="class" priority="11" />
       <Item value="ActiveRecordBase" priority="7" />
       <Item value="CuentaDto" priority="4" />
-      <Item value="public" priority="84" />
+      <Item value="public" priority="87" />
       <Item value="PersonaDto" priority="3" />
       <Item value="BelongsTo" priority="7" />
       <Item value="HasMany" priority="0" />
-      <Item value="System" priority="2" />
+      <Item value="System" priority="3" />
       <Item value="ComponentModel.Design" priority="0" />
       <Item value="Generic" priority="0" />
-      <Item value="PrimaryKey" priority="6" />
+      <Item value="PrimaryKey" priority="7" />
       <Item value="PrimaryKeyType" priority="2" />
       <Item value="CuentaPadre" priority="1" />
       <Item value="new" priority="27" />
-      <Item value="var" priority="28" />
+      <Item value="var" priority="29" />
       <Item value="file" priority="25" />
-      <Item value="Configuration" priority="0" />
-      <Item value="string" priority="44" />
+      <Item value="Configuration" priority="1" />
+      <Item value="string" priority="46" />
       <Item value="Transatlantica" priority="1" />
       <Item value="archivo" priority="26" />
       <Item value="ActiveRecord" priority="4" />
@@ -40,7 +40,7 @@
       <Item value="implicit" priority="0" />
       <Item value="operator" priority="0" />
       <Item value="Convert" priority="0" />
-      <Item value="Property" priority="37" />
+      <Item value="Property" priority="39" />
       <Item value="Cuit" priority="5" />
       <Item value="FechaHoraComprobante" priority="2" />
       <Item value="ImportePesosNetoImpuestos" priority="3" />
@@ -52,7 +52,7 @@
       <Item value="TipoDocumento" priority="7" />
       <Item value="Length" priority="32" />
       <Item value="Column" priority="8" />
-      <Item value="int" priority="32" />
+      <Item value="int" priority="33" />
       <Item value="Nested" priority="2" />
       <Item value="NewsStyleUriParser" priority="1" />
       <Item value="using" priority="2" />
@@ -62,7 +62,7 @@
       <Item value="transaction" priority="1" />
       <Item value="EmpresaDto" priority="2" />
       <Item value="empresa" priority="15" />
-      <Item value="ActiveRecordValidationBase" priority="0" />
+      <Item value="ActiveRecordValidationBase" priority="1" />
       <Item value="set" priority="0" />
       <Item value="FechaNacimiento" priority="0" />
       <Item value="ActividadDto" priority="5" />
@@ -79,8 +79,8 @@
       <Item value="MontoCompra" priority="1" />
       <Item value="Movimiento" priority="1" />
       <Item value="NumeroCuenta" priority="1" />
-      <Item value="static" priority="8" />
-      <Item value="return" priority="33" />
+      <Item value="static" priority="9" />
+      <Item value="return" priority="36" />
       <Item value="NumeroDocumento" priority="2" />
       <Item value="Puntos" priority="1" />
       <Item value="monto" priority="1" />
@@ -88,7 +88,7 @@
       <Item value="Usuario" priority="1" />
       <Item value="TransatlanticaFile" priority="2" />
       <Item value="CuentaCorrienteDto" priority="1" />
-      <Item value="ClienteDto" priority="14" />
+      <Item value="ClienteDto" priority="16" />
       <Item value="get" priority="0" />
       <Item value="switch" priority="0" />
       <Item value="case" priority="1" />
@@ -104,7 +104,7 @@
       <Item value="try" priority="2" />
       <Item value="transac" priority="5" />
       <Item value="HelperPersona" priority="2" />
-      <Item value="if" priority="16" />
+      <Item value="if" priority="17" />
       <Item value="else" priority="12" />
       <Item value="StringSplitOptions" priority="2" />
       <Item value="nombre" priority="5" />
@@ -121,8 +121,8 @@
       <Item value="apellidoynombre" priority="3" />
       <Item value="Cuenta" priority="0" />
       <Item value="HelperCuenta" priority="1" />
-      <Item value="nuevaPersona" priority="0" />
-      <Item value="nuevoCorporativo" priority="0" />
+      <Item value="nuevaPersona" priority="3" />
+      <Item value="nuevoCorporativo" priority="2" />
       <Item value="cuenta" priority="8" />
       <Item value="null" priority="3" />
       <Item value="readonly" priority="2" />
@@ -150,14 +150,14 @@
       <Item value="cuit" priority="12" />
       <Item value="_q" priority="2" />
       <Item value="IFileSpec" priority="2" />
-      <Item value="Parentesco" priority="12" />
+      <Item value="Parentesco" priority="14" />
       <Item value="Empresa" priority="3" />
       <Item value="HelperPuntos" priority="0" />
-      <Item value="private" priority="5" />
+      <Item value="private" priority="6" />
       <Item value="_empresa" priority="0" />
       <Item value="_dni" priority="0" />
       <Item value="FechaBaja" priority="0" />
-      <Item value="Where" priority="2" />
+      <Item value="Where" priority="3" />
       <Item value="List&lt;ClienteDto&gt;" priority="0" />
       <Item value="GetNumeroNuevo" priority="0" />
       <Item value="extensiones" priority="2" />
@@ -171,7 +171,7 @@
       <Item value="CrearNuevaCuenta" priority="0" />
       <Item value="micuenta" priority="3" />
       <Item value="GetExtension" priority="0" />
-      <Item value="true" priority="1" />
+      <Item value="true" priority="2" />
       <Item value="false" priority="1" />
       <Item value="numero" priority="0" />
       <Item value="CuitToDni" priority="1" />
@@ -221,6 +221,13 @@
       <Item value="actividadDefault" priority="1" />
       <Item value="cp_default" priority="0" />
       <Item value="cpDefault" priority="0" />
+      <Item value="bool" priority="2" />
+      <Item value="_autostart" priority="0" />
+      <Item value="showMessages" priority="0" />
+      <Item value="minimize" priority="0" />
+      <Item value="x" priority="0" />
+      <Item value="EnumMovimientos" priority="1" />
+      <Item value="MidpointRounding" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@Castle.ActiveRecord.PrimaryKeyType">
       <Item value="Assigned" priority="3" />
@@ -275,6 +282,7 @@
       <Item value="Count" priority="2" />
       <Item value="Select" priority="0" />
       <Item value="Where" priority="2" />
+      <Item value="FirstOrDefault" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Linq.IGrouping`2">
       <Item value="First" priority="0" />
@@ -300,7 +308,7 @@
       <Item value="Split" priority="1" />
       <Item value="Length" priority="3" />
       <Item value="Trim" priority="2" />
-      <Item value="Contains" priority="1" />
+      <Item value="Contains" priority="2" />
       <Item value="ToLowerInvariant" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@System.StringSplitOptions">
@@ -319,6 +327,7 @@
     <ItemStatistics item="Qualified:FileProccesor.Dtos.PersonaDto">
       <Item value="Key" priority="1" />
       <Item value="SaveAndFlush" priority="0" />
+      <Item value="Save" priority="1" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:FileProccesor.Keys.KeyPersona">
       <Item value="NroDocumento" priority="1" />
@@ -328,7 +337,7 @@
       <Item value="Save" priority="1" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:FileProccesor.Dtos.ClienteDto">
-      <Item value="Key" priority="7" />
+      <Item value="Key" priority="8" />
       <Item value="Save" priority="1" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:FileProccesor.Dtos.KeyCliente">
@@ -346,7 +355,7 @@
       <Item value="TryFind" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:FileProccesor.Keys.KeyCliente">
-      <Item value="NroCuenta" priority="3" />
+      <Item value="NroCuenta" priority="4" />
       <Item value="CodEmpresa" priority="1" />
       <Item value="NumeroDocumento" priority="0" />
     </ItemStatistics>
@@ -357,9 +366,11 @@
     <ItemStatistics item="Qualified:@FileProccesor.Dtos.Parentesco">
       <Item value="Titular" priority="3" />
       <Item value="Empleado" priority="2" />
+      <Item value="FindAllByProperty" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:FileProccesor.Dtos.Parentesco">
       <Item value="GetTypeCode" priority="0" />
+      <Item value="Descripccion" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:FileProccesor.Services.Agrupado">
       <Item value="Consumo" priority="5" />
@@ -386,6 +397,7 @@
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Collections.Generic.List`1">
       <Item value="Count" priority="0" />
+      <Item value="FirstOrDefault" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@System.Configuration.ConfigurationManager">
       <Item value="AppSettings" priority="0" />
@@ -428,63 +440,78 @@
     <ItemStatistics item="Qualified:FileProccesor.Dtos.CodigoPostalDto">
       <Item value="Save" priority="0" />
     </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Boolean">
+      <Item value="Parse" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.CheckBox">
+      <Item value="Checked" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Math">
+      <Item value="Abs" priority="1" />
+      <Item value="Round" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.MidpointRounding">
+      <Item value="ToEven" priority="0" />
+    </ItemStatistics>
   </CompletionStatisticsManager>
   <RecentFiles>
     <RecentFiles>
       <File id="098C2174-B53A-41E7-9C3E-39CCCB9119B2/f:Form1.Designer.cs" caret="8660" fromTop="27" />
       <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Keys/f:KeyCuenta.cs" caret="0" fromTop="0" />
       <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Keys/f:KeyCliente.cs" caret="953" fromTop="33" />
-      <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Dtos/f:EmpresaDto.cs" caret="0" fromTop="0" />
       <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Dtos/f:ConsumoDto.cs" caret="0" fromTop="0" />
-      <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Services/d:Helpers/f:HelperCuenta.cs" caret="486" fromTop="13" />
-      <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Services/f:Cambio.cs" caret="1487" fromTop="29" />
-      <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Services/f:TipoDocumento.cs" caret="389" fromTop="10" />
-      <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Services/d:Helpers/f:HelperPersona.cs" caret="2224" fromTop="20" />
-      <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Dtos/f:CodigoPostalDto.cs" caret="261" fromTop="9" />
-      <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Dtos/f:PersonaDto.cs" caret="931" fromTop="31" />
-      <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Services/f:WorkflowFidecard.cs" caret="1092" fromTop="23" />
-      <File id="098C2174-B53A-41E7-9C3E-39CCCB9119B2/f:Form1.cs" caret="5616" fromTop="14" />
       <File id="098C2174-B53A-41E7-9C3E-39CCCB9119B2/f:Program.cs" caret="0" fromTop="0" />
-      <File id="098C2174-B53A-41E7-9C3E-39CCCB9119B2/f:App.config" caret="649" fromTop="12" />
-      <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Services/f:Importar.cs" caret="878" fromTop="22" />
-      <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Services/f:Transatlantica.cs" caret="1827" fromTop="27" />
-      <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Services/d:Helpers/f:HelperPuntos.cs" caret="840" fromTop="23" />
-      <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Keys/f:KeyPersona.cs" caret="784" fromTop="27" />
+      <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Services/f:FileProcessor.cs" caret="0" fromTop="0" />
+      <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Dtos/f:EmpresaDto.cs" caret="741" fromTop="16" />
       <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Dtos/d:ValueTypes/f:Contacto.cs" caret="359" fromTop="12" />
-      <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Dtos/f:ReglasDto.cs" caret="549" fromTop="21" />
-      <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Dtos/f:ActividadDto.cs" caret="413" fromTop="16" />
+      <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Dtos/f:CodigoPostalDto.cs" caret="512" fromTop="15" />
+      <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Services/f:TipoDocumento.cs" caret="186" fromTop="6" />
+      <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Services/d:Helpers/f:HelperPersona.cs" caret="2356" fromTop="22" />
+      <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Keys/f:KeyPersona.cs" caret="0" fromTop="0" />
+      <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Dtos/f:ClienteDto.cs" caret="757" fromTop="27" />
+      <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Dtos/f:PersonaDto.cs" caret="0" fromTop="0" />
+      <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Services/f:Importar.cs" caret="0" fromTop="0" />
+      <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Dtos/f:EnumMovimientos.cs" caret="156" fromTop="5" />
+      <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Dtos/f:CuentaCorrienteDto.cs" caret="1019" fromTop="36" />
+      <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Dtos/f:ReglasDto.cs" caret="309" fromTop="12" />
+      <File id="098C2174-B53A-41E7-9C3E-39CCCB9119B2/f:App.config" caret="834" fromTop="13" />
+      <File id="098C2174-B53A-41E7-9C3E-39CCCB9119B2/f:Form1.cs" caret="2112" fromTop="16" />
+      <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Services/d:Helpers/f:HelperAggregator.cs" caret="0" fromTop="0" />
+      <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Services/f:Cambio.cs" caret="0" fromTop="0" />
+      <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Services/d:Helpers/f:HelperCuenta.cs" caret="0" fromTop="0" />
+      <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Services/f:Transatlantica.cs" caret="0" fromTop="0" />
+      <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Services/f:WorkflowFidecard.cs" caret="2175" fromTop="12" />
+      <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Services/d:Helpers/f:HelperPuntos.cs" caret="564" fromTop="4" />
     </RecentFiles>
     <RecentEdits>
-      <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Services/d:Helpers/f:HelperCuenta.cs" caret="909" fromTop="8" />
-      <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Services/d:Helpers/f:HelperCuenta.cs" caret="1360" fromTop="20" />
-      <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Services/d:Helpers/f:HelperCuenta.cs" caret="486" fromTop="13" />
-      <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Services/f:Transatlantica.cs" caret="1786" fromTop="27" />
-      <File id="098C2174-B53A-41E7-9C3E-39CCCB9119B2/f:Form1.cs" caret="5613" fromTop="20" />
-      <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Services/d:Helpers/f:HelperPuntos.cs" caret="637" fromTop="17" />
-      <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Services/d:Helpers/f:HelperPuntos.cs" caret="786" fromTop="22" />
-      <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Services/d:Helpers/f:HelperPuntos.cs" caret="293" fromTop="11" />
-      <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Services/d:Helpers/f:HelperPuntos.cs" caret="840" fromTop="23" />
-      <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Dtos/f:PersonaDto.cs" caret="1551" fromTop="29" />
-      <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Dtos/f:PersonaDto.cs" caret="638" fromTop="5" />
-      <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Dtos/f:PersonaDto.cs" caret="1551" fromTop="13" />
-      <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Dtos/f:CodigoPostalDto.cs" caret="526" fromTop="12" />
-      <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Dtos/f:CodigoPostalDto.cs" caret="261" fromTop="9" />
-      <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Dtos/f:ActividadDto.cs" caret="448" fromTop="7" />
-      <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Services/d:Helpers/f:HelperPersona.cs" caret="4088" fromTop="22" />
-      <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Dtos/f:ActividadDto.cs" caret="413" fromTop="10" />
-      <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Dtos/f:ActividadDto.cs" caret="313" fromTop="10" />
-      <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Dtos/f:ActividadDto.cs" caret="236" fromTop="9" />
-      <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Dtos/f:ActividadDto.cs" caret="0" fromTop="0" />
-      <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Services/d:Helpers/f:HelperPersona.cs" caret="2419" fromTop="17" />
-      <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Services/d:Helpers/f:HelperPersona.cs" caret="3000" fromTop="29" />
-      <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Services/d:Helpers/f:HelperPersona.cs" caret="4174" fromTop="24" />
-      <File id="098C2174-B53A-41E7-9C3E-39CCCB9119B2/f:App.config" caret="649" fromTop="12" />
-      <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Services/d:Helpers/f:HelperPersona.cs" caret="3632" fromTop="22" />
-      <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Services/d:Helpers/f:HelperPersona.cs" caret="3622" fromTop="15" />
-      <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Services/f:TipoDocumento.cs" caret="177" fromTop="5" />
-      <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Services/f:TipoDocumento.cs" caret="380" fromTop="9" />
-      <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Keys/f:KeyPersona.cs" caret="759" fromTop="26" />
-      <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Dtos/f:ReglasDto.cs" caret="213" fromTop="8" />
+      <File id="098C2174-B53A-41E7-9C3E-39CCCB9119B2/f:Form1.cs" caret="6682" fromTop="9" />
+      <File id="098C2174-B53A-41E7-9C3E-39CCCB9119B2/f:Form1.cs" caret="2138" fromTop="8" />
+      <File id="098C2174-B53A-41E7-9C3E-39CCCB9119B2/f:App.config" caret="2518" fromTop="29" />
+      <File id="098C2174-B53A-41E7-9C3E-39CCCB9119B2/f:App.config" caret="648" fromTop="7" />
+      <File id="098C2174-B53A-41E7-9C3E-39CCCB9119B2/f:App.config" caret="834" fromTop="13" />
+      <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Dtos/f:CodigoPostalDto.cs" caret="769" fromTop="22" />
+      <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Dtos/f:CodigoPostalDto.cs" caret="512" fromTop="15" />
+      <File id="098C2174-B53A-41E7-9C3E-39CCCB9119B2/f:Form1.cs" caret="7061" fromTop="22" />
+      <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Services/d:Helpers/f:HelperCuenta.cs" caret="1364" fromTop="15" />
+      <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Services/d:Helpers/f:HelperCuenta.cs" caret="1630" fromTop="19" />
+      <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Services/d:Helpers/f:HelperCuenta.cs" caret="0" fromTop="0" />
+      <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Services/d:Helpers/f:HelperCuenta.cs" caret="673" fromTop="9" />
+      <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Services/d:Helpers/f:HelperCuenta.cs" caret="219" fromTop="1" />
+      <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Services/d:Helpers/f:HelperCuenta.cs" caret="2504" fromTop="29" />
+      <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Services/d:Helpers/f:HelperCuenta.cs" caret="2249" fromTop="24" />
+      <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Services/d:Helpers/f:HelperPersona.cs" caret="2237" fromTop="8" />
+      <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Services/d:Helpers/f:HelperPersona.cs" caret="2524" fromTop="14" />
+      <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Services/d:Helpers/f:HelperPersona.cs" caret="3019" fromTop="22" />
+      <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Services/d:Helpers/f:HelperPersona.cs" caret="3143" fromTop="23" />
+      <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Services/d:Helpers/f:HelperCuenta.cs" caret="1583" fromTop="17" />
+      <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Dtos/f:ClienteDto.cs" caret="388" fromTop="14" />
+      <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Dtos/f:ClienteDto.cs" caret="687" fromTop="15" />
+      <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Dtos/f:ReglasDto.cs" caret="309" fromTop="12" />
+      <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Services/f:WorkflowFidecard.cs" caret="1300" fromTop="14" />
+      <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Dtos/f:EnumMovimientos.cs" caret="156" fromTop="5" />
+      <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Dtos/f:CuentaCorrienteDto.cs" caret="933" fromTop="21" />
+      <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Services/f:WorkflowFidecard.cs" caret="2174" fromTop="12" />
+      <File id="46CA89AD-4C35-41E4-B72D-72B9CFB7E342/d:Services/d:Helpers/f:HelperPuntos.cs" caret="896" fromTop="23" />
     </RecentEdits>
   </RecentFiles>
   <UnitTestRunner>

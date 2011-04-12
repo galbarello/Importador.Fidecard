@@ -25,7 +25,7 @@ namespace FileProccesor.Dtos
         [Property]
         public string TipoCliente { get; set; }
         
-        [Property(Unique = true)]
+        [Property]
         public string NroComprobante { get; set; }
         
         [Property]
