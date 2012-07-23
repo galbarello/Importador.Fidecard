@@ -1,11 +1,1309 @@
-2011-03-30 11:47:24,691 [1] ERROR NHibernate.Tool.hbm2ddl.SchemaUpdate [(null)] &lt;(null)&gt; - Unsuccessful: alter table Personas add constraint FK1261169416022CC5 foreign key (CodPostal) references CodigosPostales
-System.Data.SqlClient.SqlException: Foreign key 'FK1261169416022CC5' has implicit reference to object 'CodigosPostales' which does not have a primary key defined on it.
-Could not create constraint. See previous errors.
-   en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
-   en System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection)
-   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj)
-   en System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
-   en System.Data.SqlClient.SqlCommand.RunExecuteNonQueryTds(String methodName, Boolean async)
-   en System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(DbAsyncResult result, String methodName, Boolean sendToPipe)
-   en System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
-   en NHibernate.Tool.hbm2ddl.SchemaUpdate.Execute(Action`1 scriptAction, Boolean doUpdate)
+2012-07-22 21:19:34,480 [9] INFO  NHibernate.Cfg.Environment [(null)] &lt;(null)&gt; - NHibernate 2.1.2.4000 (2.1.2.4000)
+2012-07-22 21:19:34,657 [9] INFO  NHibernate.Cfg.Environment [(null)] &lt;(null)&gt; - hibernate-configuration section not found in application configuration file
+2012-07-22 21:19:34,670 [9] INFO  NHibernate.Cfg.Environment [(null)] &lt;(null)&gt; - Bytecode provider name : lcg
+2012-07-22 21:19:34,690 [9] INFO  NHibernate.Cfg.Environment [(null)] &lt;(null)&gt; - Using reflection optimizer
+2012-07-22 21:19:36,119 [9] DEBUG NHibernate.Cfg.Configuration [(null)] &lt;(null)&gt; - Mapping XML:
+<?xml version="1.0" encoding="utf-16"?>
+<hibernate-mapping  auto-import="true" default-lazy="false" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="FileProccesor.Dtos.PersonaDto, FileProccesor" table="Personas">
+    <composite-id name="Key" class="FileProccesor.Keys.KeyPersona, FileProccesor" unsaved-value="none" access="property">
+      <key-property name="NroDocumento" access="property" column="NroDocumento" type="String" length="9" />
+      <key-property name="EmpresaPersona" access="property" column="CodEmpresa" type="Int32" />
+      <key-property name="TipoDocumento" access="property" column="TipoDocumento" type="String" length="3" />
+    </composite-id>
+    <property name="Nombre" access="property" type="String">
+      <column name="Nombre"/>
+    </property>
+    <property name="Apellido" access="property" type="String">
+      <column name="Apellido"/>
+    </property>
+    <property name="Domicilio" access="property" type="String">
+      <column name="Domicilio" length="50"/>
+    </property>
+    <property name="Telefono" access="property" type="String">
+      <column name="Telefono" length="14"/>
+    </property>
+    <property name="Celular" access="property" type="String">
+      <column name="celular" length="16"/>
+    </property>
+    <property name="Fax" access="property" type="String">
+      <column name="fax" length="14"/>
+    </property>
+    <property name="Email" access="property" type="String">
+      <column name="email" length="50"/>
+    </property>
+    <property name="Sexo" access="property" type="String">
+      <column name="sexo" length="9"/>
+    </property>
+    <property name="ActividadPersona" access="property" type="String">
+      <column name="actividad"/>
+    </property>
+    <property name="FechaBaja" access="property" type="System.DateTime, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+      <column name="FechaBaja"/>
+    </property>
+    <property name="MotivoBaja" access="property" type="Int32">
+      <column name="CodMotivoBaja"/>
+    </property>
+    <property name="Cuenta" access="property" type="String">
+      <column name="Cuenta" length="10"/>
+    </property>
+    <many-to-one name="CodPostal" access="property" class="FileProccesor.Dtos.CodigoPostalDto, FileProccesor" column="CodPostal" lazy="proxy" />
+    <component name="FechaNacimientoPersona" class="FileProccesor.Dtos.ValueTypes.FechaNacimiento, FileProccesor" access="property">
+      <property name="Dia" access="property" type="String">
+        <column name="DiaNacimiento" length="2"/>
+      </property>
+      <property name="Mes" access="property" type="String">
+        <column name="MesNacimiento" length="2"/>
+      </property>
+      <property name="Año" access="property" type="String">
+        <column name="AnoNacimiento" length="4"/>
+      </property>
+    </component>
+  </class>
+</hibernate-mapping>
+
+2012-07-22 21:19:39,627 [9] INFO  NHibernate.Dialect.Dialect [(null)] &lt;(null)&gt; - Using dialect: NHibernate.Dialect.MsSql2005Dialect
+2012-07-22 21:19:58,347 [9] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapping class: FileProccesor.Dtos.PersonaDto -> Personas
+2012-07-22 21:19:58,747 [9] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: NroDocumento -> NroDocumento, type: String
+2012-07-22 21:19:58,763 [9] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: EmpresaPersona -> CodEmpresa, type: Int32
+2012-07-22 21:19:58,763 [9] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: TipoDocumento -> TipoDocumento, type: String
+2012-07-22 21:19:59,036 [9] DEBUG NHibernate.Tuple.Component.AbstractComponentTuplizer [(null)] &lt;(null)&gt; - No custom accessors found for component: FileProccesor.Keys.KeyPersona, FileProccesor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+2012-07-22 21:19:59,060 [9] DEBUG NHibernate.Tuple.Component.AbstractComponentTuplizer [(null)] &lt;(null)&gt; - No custom accessors found for component: FileProccesor.Keys.KeyPersona, FileProccesor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+2012-07-22 21:19:59,287 [9] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Key -> NroDocumento, CodEmpresa, TipoDocumento, type: component[NroDocumento,EmpresaPersona,TipoDocumento]
+2012-07-22 21:19:59,405 [9] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Nombre -> Nombre, type: String
+2012-07-22 21:19:59,412 [9] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Apellido -> Apellido, type: String
+2012-07-22 21:19:59,412 [9] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Domicilio -> Domicilio, type: String
+2012-07-22 21:19:59,412 [9] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Telefono -> Telefono, type: String
+2012-07-22 21:19:59,420 [9] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Celular -> celular, type: String
+2012-07-22 21:19:59,420 [9] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Fax -> fax, type: String
+2012-07-22 21:19:59,420 [9] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Email -> email, type: String
+2012-07-22 21:19:59,420 [9] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Sexo -> sexo, type: String
+2012-07-22 21:19:59,420 [9] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: ActividadPersona -> actividad, type: String
+2012-07-22 21:19:59,420 [9] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: FechaBaja -> FechaBaja, type: DateTime
+2012-07-22 21:19:59,428 [9] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: MotivoBaja -> CodMotivoBaja, type: Int32
+2012-07-22 21:19:59,428 [9] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Cuenta -> Cuenta, type: String
+2012-07-22 21:19:59,475 [9] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: CodPostal -> CodPostal, type: FileProccesor.Dtos.CodigoPostalDto
+2012-07-22 21:19:59,490 [9] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Dia -> DiaNacimiento, type: String
+2012-07-22 21:19:59,490 [9] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Mes -> MesNacimiento, type: String
+2012-07-22 21:19:59,490 [9] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Año -> AnoNacimiento, type: String
+2012-07-22 21:19:59,490 [9] DEBUG NHibernate.Tuple.Component.AbstractComponentTuplizer [(null)] &lt;(null)&gt; - No custom accessors found for component: FileProccesor.Dtos.ValueTypes.FechaNacimiento, FileProccesor
+2012-07-22 21:19:59,498 [9] DEBUG NHibernate.Tuple.Component.AbstractComponentTuplizer [(null)] &lt;(null)&gt; - No custom accessors found for component: FileProccesor.Dtos.ValueTypes.FechaNacimiento, FileProccesor
+2012-07-22 21:19:59,498 [9] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: FechaNacimientoPersona -> DiaNacimiento, MesNacimiento, AnoNacimiento, type: component[Dia,Mes,Año]
+2012-07-22 21:19:59,537 [9] DEBUG NHibernate.Cfg.Configuration [(null)] &lt;(null)&gt; - Mapping XML:
+<?xml version="1.0" encoding="utf-16"?>
+<hibernate-mapping  auto-import="true" default-lazy="false" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="FileProccesor.Dtos.ConsumoDto, FileProccesor" table="registros_archivos">
+    <id name="Id" access="property" column="Id" type="System.Guid" unsaved-value="00000000-0000-0000-0000-000000000000">
+      <generator class="guid.comb">
+      </generator>
+    </id>
+    <timestamp name="LastOperation" access="property" column="LastOperation" />
+    <property name="Cuit" access="property" type="String">
+      <column name="Cuit"/>
+    </property>
+    <property name="RazonSocial" access="property" type="String">
+      <column name="RazonSocial"/>
+    </property>
+    <property name="NroDocumento" access="property" type="String">
+      <column name="NroDocumento"/>
+    </property>
+    <property name="NombrePersona" access="property" type="String">
+      <column name="NombrePersona"/>
+    </property>
+    <property name="TipoCliente" access="property" type="String">
+      <column name="TipoCliente"/>
+    </property>
+    <property name="NroComprobante" access="property" type="String">
+      <column name="NroComprobante"/>
+    </property>
+    <property name="FechaHoraComprobante" access="property" type="System.DateTime">
+      <column name="FechaHoraComprobante"/>
+    </property>
+    <property name="ImportePesosNetoImpuestos" access="property" type="Double">
+      <column name="ImportePesosNetoImpuestos"/>
+    </property>
+    <property name="Procesado" access="property" type="Boolean">
+      <column name="Procesado"/>
+    </property>
+    <property name="Archivo" access="property" type="String">
+      <column name="Archivo"/>
+    </property>
+    <property name="Empresa" access="property" type="Int32">
+      <column name="Empresa"/>
+    </property>
+    <property name="Secretaria" access="property" type="String">
+      <column name="Secretaria"/>
+    </property>
+    <property name="Coeficiente" access="property" type="String">
+      <column name="Coeficiente"/>
+    </property>
+    <property name="Programa" access="property" type="String">
+      <column name="Programa"/>
+    </property>
+  </class>
+</hibernate-mapping>
+
+2012-07-22 21:19:59,584 [9] INFO  NHibernate.Dialect.Dialect [(null)] &lt;(null)&gt; - Using dialect: NHibernate.Dialect.MsSql2005Dialect
+2012-07-22 21:19:59,709 [9] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapping class: FileProccesor.Dtos.ConsumoDto -> registros_archivos
+2012-07-22 21:19:59,717 [9] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Id -> Id, type: Guid
+2012-07-22 21:19:59,733 [9] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: LastOperation -> LastOperation, type: Timestamp
+2012-07-22 21:19:59,733 [9] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Cuit -> Cuit, type: String
+2012-07-22 21:19:59,733 [9] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: RazonSocial -> RazonSocial, type: String
+2012-07-22 21:19:59,733 [9] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: NroDocumento -> NroDocumento, type: String
+2012-07-22 21:19:59,740 [9] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: NombrePersona -> NombrePersona, type: String
+2012-07-22 21:19:59,740 [9] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: TipoCliente -> TipoCliente, type: String
+2012-07-22 21:19:59,740 [9] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: NroComprobante -> NroComprobante, type: String
+2012-07-22 21:19:59,740 [9] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: FechaHoraComprobante -> FechaHoraComprobante, type: DateTime
+2012-07-22 21:19:59,740 [9] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: ImportePesosNetoImpuestos -> ImportePesosNetoImpuestos, type: Double
+2012-07-22 21:19:59,740 [9] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Procesado -> Procesado, type: Boolean
+2012-07-22 21:19:59,740 [9] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Archivo -> Archivo, type: String
+2012-07-22 21:19:59,740 [9] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Empresa -> Empresa, type: Int32
+2012-07-22 21:19:59,740 [9] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Secretaria -> Secretaria, type: String
+2012-07-22 21:19:59,740 [9] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Coeficiente -> Coeficiente, type: String
+2012-07-22 21:19:59,740 [9] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Programa -> Programa, type: String
+2012-07-22 21:19:59,740 [9] DEBUG NHibernate.Cfg.Configuration [(null)] &lt;(null)&gt; - Mapping XML:
+<?xml version="1.0" encoding="utf-16"?>
+<hibernate-mapping  auto-import="true" default-lazy="false" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="FileProccesor.Dtos.ParentescoDto, FileProccesor" table="Parentesco">
+    <id name="Id" access="property" column="CodParentesco" type="Int32" unsaved-value="0">
+      <generator class="native">
+      </generator>
+    </id>
+    <property name="Descripccion" access="property" type="String">
+      <column name="DescParentesco"/>
+    </property>
+  </class>
+</hibernate-mapping>
+
+2012-07-22 21:19:59,787 [9] INFO  NHibernate.Dialect.Dialect [(null)] &lt;(null)&gt; - Using dialect: NHibernate.Dialect.MsSql2005Dialect
+2012-07-22 21:19:59,795 [9] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapping class: FileProccesor.Dtos.ParentescoDto -> Parentesco
+2012-07-22 21:19:59,795 [9] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Id -> CodParentesco, type: Int32
+2012-07-22 21:19:59,795 [9] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Descripccion -> DescParentesco, type: String
+2012-07-22 21:19:59,795 [9] DEBUG NHibernate.Cfg.Configuration [(null)] &lt;(null)&gt; - Mapping XML:
+<?xml version="1.0" encoding="utf-16"?>
+<hibernate-mapping  auto-import="true" default-lazy="false" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="FileProccesor.Dtos.MovimientoDto, FileProccesor" table="Movimientos">
+    <id name="Id" access="property" column="CodMovimiento" type="Int32" unsaved-value="0">
+      <generator class="increment">
+      </generator>
+    </id>
+    <property name="Descripccion" access="property" type="String">
+      <column name="DescMovimiento"/>
+    </property>
+  </class>
+</hibernate-mapping>
+
+2012-07-22 21:19:59,834 [9] INFO  NHibernate.Dialect.Dialect [(null)] &lt;(null)&gt; - Using dialect: NHibernate.Dialect.MsSql2005Dialect
+2012-07-22 21:19:59,834 [9] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapping class: FileProccesor.Dtos.MovimientoDto -> Movimientos
+2012-07-22 21:19:59,842 [9] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Id -> CodMovimiento, type: Int32
+2012-07-22 21:19:59,842 [9] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Descripccion -> DescMovimiento, type: String
+2012-07-22 21:19:59,842 [9] DEBUG NHibernate.Cfg.Configuration [(null)] &lt;(null)&gt; - Mapping XML:
+<?xml version="1.0" encoding="utf-16"?>
+<hibernate-mapping  auto-import="true" default-lazy="false" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="FileProccesor.Dtos.ReglasDto, FileProccesor" table="ReglasNegocio">
+    <composite-id name="Key" class="FileProccesor.Keys.KeyRegla, FileProccesor" unsaved-value="none" access="property">
+      <key-property name="CodEmpresa" access="property" column="CodEmpresa" type="Int32" />
+      <key-property name="Sucursal" access="property" column="CodSucursal" type="Int32" />
+      <key-property name="FechaInicio" access="property" column="FechaInicio" type="System.DateTime" />
+    </composite-id>
+    <property name="Multiplicador" access="property" type="Int32">
+      <column name="Basico"/>
+    </property>
+    <property name="MultiplicadorEspecial" access="property" type="Int32">
+      <column name="ProductoPromo"/>
+    </property>
+    <property name="FechaFin" access="property" type="System.DateTime, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+      <column name="FechaFin"/>
+    </property>
+  </class>
+</hibernate-mapping>
+
+2012-07-22 21:19:59,873 [9] INFO  NHibernate.Dialect.Dialect [(null)] &lt;(null)&gt; - Using dialect: NHibernate.Dialect.MsSql2005Dialect
+2012-07-22 21:19:59,881 [9] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapping class: FileProccesor.Dtos.ReglasDto -> ReglasNegocio
+2012-07-22 21:19:59,881 [9] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: CodEmpresa -> CodEmpresa, type: Int32
+2012-07-22 21:19:59,881 [9] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Sucursal -> CodSucursal, type: Int32
+2012-07-22 21:19:59,881 [9] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: FechaInicio -> FechaInicio, type: DateTime
+2012-07-22 21:19:59,881 [9] DEBUG NHibernate.Tuple.Component.AbstractComponentTuplizer [(null)] &lt;(null)&gt; - No custom accessors found for component: FileProccesor.Keys.KeyRegla, FileProccesor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+2012-07-22 21:19:59,881 [9] DEBUG NHibernate.Tuple.Component.AbstractComponentTuplizer [(null)] &lt;(null)&gt; - No custom accessors found for component: FileProccesor.Keys.KeyRegla, FileProccesor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+2012-07-22 21:19:59,889 [9] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Key -> CodEmpresa, CodSucursal, FechaInicio, type: component[CodEmpresa,Sucursal,FechaInicio]
+2012-07-22 21:19:59,889 [9] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Multiplicador -> Basico, type: Int32
+2012-07-22 21:19:59,889 [9] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: MultiplicadorEspecial -> ProductoPromo, type: Int32
+2012-07-22 21:19:59,889 [9] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: FechaFin -> FechaFin, type: DateTime
+2012-07-22 21:19:59,889 [9] DEBUG NHibernate.Cfg.Configuration [(null)] &lt;(null)&gt; - Mapping XML:
+<?xml version="1.0" encoding="utf-16"?>
+<hibernate-mapping  auto-import="true" default-lazy="false" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="FileProccesor.Dtos.EmpresaDto, FileProccesor" table="Empresas">
+    <id name="Id" access="property" column="codempresa" type="Int32" unsaved-value="0">
+      <generator class="native">
+      </generator>
+    </id>
+    <property name="RazonSocial" access="property" type="String">
+      <column name="Razon_social" length="50"/>
+    </property>
+    <property name="Telefono" access="property" type="String">
+      <column name="Telefono" length="14"/>
+    </property>
+    <property name="Fax" access="property" type="String">
+      <column name="fax" length="14"/>
+    </property>
+    <property name="ActividadEmpresa" access="property" type="Int32">
+      <column name="ActividadEmpresa"/>
+    </property>
+    <property name="FechaBaja" access="property" type="System.DateTime, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+      <column name="FechaBaja"/>
+    </property>
+    <property name="CodBaja" access="property" type="Int32">
+      <column name="CodMotivoBaja"/>
+    </property>
+    <property name="Moroso" access="property" type="Boolean">
+      <column name="Moroso"/>
+    </property>
+    <property name="Tope" access="property" type="Int32">
+      <column name="TopeImporte"/>
+    </property>
+    <component name="DireccionEmpresa" class="FileProccesor.Dtos.ValueTypes.Direccion, FileProccesor" access="property">
+      <property name="Domicilio" access="property" type="String">
+        <column name="Domicilio" length="120"/>
+      </property>
+      <property name="CodigoPostal" access="property" type="String">
+        <column name="CodPostal" length="8"/>
+      </property>
+    </component>
+    <component name="ContactoEmpresa" class="FileProccesor.Dtos.ValueTypes.Contacto, FileProccesor" access="property">
+      <property name="Nombre" access="property" type="String">
+        <column name="NombreContacto" length="50"/>
+      </property>
+      <property name="Telefono" access="property" type="String">
+        <column name="TelefonoContacto" length="16"/>
+      </property>
+      <property name="Email" access="property" type="String">
+        <column name="email" length="50"/>
+      </property>
+    </component>
+  </class>
+</hibernate-mapping>
+
+2012-07-22 21:19:59,936 [9] INFO  NHibernate.Dialect.Dialect [(null)] &lt;(null)&gt; - Using dialect: NHibernate.Dialect.MsSql2005Dialect
+2012-07-22 21:19:59,944 [9] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapping class: FileProccesor.Dtos.EmpresaDto -> Empresas
+2012-07-22 21:19:59,944 [9] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Id -> codempresa, type: Int32
+2012-07-22 21:19:59,944 [9] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: RazonSocial -> Razon_social, type: String
+2012-07-22 21:19:59,944 [9] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Telefono -> Telefono, type: String
+2012-07-22 21:19:59,944 [9] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Fax -> fax, type: String
+2012-07-22 21:19:59,944 [9] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: ActividadEmpresa -> ActividadEmpresa, type: Int32
+2012-07-22 21:19:59,944 [9] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: FechaBaja -> FechaBaja, type: DateTime
+2012-07-22 21:19:59,944 [9] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: CodBaja -> CodMotivoBaja, type: Int32
+2012-07-22 21:19:59,944 [9] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Moroso -> Moroso, type: Boolean
+2012-07-22 21:19:59,944 [9] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Tope -> TopeImporte, type: Int32
+2012-07-22 21:19:59,944 [9] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Domicilio -> Domicilio, type: String
+2012-07-22 21:19:59,944 [9] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: CodigoPostal -> CodPostal, type: String
+2012-07-22 21:19:59,944 [9] DEBUG NHibernate.Tuple.Component.AbstractComponentTuplizer [(null)] &lt;(null)&gt; - No custom accessors found for component: FileProccesor.Dtos.ValueTypes.Direccion, FileProccesor
+2012-07-22 21:19:59,944 [9] DEBUG NHibernate.Tuple.Component.AbstractComponentTuplizer [(null)] &lt;(null)&gt; - No custom accessors found for component: FileProccesor.Dtos.ValueTypes.Direccion, FileProccesor
+2012-07-22 21:19:59,951 [9] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: DireccionEmpresa -> Domicilio, CodPostal, type: component[Domicilio,CodigoPostal]
+2012-07-22 21:19:59,951 [9] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Nombre -> NombreContacto, type: String
+2012-07-22 21:19:59,951 [9] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Telefono -> TelefonoContacto, type: String
+2012-07-22 21:19:59,951 [9] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Email -> email, type: String
+2012-07-22 21:19:59,951 [9] DEBUG NHibernate.Tuple.Component.AbstractComponentTuplizer [(null)] &lt;(null)&gt; - No custom accessors found for component: FileProccesor.Dtos.ValueTypes.Contacto, FileProccesor
+2012-07-22 21:19:59,951 [9] DEBUG NHibernate.Tuple.Component.AbstractComponentTuplizer [(null)] &lt;(null)&gt; - No custom accessors found for component: FileProccesor.Dtos.ValueTypes.Contacto, FileProccesor
+2012-07-22 21:19:59,951 [9] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: ContactoEmpresa -> NombreContacto, TelefonoContacto, email, type: component[Nombre,Telefono,Email]
+2012-07-22 21:19:59,959 [9] DEBUG NHibernate.Cfg.Configuration [(null)] &lt;(null)&gt; - Mapping XML:
+<?xml version="1.0" encoding="utf-16"?>
+<hibernate-mapping  auto-import="true" default-lazy="false" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="FileProccesor.Dtos.ClienteDto, FileProccesor" table="Clientes">
+    <composite-id name="Key" class="FileProccesor.Keys.KeyCliente, FileProccesor" unsaved-value="none" access="property">
+      <key-property name="CodEmpresa" access="property" column="CodEmpresa" type="Int32" />
+      <key-property name="NroCuenta" access="property" column="NroCuenta" type="Int32" />
+      <key-property name="NumeroDocumento" access="property" column="NroDoc" type="String" length="9" />
+    </composite-id>
+    <property name="CodExtension" access="property" type="Int32">
+      <column name="CodExtension"/>
+    </property>
+    <property name="FechaBaja" access="property" type="System.DateTime, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+      <column name="fechaBaja"/>
+    </property>
+    <property name="MotivoBaja" access="property" type="System.Int32, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+      <column name="CodMotivoBaja"/>
+    </property>
+    <many-to-one name="Parentesco" access="property" class="FileProccesor.Dtos.ParentescoDto, FileProccesor" column="CodParentesco" lazy="proxy" />
+  </class>
+</hibernate-mapping>
+
+2012-07-22 21:19:59,998 [9] INFO  NHibernate.Dialect.Dialect [(null)] &lt;(null)&gt; - Using dialect: NHibernate.Dialect.MsSql2005Dialect
+2012-07-22 21:20:00,006 [9] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapping class: FileProccesor.Dtos.ClienteDto -> Clientes
+2012-07-22 21:20:00,006 [9] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: CodEmpresa -> CodEmpresa, type: Int32
+2012-07-22 21:20:00,006 [9] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: NroCuenta -> NroCuenta, type: Int32
+2012-07-22 21:20:00,006 [9] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: NumeroDocumento -> NroDoc, type: String
+2012-07-22 21:20:00,006 [9] DEBUG NHibernate.Tuple.Component.AbstractComponentTuplizer [(null)] &lt;(null)&gt; - No custom accessors found for component: FileProccesor.Keys.KeyCliente, FileProccesor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+2012-07-22 21:20:00,006 [9] DEBUG NHibernate.Tuple.Component.AbstractComponentTuplizer [(null)] &lt;(null)&gt; - No custom accessors found for component: FileProccesor.Keys.KeyCliente, FileProccesor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+2012-07-22 21:20:00,006 [9] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Key -> CodEmpresa, NroCuenta, NroDoc, type: component[CodEmpresa,NroCuenta,NumeroDocumento]
+2012-07-22 21:20:00,006 [9] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: CodExtension -> CodExtension, type: Int32
+2012-07-22 21:20:00,006 [9] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: FechaBaja -> fechaBaja, type: DateTime
+2012-07-22 21:20:00,006 [9] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: MotivoBaja -> CodMotivoBaja, type: Int32
+2012-07-22 21:20:00,006 [9] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Parentesco -> CodParentesco, type: FileProccesor.Dtos.ParentescoDto
+2012-07-22 21:20:00,014 [9] DEBUG NHibernate.Cfg.Configuration [(null)] &lt;(null)&gt; - Mapping XML:
+<?xml version="1.0" encoding="utf-16"?>
+<hibernate-mapping  auto-import="true" default-lazy="false" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="FileProccesor.Dtos.CodigoPostalDto, FileProccesor" table="CodigosPostales">
+    <id name="CodPostal" access="property" column="CodPostal" type="String" length="8">
+      <generator class="assigned">
+      </generator>
+    </id>
+    <property name="Localidad" access="property" type="String">
+      <column name="Localidad" length="50"/>
+    </property>
+    <property name="Provincia" access="property" type="String">
+      <column name="Provincia" length="50"/>
+    </property>
+    <property name="FechaBaja" access="property" type="System.DateTime, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+      <column name="FechaBaja"/>
+    </property>
+    <property name="MotivoBaja" access="property" type="System.Int32, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+      <column name="CodMotivoBaja"/>
+    </property>
+  </class>
+</hibernate-mapping>
+
+2012-07-22 21:20:00,053 [9] INFO  NHibernate.Dialect.Dialect [(null)] &lt;(null)&gt; - Using dialect: NHibernate.Dialect.MsSql2005Dialect
+2012-07-22 21:20:00,053 [9] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapping class: FileProccesor.Dtos.CodigoPostalDto -> CodigosPostales
+2012-07-22 21:20:00,053 [9] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: CodPostal -> CodPostal, type: String
+2012-07-22 21:20:00,053 [9] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Localidad -> Localidad, type: String
+2012-07-22 21:20:00,061 [9] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Provincia -> Provincia, type: String
+2012-07-22 21:20:00,061 [9] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: FechaBaja -> FechaBaja, type: DateTime
+2012-07-22 21:20:00,061 [9] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: MotivoBaja -> CodMotivoBaja, type: Int32
+2012-07-22 21:20:00,061 [9] DEBUG NHibernate.Cfg.Configuration [(null)] &lt;(null)&gt; - Mapping XML:
+<?xml version="1.0" encoding="utf-16"?>
+<hibernate-mapping  auto-import="true" default-lazy="false" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="FileProccesor.Dtos.CuentaCorrienteDto, FileProccesor" table="Cuentas_Corrientes">
+    <composite-id name="Key" class="FileProccesor.Keys.KeyCuenta, FileProccesor" unsaved-value="none" access="property">
+      <key-property name="CodEmpresa" access="property" column="CodEmpresa" type="Int32" />
+      <key-property name="NumeroComprobante" access="property" column="nrocomprobante" type="String" length="50" />
+    </composite-id>
+    <property name="NumeroCuenta" access="property" type="Int32">
+      <column name="Cuenta"/>
+    </property>
+    <property name="FechaCompra" access="property" type="System.DateTime">
+      <column name="fecha_compra"/>
+    </property>
+    <property name="HoraCompra" access="property" type="System.DateTime">
+      <column name="hora_compra"/>
+    </property>
+    <property name="NumeroDocumento" access="property" type="String">
+      <column name="NroDoc" length="9"/>
+    </property>
+    <property name="Sucursal" access="property" type="Int32">
+      <column name="codSucursal"/>
+    </property>
+    <property name="Usuario" access="property" type="String">
+      <column name="codUsuario" length="9"/>
+    </property>
+    <property name="MontoCompra" access="property" type="Double">
+      <column name="montoCompra"/>
+    </property>
+    <property name="Puntos" access="property" type="Double">
+      <column name="cantidadPuntos"/>
+    </property>
+    <property name="Secretaria" access="property" type="String">
+      <column name="Secretaria"/>
+    </property>
+    <property name="Coeficiente" access="property" type="String">
+      <column name="Coeficiente"/>
+    </property>
+    <property name="Programa" access="property" type="String">
+      <column name="Programa"/>
+    </property>
+    <many-to-one name="Movimiento" access="property" class="FileProccesor.Dtos.MovimientoDto, FileProccesor" column="Movimiento" lazy="proxy" />
+  </class>
+</hibernate-mapping>
+
+2012-07-22 21:20:00,139 [9] INFO  NHibernate.Dialect.Dialect [(null)] &lt;(null)&gt; - Using dialect: NHibernate.Dialect.MsSql2005Dialect
+2012-07-22 21:20:00,147 [9] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapping class: FileProccesor.Dtos.CuentaCorrienteDto -> Cuentas_Corrientes
+2012-07-22 21:20:00,147 [9] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: CodEmpresa -> CodEmpresa, type: Int32
+2012-07-22 21:20:00,147 [9] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: NumeroComprobante -> nrocomprobante, type: String
+2012-07-22 21:20:00,147 [9] DEBUG NHibernate.Tuple.Component.AbstractComponentTuplizer [(null)] &lt;(null)&gt; - No custom accessors found for component: FileProccesor.Keys.KeyCuenta, FileProccesor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+2012-07-22 21:20:00,147 [9] DEBUG NHibernate.Tuple.Component.AbstractComponentTuplizer [(null)] &lt;(null)&gt; - No custom accessors found for component: FileProccesor.Keys.KeyCuenta, FileProccesor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+2012-07-22 21:20:00,155 [9] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Key -> CodEmpresa, nrocomprobante, type: component[CodEmpresa,NumeroComprobante]
+2012-07-22 21:20:00,155 [9] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: NumeroCuenta -> Cuenta, type: Int32
+2012-07-22 21:20:00,155 [9] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: FechaCompra -> fecha_compra, type: DateTime
+2012-07-22 21:20:00,155 [9] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: HoraCompra -> hora_compra, type: DateTime
+2012-07-22 21:20:00,155 [9] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: NumeroDocumento -> NroDoc, type: String
+2012-07-22 21:20:00,155 [9] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Sucursal -> codSucursal, type: Int32
+2012-07-22 21:20:00,155 [9] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Usuario -> codUsuario, type: String
+2012-07-22 21:20:00,155 [9] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: MontoCompra -> montoCompra, type: Double
+2012-07-22 21:20:00,155 [9] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Puntos -> cantidadPuntos, type: Double
+2012-07-22 21:20:00,155 [9] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Secretaria -> Secretaria, type: String
+2012-07-22 21:20:00,155 [9] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Coeficiente -> Coeficiente, type: String
+2012-07-22 21:20:00,155 [9] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Programa -> Programa, type: String
+2012-07-22 21:20:00,155 [9] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Movimiento -> Movimiento, type: FileProccesor.Dtos.MovimientoDto
+2012-07-22 21:21:53,720 [9] WARN  Front.Form1 [(null)] &lt;(null)&gt; - Un Archivo 'CAMBIO_200712.txt' en 'C:\Temp\' ha sido creado el dom , 22-jul-2012 09:21 p.m.
+2012-07-22 21:24:03,711 [10] INFO  NHibernate.Cfg.Environment [(null)] &lt;(null)&gt; - NHibernate 2.1.2.4000 (2.1.2.4000)
+2012-07-22 21:24:03,819 [10] INFO  NHibernate.Cfg.Environment [(null)] &lt;(null)&gt; - hibernate-configuration section not found in application configuration file
+2012-07-22 21:24:03,826 [10] INFO  NHibernate.Cfg.Environment [(null)] &lt;(null)&gt; - Bytecode provider name : lcg
+2012-07-22 21:24:03,834 [10] INFO  NHibernate.Cfg.Environment [(null)] &lt;(null)&gt; - Using reflection optimizer
+2012-07-22 21:24:04,344 [10] DEBUG NHibernate.Cfg.Configuration [(null)] &lt;(null)&gt; - Mapping XML:
+<?xml version="1.0" encoding="utf-16"?>
+<hibernate-mapping  auto-import="true" default-lazy="false" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="FileProccesor.Dtos.EmpresaDto, FileProccesor" table="Empresas">
+    <id name="Id" access="property" column="codempresa" type="Int32" unsaved-value="0">
+      <generator class="native">
+      </generator>
+    </id>
+    <property name="RazonSocial" access="property" type="String">
+      <column name="Razon_social" length="50"/>
+    </property>
+    <property name="Telefono" access="property" type="String">
+      <column name="Telefono" length="14"/>
+    </property>
+    <property name="Fax" access="property" type="String">
+      <column name="fax" length="14"/>
+    </property>
+    <property name="ActividadEmpresa" access="property" type="Int32">
+      <column name="ActividadEmpresa"/>
+    </property>
+    <property name="FechaBaja" access="property" type="System.DateTime, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+      <column name="FechaBaja"/>
+    </property>
+    <property name="CodBaja" access="property" type="Int32">
+      <column name="CodMotivoBaja"/>
+    </property>
+    <property name="Moroso" access="property" type="Boolean">
+      <column name="Moroso"/>
+    </property>
+    <property name="Tope" access="property" type="Int32">
+      <column name="TopeImporte"/>
+    </property>
+    <component name="DireccionEmpresa" class="FileProccesor.Dtos.ValueTypes.Direccion, FileProccesor" access="property">
+      <property name="Domicilio" access="property" type="String">
+        <column name="Domicilio" length="120"/>
+      </property>
+      <property name="CodigoPostal" access="property" type="String">
+        <column name="CodPostal" length="8"/>
+      </property>
+    </component>
+    <component name="ContactoEmpresa" class="FileProccesor.Dtos.ValueTypes.Contacto, FileProccesor" access="property">
+      <property name="Nombre" access="property" type="String">
+        <column name="NombreContacto" length="50"/>
+      </property>
+      <property name="Telefono" access="property" type="String">
+        <column name="TelefonoContacto" length="16"/>
+      </property>
+      <property name="Email" access="property" type="String">
+        <column name="email" length="50"/>
+      </property>
+    </component>
+  </class>
+</hibernate-mapping>
+
+2012-07-22 21:24:04,576 [10] INFO  NHibernate.Dialect.Dialect [(null)] &lt;(null)&gt; - Using dialect: NHibernate.Dialect.MsSql2005Dialect
+2012-07-22 21:24:11,536 [10] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapping class: FileProccesor.Dtos.EmpresaDto -> Empresas
+2012-07-22 21:24:11,700 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Id -> codempresa, type: Int32
+2012-07-22 21:24:11,818 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: RazonSocial -> Razon_social, type: String
+2012-07-22 21:24:11,825 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Telefono -> Telefono, type: String
+2012-07-22 21:24:11,825 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Fax -> fax, type: String
+2012-07-22 21:24:11,825 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: ActividadEmpresa -> ActividadEmpresa, type: Int32
+2012-07-22 21:24:11,825 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: FechaBaja -> FechaBaja, type: DateTime
+2012-07-22 21:24:11,825 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: CodBaja -> CodMotivoBaja, type: Int32
+2012-07-22 21:24:11,825 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Moroso -> Moroso, type: Boolean
+2012-07-22 21:24:11,825 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Tope -> TopeImporte, type: Int32
+2012-07-22 21:24:11,841 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Domicilio -> Domicilio, type: String
+2012-07-22 21:24:11,841 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: CodigoPostal -> CodPostal, type: String
+2012-07-22 21:24:12,015 [10] DEBUG NHibernate.Tuple.Component.AbstractComponentTuplizer [(null)] &lt;(null)&gt; - No custom accessors found for component: FileProccesor.Dtos.ValueTypes.Direccion, FileProccesor
+2012-07-22 21:24:12,038 [10] DEBUG NHibernate.Tuple.Component.AbstractComponentTuplizer [(null)] &lt;(null)&gt; - No custom accessors found for component: FileProccesor.Dtos.ValueTypes.Direccion, FileProccesor
+2012-07-22 21:24:12,140 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: DireccionEmpresa -> Domicilio, CodPostal, type: component[Domicilio,CodigoPostal]
+2012-07-22 21:24:12,140 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Nombre -> NombreContacto, type: String
+2012-07-22 21:24:12,140 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Telefono -> TelefonoContacto, type: String
+2012-07-22 21:24:12,140 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Email -> email, type: String
+2012-07-22 21:24:12,140 [10] DEBUG NHibernate.Tuple.Component.AbstractComponentTuplizer [(null)] &lt;(null)&gt; - No custom accessors found for component: FileProccesor.Dtos.ValueTypes.Contacto, FileProccesor
+2012-07-22 21:24:12,148 [10] DEBUG NHibernate.Tuple.Component.AbstractComponentTuplizer [(null)] &lt;(null)&gt; - No custom accessors found for component: FileProccesor.Dtos.ValueTypes.Contacto, FileProccesor
+2012-07-22 21:24:12,148 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: ContactoEmpresa -> NombreContacto, TelefonoContacto, email, type: component[Nombre,Telefono,Email]
+2012-07-22 21:24:12,163 [10] DEBUG NHibernate.Cfg.Configuration [(null)] &lt;(null)&gt; - Mapping XML:
+<?xml version="1.0" encoding="utf-16"?>
+<hibernate-mapping  auto-import="true" default-lazy="false" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="FileProccesor.Dtos.CodigoPostalDto, FileProccesor" table="CodigosPostales">
+    <id name="CodPostal" access="property" column="CodPostal" type="String" length="8">
+      <generator class="assigned">
+      </generator>
+    </id>
+    <property name="Localidad" access="property" type="String">
+      <column name="Localidad" length="50"/>
+    </property>
+    <property name="Provincia" access="property" type="String">
+      <column name="Provincia" length="50"/>
+    </property>
+    <property name="FechaBaja" access="property" type="System.DateTime, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+      <column name="FechaBaja"/>
+    </property>
+    <property name="MotivoBaja" access="property" type="System.Int32, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+      <column name="CodMotivoBaja"/>
+    </property>
+  </class>
+</hibernate-mapping>
+
+2012-07-22 21:24:12,195 [10] INFO  NHibernate.Dialect.Dialect [(null)] &lt;(null)&gt; - Using dialect: NHibernate.Dialect.MsSql2005Dialect
+2012-07-22 21:24:12,218 [10] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapping class: FileProccesor.Dtos.CodigoPostalDto -> CodigosPostales
+2012-07-22 21:24:12,218 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: CodPostal -> CodPostal, type: String
+2012-07-22 21:24:12,218 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Localidad -> Localidad, type: String
+2012-07-22 21:24:12,218 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Provincia -> Provincia, type: String
+2012-07-22 21:24:12,218 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: FechaBaja -> FechaBaja, type: DateTime
+2012-07-22 21:24:12,218 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: MotivoBaja -> CodMotivoBaja, type: Int32
+2012-07-22 21:24:12,241 [10] DEBUG NHibernate.Cfg.Configuration [(null)] &lt;(null)&gt; - Mapping XML:
+<?xml version="1.0" encoding="utf-16"?>
+<hibernate-mapping  auto-import="true" default-lazy="false" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="FileProccesor.Dtos.CuentaCorrienteDto, FileProccesor" table="Cuentas_Corrientes">
+    <composite-id name="Key" class="FileProccesor.Keys.KeyCuenta, FileProccesor" unsaved-value="none" access="property">
+      <key-property name="CodEmpresa" access="property" column="CodEmpresa" type="Int32" />
+      <key-property name="NumeroComprobante" access="property" column="nrocomprobante" type="String" length="50" />
+    </composite-id>
+    <property name="NumeroCuenta" access="property" type="Int32">
+      <column name="Cuenta"/>
+    </property>
+    <property name="FechaCompra" access="property" type="System.DateTime">
+      <column name="fecha_compra"/>
+    </property>
+    <property name="HoraCompra" access="property" type="System.DateTime">
+      <column name="hora_compra"/>
+    </property>
+    <property name="NumeroDocumento" access="property" type="String">
+      <column name="NroDoc" length="9"/>
+    </property>
+    <property name="Sucursal" access="property" type="Int32">
+      <column name="codSucursal"/>
+    </property>
+    <property name="Usuario" access="property" type="String">
+      <column name="codUsuario" length="9"/>
+    </property>
+    <property name="MontoCompra" access="property" type="Double">
+      <column name="montoCompra"/>
+    </property>
+    <property name="Puntos" access="property" type="Double">
+      <column name="cantidadPuntos"/>
+    </property>
+    <property name="Secretaria" access="property" type="String">
+      <column name="Secretaria"/>
+    </property>
+    <property name="Coeficiente" access="property" type="String">
+      <column name="Coeficiente"/>
+    </property>
+    <property name="Programa" access="property" type="String">
+      <column name="Programa"/>
+    </property>
+    <many-to-one name="Movimiento" access="property" class="FileProccesor.Dtos.MovimientoDto, FileProccesor" column="Movimiento" lazy="proxy" />
+  </class>
+</hibernate-mapping>
+
+2012-07-22 21:24:12,273 [10] INFO  NHibernate.Dialect.Dialect [(null)] &lt;(null)&gt; - Using dialect: NHibernate.Dialect.MsSql2005Dialect
+2012-07-22 21:24:12,523 [10] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapping class: FileProccesor.Dtos.CuentaCorrienteDto -> Cuentas_Corrientes
+2012-07-22 21:24:12,546 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: CodEmpresa -> CodEmpresa, type: Int32
+2012-07-22 21:24:12,546 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: NumeroComprobante -> nrocomprobante, type: String
+2012-07-22 21:24:12,546 [10] DEBUG NHibernate.Tuple.Component.AbstractComponentTuplizer [(null)] &lt;(null)&gt; - No custom accessors found for component: FileProccesor.Keys.KeyCuenta, FileProccesor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+2012-07-22 21:24:12,546 [10] DEBUG NHibernate.Tuple.Component.AbstractComponentTuplizer [(null)] &lt;(null)&gt; - No custom accessors found for component: FileProccesor.Keys.KeyCuenta, FileProccesor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+2012-07-22 21:24:12,554 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Key -> CodEmpresa, nrocomprobante, type: component[CodEmpresa,NumeroComprobante]
+2012-07-22 21:24:12,562 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: NumeroCuenta -> Cuenta, type: Int32
+2012-07-22 21:24:12,562 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: FechaCompra -> fecha_compra, type: DateTime
+2012-07-22 21:24:12,562 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: HoraCompra -> hora_compra, type: DateTime
+2012-07-22 21:24:12,562 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: NumeroDocumento -> NroDoc, type: String
+2012-07-22 21:24:12,562 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Sucursal -> codSucursal, type: Int32
+2012-07-22 21:24:12,562 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Usuario -> codUsuario, type: String
+2012-07-22 21:24:12,562 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: MontoCompra -> montoCompra, type: Double
+2012-07-22 21:24:12,562 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Puntos -> cantidadPuntos, type: Double
+2012-07-22 21:24:12,562 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Secretaria -> Secretaria, type: String
+2012-07-22 21:24:12,562 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Coeficiente -> Coeficiente, type: String
+2012-07-22 21:24:12,562 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Programa -> Programa, type: String
+2012-07-22 21:24:12,616 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Movimiento -> Movimiento, type: FileProccesor.Dtos.MovimientoDto
+2012-07-22 21:24:12,624 [10] DEBUG NHibernate.Cfg.Configuration [(null)] &lt;(null)&gt; - Mapping XML:
+<?xml version="1.0" encoding="utf-16"?>
+<hibernate-mapping  auto-import="true" default-lazy="false" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="FileProccesor.Dtos.PersonaDto, FileProccesor" table="Personas">
+    <composite-id name="Key" class="FileProccesor.Keys.KeyPersona, FileProccesor" unsaved-value="none" access="property">
+      <key-property name="NroDocumento" access="property" column="NroDocumento" type="String" length="9" />
+      <key-property name="EmpresaPersona" access="property" column="CodEmpresa" type="Int32" />
+      <key-property name="TipoDocumento" access="property" column="TipoDocumento" type="String" length="3" />
+    </composite-id>
+    <property name="Nombre" access="property" type="String">
+      <column name="Nombre"/>
+    </property>
+    <property name="Apellido" access="property" type="String">
+      <column name="Apellido"/>
+    </property>
+    <property name="Domicilio" access="property" type="String">
+      <column name="Domicilio" length="50"/>
+    </property>
+    <property name="Telefono" access="property" type="String">
+      <column name="Telefono" length="14"/>
+    </property>
+    <property name="Celular" access="property" type="String">
+      <column name="celular" length="16"/>
+    </property>
+    <property name="Fax" access="property" type="String">
+      <column name="fax" length="14"/>
+    </property>
+    <property name="Email" access="property" type="String">
+      <column name="email" length="50"/>
+    </property>
+    <property name="Sexo" access="property" type="String">
+      <column name="sexo" length="9"/>
+    </property>
+    <property name="ActividadPersona" access="property" type="String">
+      <column name="actividad"/>
+    </property>
+    <property name="FechaBaja" access="property" type="System.DateTime, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+      <column name="FechaBaja"/>
+    </property>
+    <property name="MotivoBaja" access="property" type="Int32">
+      <column name="CodMotivoBaja"/>
+    </property>
+    <property name="Cuenta" access="property" type="String">
+      <column name="Cuenta" length="10"/>
+    </property>
+    <many-to-one name="CodPostal" access="property" class="FileProccesor.Dtos.CodigoPostalDto, FileProccesor" column="CodPostal" lazy="proxy" />
+    <component name="FechaNacimientoPersona" class="FileProccesor.Dtos.ValueTypes.FechaNacimiento, FileProccesor" access="property">
+      <property name="Dia" access="property" type="String">
+        <column name="DiaNacimiento" length="2"/>
+      </property>
+      <property name="Mes" access="property" type="String">
+        <column name="MesNacimiento" length="2"/>
+      </property>
+      <property name="Año" access="property" type="String">
+        <column name="AnoNacimiento" length="4"/>
+      </property>
+    </component>
+  </class>
+</hibernate-mapping>
+
+2012-07-22 21:24:12,655 [10] INFO  NHibernate.Dialect.Dialect [(null)] &lt;(null)&gt; - Using dialect: NHibernate.Dialect.MsSql2005Dialect
+2012-07-22 21:24:12,663 [10] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapping class: FileProccesor.Dtos.PersonaDto -> Personas
+2012-07-22 21:24:12,663 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: NroDocumento -> NroDocumento, type: String
+2012-07-22 21:24:12,663 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: EmpresaPersona -> CodEmpresa, type: Int32
+2012-07-22 21:24:12,663 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: TipoDocumento -> TipoDocumento, type: String
+2012-07-22 21:24:12,663 [10] DEBUG NHibernate.Tuple.Component.AbstractComponentTuplizer [(null)] &lt;(null)&gt; - No custom accessors found for component: FileProccesor.Keys.KeyPersona, FileProccesor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+2012-07-22 21:24:12,663 [10] DEBUG NHibernate.Tuple.Component.AbstractComponentTuplizer [(null)] &lt;(null)&gt; - No custom accessors found for component: FileProccesor.Keys.KeyPersona, FileProccesor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+2012-07-22 21:24:12,663 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Key -> NroDocumento, CodEmpresa, TipoDocumento, type: component[NroDocumento,EmpresaPersona,TipoDocumento]
+2012-07-22 21:24:12,663 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Nombre -> Nombre, type: String
+2012-07-22 21:24:12,663 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Apellido -> Apellido, type: String
+2012-07-22 21:24:12,663 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Domicilio -> Domicilio, type: String
+2012-07-22 21:24:12,671 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Telefono -> Telefono, type: String
+2012-07-22 21:24:12,671 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Celular -> celular, type: String
+2012-07-22 21:24:12,671 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Fax -> fax, type: String
+2012-07-22 21:24:12,679 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Email -> email, type: String
+2012-07-22 21:24:12,679 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Sexo -> sexo, type: String
+2012-07-22 21:24:12,679 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: ActividadPersona -> actividad, type: String
+2012-07-22 21:24:12,679 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: FechaBaja -> FechaBaja, type: DateTime
+2012-07-22 21:24:12,679 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: MotivoBaja -> CodMotivoBaja, type: Int32
+2012-07-22 21:24:12,679 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Cuenta -> Cuenta, type: String
+2012-07-22 21:24:12,679 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: CodPostal -> CodPostal, type: FileProccesor.Dtos.CodigoPostalDto
+2012-07-22 21:24:12,679 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Dia -> DiaNacimiento, type: String
+2012-07-22 21:24:12,679 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Mes -> MesNacimiento, type: String
+2012-07-22 21:24:12,679 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Año -> AnoNacimiento, type: String
+2012-07-22 21:24:12,679 [10] DEBUG NHibernate.Tuple.Component.AbstractComponentTuplizer [(null)] &lt;(null)&gt; - No custom accessors found for component: FileProccesor.Dtos.ValueTypes.FechaNacimiento, FileProccesor
+2012-07-22 21:24:12,679 [10] DEBUG NHibernate.Tuple.Component.AbstractComponentTuplizer [(null)] &lt;(null)&gt; - No custom accessors found for component: FileProccesor.Dtos.ValueTypes.FechaNacimiento, FileProccesor
+2012-07-22 21:24:12,687 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: FechaNacimientoPersona -> DiaNacimiento, MesNacimiento, AnoNacimiento, type: component[Dia,Mes,Año]
+2012-07-22 21:24:12,687 [10] DEBUG NHibernate.Cfg.Configuration [(null)] &lt;(null)&gt; - Mapping XML:
+<?xml version="1.0" encoding="utf-16"?>
+<hibernate-mapping  auto-import="true" default-lazy="false" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="FileProccesor.Dtos.ConsumoDto, FileProccesor" table="registros_archivos">
+    <id name="Id" access="property" column="Id" type="System.Guid" unsaved-value="00000000-0000-0000-0000-000000000000">
+      <generator class="guid.comb">
+      </generator>
+    </id>
+    <timestamp name="LastOperation" access="property" column="LastOperation" />
+    <property name="Cuit" access="property" type="String">
+      <column name="Cuit"/>
+    </property>
+    <property name="RazonSocial" access="property" type="String">
+      <column name="RazonSocial"/>
+    </property>
+    <property name="NroDocumento" access="property" type="String">
+      <column name="NroDocumento"/>
+    </property>
+    <property name="NombrePersona" access="property" type="String">
+      <column name="NombrePersona"/>
+    </property>
+    <property name="TipoCliente" access="property" type="String">
+      <column name="TipoCliente"/>
+    </property>
+    <property name="NroComprobante" access="property" type="String">
+      <column name="NroComprobante"/>
+    </property>
+    <property name="FechaHoraComprobante" access="property" type="System.DateTime">
+      <column name="FechaHoraComprobante"/>
+    </property>
+    <property name="ImportePesosNetoImpuestos" access="property" type="Double">
+      <column name="ImportePesosNetoImpuestos"/>
+    </property>
+    <property name="Procesado" access="property" type="Boolean">
+      <column name="Procesado"/>
+    </property>
+    <property name="Archivo" access="property" type="String">
+      <column name="Archivo"/>
+    </property>
+    <property name="Empresa" access="property" type="Int32">
+      <column name="Empresa"/>
+    </property>
+    <property name="Secretaria" access="property" type="String">
+      <column name="Secretaria"/>
+    </property>
+    <property name="Coeficiente" access="property" type="String">
+      <column name="Coeficiente"/>
+    </property>
+    <property name="Programa" access="property" type="String">
+      <column name="Programa"/>
+    </property>
+  </class>
+</hibernate-mapping>
+
+2012-07-22 21:24:12,726 [10] INFO  NHibernate.Dialect.Dialect [(null)] &lt;(null)&gt; - Using dialect: NHibernate.Dialect.MsSql2005Dialect
+2012-07-22 21:24:12,765 [10] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapping class: FileProccesor.Dtos.ConsumoDto -> registros_archivos
+2012-07-22 21:24:12,773 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Id -> Id, type: Guid
+2012-07-22 21:24:12,780 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: LastOperation -> LastOperation, type: Timestamp
+2012-07-22 21:24:12,780 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Cuit -> Cuit, type: String
+2012-07-22 21:24:12,780 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: RazonSocial -> RazonSocial, type: String
+2012-07-22 21:24:12,780 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: NroDocumento -> NroDocumento, type: String
+2012-07-22 21:24:12,780 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: NombrePersona -> NombrePersona, type: String
+2012-07-22 21:24:12,788 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: TipoCliente -> TipoCliente, type: String
+2012-07-22 21:24:12,788 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: NroComprobante -> NroComprobante, type: String
+2012-07-22 21:24:12,788 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: FechaHoraComprobante -> FechaHoraComprobante, type: DateTime
+2012-07-22 21:24:12,788 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: ImportePesosNetoImpuestos -> ImportePesosNetoImpuestos, type: Double
+2012-07-22 21:24:12,788 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Procesado -> Procesado, type: Boolean
+2012-07-22 21:24:12,788 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Archivo -> Archivo, type: String
+2012-07-22 21:24:12,788 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Empresa -> Empresa, type: Int32
+2012-07-22 21:24:12,788 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Secretaria -> Secretaria, type: String
+2012-07-22 21:24:12,788 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Coeficiente -> Coeficiente, type: String
+2012-07-22 21:24:12,788 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Programa -> Programa, type: String
+2012-07-22 21:24:12,788 [10] DEBUG NHibernate.Cfg.Configuration [(null)] &lt;(null)&gt; - Mapping XML:
+<?xml version="1.0" encoding="utf-16"?>
+<hibernate-mapping  auto-import="true" default-lazy="false" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="FileProccesor.Dtos.ParentescoDto, FileProccesor" table="Parentesco">
+    <id name="Id" access="property" column="CodParentesco" type="Int32" unsaved-value="0">
+      <generator class="native">
+      </generator>
+    </id>
+    <property name="Descripccion" access="property" type="String">
+      <column name="DescParentesco"/>
+    </property>
+  </class>
+</hibernate-mapping>
+
+2012-07-22 21:24:12,827 [10] INFO  NHibernate.Dialect.Dialect [(null)] &lt;(null)&gt; - Using dialect: NHibernate.Dialect.MsSql2005Dialect
+2012-07-22 21:24:12,827 [10] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapping class: FileProccesor.Dtos.ParentescoDto -> Parentesco
+2012-07-22 21:24:12,827 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Id -> CodParentesco, type: Int32
+2012-07-22 21:24:12,827 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Descripccion -> DescParentesco, type: String
+2012-07-22 21:24:12,827 [10] DEBUG NHibernate.Cfg.Configuration [(null)] &lt;(null)&gt; - Mapping XML:
+<?xml version="1.0" encoding="utf-16"?>
+<hibernate-mapping  auto-import="true" default-lazy="false" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="FileProccesor.Dtos.MovimientoDto, FileProccesor" table="Movimientos">
+    <id name="Id" access="property" column="CodMovimiento" type="Int32" unsaved-value="0">
+      <generator class="increment">
+      </generator>
+    </id>
+    <property name="Descripccion" access="property" type="String">
+      <column name="DescMovimiento"/>
+    </property>
+  </class>
+</hibernate-mapping>
+
+2012-07-22 21:24:12,866 [10] INFO  NHibernate.Dialect.Dialect [(null)] &lt;(null)&gt; - Using dialect: NHibernate.Dialect.MsSql2005Dialect
+2012-07-22 21:24:12,874 [10] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapping class: FileProccesor.Dtos.MovimientoDto -> Movimientos
+2012-07-22 21:24:12,874 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Id -> CodMovimiento, type: Int32
+2012-07-22 21:24:12,874 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Descripccion -> DescMovimiento, type: String
+2012-07-22 21:24:12,882 [10] DEBUG NHibernate.Cfg.Configuration [(null)] &lt;(null)&gt; - Mapping XML:
+<?xml version="1.0" encoding="utf-16"?>
+<hibernate-mapping  auto-import="true" default-lazy="false" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="FileProccesor.Dtos.ClienteDto, FileProccesor" table="Clientes">
+    <composite-id name="Key" class="FileProccesor.Keys.KeyCliente, FileProccesor" unsaved-value="none" access="property">
+      <key-property name="CodEmpresa" access="property" column="CodEmpresa" type="Int32" />
+      <key-property name="NroCuenta" access="property" column="NroCuenta" type="Int32" />
+      <key-property name="NumeroDocumento" access="property" column="NroDoc" type="String" length="9" />
+    </composite-id>
+    <property name="CodExtension" access="property" type="Int32">
+      <column name="CodExtension"/>
+    </property>
+    <property name="FechaBaja" access="property" type="System.DateTime, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+      <column name="fechaBaja"/>
+    </property>
+    <property name="MotivoBaja" access="property" type="System.Int32, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+      <column name="CodMotivoBaja"/>
+    </property>
+    <many-to-one name="Parentesco" access="property" class="FileProccesor.Dtos.ParentescoDto, FileProccesor" column="CodParentesco" lazy="proxy" />
+  </class>
+</hibernate-mapping>
+
+2012-07-22 21:24:12,921 [10] INFO  NHibernate.Dialect.Dialect [(null)] &lt;(null)&gt; - Using dialect: NHibernate.Dialect.MsSql2005Dialect
+2012-07-22 21:24:12,929 [10] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapping class: FileProccesor.Dtos.ClienteDto -> Clientes
+2012-07-22 21:24:12,929 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: CodEmpresa -> CodEmpresa, type: Int32
+2012-07-22 21:24:12,929 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: NroCuenta -> NroCuenta, type: Int32
+2012-07-22 21:24:12,929 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: NumeroDocumento -> NroDoc, type: String
+2012-07-22 21:24:12,929 [10] DEBUG NHibernate.Tuple.Component.AbstractComponentTuplizer [(null)] &lt;(null)&gt; - No custom accessors found for component: FileProccesor.Keys.KeyCliente, FileProccesor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+2012-07-22 21:24:12,929 [10] DEBUG NHibernate.Tuple.Component.AbstractComponentTuplizer [(null)] &lt;(null)&gt; - No custom accessors found for component: FileProccesor.Keys.KeyCliente, FileProccesor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+2012-07-22 21:24:12,929 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Key -> CodEmpresa, NroCuenta, NroDoc, type: component[CodEmpresa,NroCuenta,NumeroDocumento]
+2012-07-22 21:24:12,937 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: CodExtension -> CodExtension, type: Int32
+2012-07-22 21:24:12,937 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: FechaBaja -> fechaBaja, type: DateTime
+2012-07-22 21:24:12,937 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: MotivoBaja -> CodMotivoBaja, type: Int32
+2012-07-22 21:24:12,937 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Parentesco -> CodParentesco, type: FileProccesor.Dtos.ParentescoDto
+2012-07-22 21:24:12,937 [10] DEBUG NHibernate.Cfg.Configuration [(null)] &lt;(null)&gt; - Mapping XML:
+<?xml version="1.0" encoding="utf-16"?>
+<hibernate-mapping  auto-import="true" default-lazy="false" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="FileProccesor.Dtos.ReglasDto, FileProccesor" table="ReglasNegocio">
+    <composite-id name="Key" class="FileProccesor.Keys.KeyRegla, FileProccesor" unsaved-value="none" access="property">
+      <key-property name="CodEmpresa" access="property" column="CodEmpresa" type="Int32" />
+      <key-property name="Sucursal" access="property" column="CodSucursal" type="Int32" />
+      <key-property name="FechaInicio" access="property" column="FechaInicio" type="System.DateTime" />
+    </composite-id>
+    <property name="Multiplicador" access="property" type="Int32">
+      <column name="Basico"/>
+    </property>
+    <property name="MultiplicadorEspecial" access="property" type="Int32">
+      <column name="ProductoPromo"/>
+    </property>
+    <property name="FechaFin" access="property" type="System.DateTime, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+      <column name="FechaFin"/>
+    </property>
+  </class>
+</hibernate-mapping>
+
+2012-07-22 21:24:12,985 [10] INFO  NHibernate.Dialect.Dialect [(null)] &lt;(null)&gt; - Using dialect: NHibernate.Dialect.MsSql2005Dialect
+2012-07-22 21:24:12,992 [10] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapping class: FileProccesor.Dtos.ReglasDto -> ReglasNegocio
+2012-07-22 21:24:12,992 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: CodEmpresa -> CodEmpresa, type: Int32
+2012-07-22 21:24:12,992 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Sucursal -> CodSucursal, type: Int32
+2012-07-22 21:24:12,992 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: FechaInicio -> FechaInicio, type: DateTime
+2012-07-22 21:24:12,992 [10] DEBUG NHibernate.Tuple.Component.AbstractComponentTuplizer [(null)] &lt;(null)&gt; - No custom accessors found for component: FileProccesor.Keys.KeyRegla, FileProccesor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+2012-07-22 21:24:12,992 [10] DEBUG NHibernate.Tuple.Component.AbstractComponentTuplizer [(null)] &lt;(null)&gt; - No custom accessors found for component: FileProccesor.Keys.KeyRegla, FileProccesor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+2012-07-22 21:24:13,000 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Key -> CodEmpresa, CodSucursal, FechaInicio, type: component[CodEmpresa,Sucursal,FechaInicio]
+2012-07-22 21:24:13,008 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Multiplicador -> Basico, type: Int32
+2012-07-22 21:24:13,008 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: MultiplicadorEspecial -> ProductoPromo, type: Int32
+2012-07-22 21:24:13,008 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: FechaFin -> FechaFin, type: DateTime
+2012-07-22 21:24:15,698 [10] WARN  Front.Form1 [(null)] &lt;(null)&gt; - Un Archivo 'CAMBIO_200712.txt' en 'C:\Temp\' ha sido creado el dom , 22-jul-2012 09:24 p.m.
+2012-07-22 21:28:54,478 [10] INFO  NHibernate.Cfg.Environment [(null)] &lt;(null)&gt; - NHibernate 2.1.2.4000 (2.1.2.4000)
+2012-07-22 21:28:54,571 [10] INFO  NHibernate.Cfg.Environment [(null)] &lt;(null)&gt; - hibernate-configuration section not found in application configuration file
+2012-07-22 21:28:54,572 [10] INFO  NHibernate.Cfg.Environment [(null)] &lt;(null)&gt; - Bytecode provider name : lcg
+2012-07-22 21:28:54,578 [10] INFO  NHibernate.Cfg.Environment [(null)] &lt;(null)&gt; - Using reflection optimizer
+2012-07-22 21:28:55,003 [10] DEBUG NHibernate.Cfg.Configuration [(null)] &lt;(null)&gt; - Mapping XML:
+<?xml version="1.0" encoding="utf-16"?>
+<hibernate-mapping  auto-import="true" default-lazy="false" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="FileProccesor.Dtos.ClienteDto, FileProccesor" table="Clientes">
+    <composite-id name="Key" class="FileProccesor.Keys.KeyCliente, FileProccesor" unsaved-value="none" access="property">
+      <key-property name="CodEmpresa" access="property" column="CodEmpresa" type="Int32" />
+      <key-property name="NroCuenta" access="property" column="NroCuenta" type="Int32" />
+      <key-property name="NumeroDocumento" access="property" column="NroDoc" type="String" length="9" />
+    </composite-id>
+    <property name="CodExtension" access="property" type="Int32">
+      <column name="CodExtension"/>
+    </property>
+    <property name="FechaBaja" access="property" type="System.DateTime, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+      <column name="fechaBaja"/>
+    </property>
+    <property name="MotivoBaja" access="property" type="System.Int32, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+      <column name="CodMotivoBaja"/>
+    </property>
+    <many-to-one name="Parentesco" access="property" class="FileProccesor.Dtos.ParentescoDto, FileProccesor" column="CodParentesco" lazy="proxy" />
+  </class>
+</hibernate-mapping>
+
+2012-07-22 21:28:55,610 [10] INFO  NHibernate.Dialect.Dialect [(null)] &lt;(null)&gt; - Using dialect: NHibernate.Dialect.MsSql2005Dialect
+2012-07-22 21:29:00,980 [10] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapping class: FileProccesor.Dtos.ClienteDto -> Clientes
+2012-07-22 21:29:01,105 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: CodEmpresa -> CodEmpresa, type: Int32
+2012-07-22 21:29:01,107 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: NroCuenta -> NroCuenta, type: Int32
+2012-07-22 21:29:01,116 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: NumeroDocumento -> NroDoc, type: String
+2012-07-22 21:29:01,223 [10] DEBUG NHibernate.Tuple.Component.AbstractComponentTuplizer [(null)] &lt;(null)&gt; - No custom accessors found for component: FileProccesor.Keys.KeyCliente, FileProccesor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+2012-07-22 21:29:01,251 [10] DEBUG NHibernate.Tuple.Component.AbstractComponentTuplizer [(null)] &lt;(null)&gt; - No custom accessors found for component: FileProccesor.Keys.KeyCliente, FileProccesor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+2012-07-22 21:29:01,391 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Key -> CodEmpresa, NroCuenta, NroDoc, type: component[CodEmpresa,NroCuenta,NumeroDocumento]
+2012-07-22 21:29:01,481 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: CodExtension -> CodExtension, type: Int32
+2012-07-22 21:29:01,486 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: FechaBaja -> fechaBaja, type: DateTime
+2012-07-22 21:29:01,487 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: MotivoBaja -> CodMotivoBaja, type: Int32
+2012-07-22 21:29:01,518 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Parentesco -> CodParentesco, type: FileProccesor.Dtos.ParentescoDto
+2012-07-22 21:29:01,550 [10] DEBUG NHibernate.Cfg.Configuration [(null)] &lt;(null)&gt; - Mapping XML:
+<?xml version="1.0" encoding="utf-16"?>
+<hibernate-mapping  auto-import="true" default-lazy="false" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="FileProccesor.Dtos.ParentescoDto, FileProccesor" table="Parentesco">
+    <id name="Id" access="property" column="CodParentesco" type="Int32" unsaved-value="0">
+      <generator class="native">
+      </generator>
+    </id>
+    <property name="Descripccion" access="property" type="String">
+      <column name="DescParentesco"/>
+    </property>
+  </class>
+</hibernate-mapping>
+
+2012-07-22 21:29:01,577 [10] INFO  NHibernate.Dialect.Dialect [(null)] &lt;(null)&gt; - Using dialect: NHibernate.Dialect.MsSql2005Dialect
+2012-07-22 21:29:01,625 [10] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapping class: FileProccesor.Dtos.ParentescoDto -> Parentesco
+2012-07-22 21:29:01,632 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Id -> CodParentesco, type: Int32
+2012-07-22 21:29:01,639 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Descripccion -> DescParentesco, type: String
+2012-07-22 21:29:01,640 [10] DEBUG NHibernate.Cfg.Configuration [(null)] &lt;(null)&gt; - Mapping XML:
+<?xml version="1.0" encoding="utf-16"?>
+<hibernate-mapping  auto-import="true" default-lazy="false" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="FileProccesor.Dtos.MovimientoDto, FileProccesor" table="Movimientos">
+    <id name="Id" access="property" column="CodMovimiento" type="Int32" unsaved-value="0">
+      <generator class="increment">
+      </generator>
+    </id>
+    <property name="Descripccion" access="property" type="String">
+      <column name="DescMovimiento"/>
+    </property>
+  </class>
+</hibernate-mapping>
+
+2012-07-22 21:29:01,662 [10] INFO  NHibernate.Dialect.Dialect [(null)] &lt;(null)&gt; - Using dialect: NHibernate.Dialect.MsSql2005Dialect
+2012-07-22 21:29:01,665 [10] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapping class: FileProccesor.Dtos.MovimientoDto -> Movimientos
+2012-07-22 21:29:01,665 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Id -> CodMovimiento, type: Int32
+2012-07-22 21:29:01,665 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Descripccion -> DescMovimiento, type: String
+2012-07-22 21:29:01,667 [10] DEBUG NHibernate.Cfg.Configuration [(null)] &lt;(null)&gt; - Mapping XML:
+<?xml version="1.0" encoding="utf-16"?>
+<hibernate-mapping  auto-import="true" default-lazy="false" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="FileProccesor.Dtos.ReglasDto, FileProccesor" table="ReglasNegocio">
+    <composite-id name="Key" class="FileProccesor.Keys.KeyRegla, FileProccesor" unsaved-value="none" access="property">
+      <key-property name="CodEmpresa" access="property" column="CodEmpresa" type="Int32" />
+      <key-property name="Sucursal" access="property" column="CodSucursal" type="Int32" />
+      <key-property name="FechaInicio" access="property" column="FechaInicio" type="System.DateTime" />
+    </composite-id>
+    <property name="Multiplicador" access="property" type="Int32">
+      <column name="Basico"/>
+    </property>
+    <property name="MultiplicadorEspecial" access="property" type="Int32">
+      <column name="ProductoPromo"/>
+    </property>
+    <property name="FechaFin" access="property" type="System.DateTime, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+      <column name="FechaFin"/>
+    </property>
+  </class>
+</hibernate-mapping>
+
+2012-07-22 21:29:01,690 [10] INFO  NHibernate.Dialect.Dialect [(null)] &lt;(null)&gt; - Using dialect: NHibernate.Dialect.MsSql2005Dialect
+2012-07-22 21:29:01,694 [10] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapping class: FileProccesor.Dtos.ReglasDto -> ReglasNegocio
+2012-07-22 21:29:01,694 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: CodEmpresa -> CodEmpresa, type: Int32
+2012-07-22 21:29:01,694 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Sucursal -> CodSucursal, type: Int32
+2012-07-22 21:29:01,695 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: FechaInicio -> FechaInicio, type: DateTime
+2012-07-22 21:29:01,695 [10] DEBUG NHibernate.Tuple.Component.AbstractComponentTuplizer [(null)] &lt;(null)&gt; - No custom accessors found for component: FileProccesor.Keys.KeyRegla, FileProccesor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+2012-07-22 21:29:01,696 [10] DEBUG NHibernate.Tuple.Component.AbstractComponentTuplizer [(null)] &lt;(null)&gt; - No custom accessors found for component: FileProccesor.Keys.KeyRegla, FileProccesor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+2012-07-22 21:29:01,697 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Key -> CodEmpresa, CodSucursal, FechaInicio, type: component[CodEmpresa,Sucursal,FechaInicio]
+2012-07-22 21:29:01,699 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Multiplicador -> Basico, type: Int32
+2012-07-22 21:29:01,699 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: MultiplicadorEspecial -> ProductoPromo, type: Int32
+2012-07-22 21:29:01,699 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: FechaFin -> FechaFin, type: DateTime
+2012-07-22 21:29:01,716 [10] DEBUG NHibernate.Cfg.Configuration [(null)] &lt;(null)&gt; - Mapping XML:
+<?xml version="1.0" encoding="utf-16"?>
+<hibernate-mapping  auto-import="true" default-lazy="false" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="FileProccesor.Dtos.EmpresaDto, FileProccesor" table="Empresas">
+    <id name="Id" access="property" column="codempresa" type="Int32" unsaved-value="0">
+      <generator class="native">
+      </generator>
+    </id>
+    <property name="RazonSocial" access="property" type="String">
+      <column name="Razon_social" length="50"/>
+    </property>
+    <property name="Telefono" access="property" type="String">
+      <column name="Telefono" length="14"/>
+    </property>
+    <property name="Fax" access="property" type="String">
+      <column name="fax" length="14"/>
+    </property>
+    <property name="ActividadEmpresa" access="property" type="Int32">
+      <column name="ActividadEmpresa"/>
+    </property>
+    <property name="FechaBaja" access="property" type="System.DateTime, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+      <column name="FechaBaja"/>
+    </property>
+    <property name="CodBaja" access="property" type="Int32">
+      <column name="CodMotivoBaja"/>
+    </property>
+    <property name="Moroso" access="property" type="Boolean">
+      <column name="Moroso"/>
+    </property>
+    <property name="Tope" access="property" type="Int32">
+      <column name="TopeImporte"/>
+    </property>
+    <component name="DireccionEmpresa" class="FileProccesor.Dtos.ValueTypes.Direccion, FileProccesor" access="property">
+      <property name="Domicilio" access="property" type="String">
+        <column name="Domicilio" length="120"/>
+      </property>
+      <property name="CodigoPostal" access="property" type="String">
+        <column name="CodPostal" length="8"/>
+      </property>
+    </component>
+    <component name="ContactoEmpresa" class="FileProccesor.Dtos.ValueTypes.Contacto, FileProccesor" access="property">
+      <property name="Nombre" access="property" type="String">
+        <column name="NombreContacto" length="50"/>
+      </property>
+      <property name="Telefono" access="property" type="String">
+        <column name="TelefonoContacto" length="16"/>
+      </property>
+      <property name="Email" access="property" type="String">
+        <column name="email" length="50"/>
+      </property>
+    </component>
+  </class>
+</hibernate-mapping>
+
+2012-07-22 21:29:01,747 [10] INFO  NHibernate.Dialect.Dialect [(null)] &lt;(null)&gt; - Using dialect: NHibernate.Dialect.MsSql2005Dialect
+2012-07-22 21:29:01,802 [10] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapping class: FileProccesor.Dtos.EmpresaDto -> Empresas
+2012-07-22 21:29:01,810 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Id -> codempresa, type: Int32
+2012-07-22 21:29:01,810 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: RazonSocial -> Razon_social, type: String
+2012-07-22 21:29:01,810 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Telefono -> Telefono, type: String
+2012-07-22 21:29:01,810 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Fax -> fax, type: String
+2012-07-22 21:29:01,810 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: ActividadEmpresa -> ActividadEmpresa, type: Int32
+2012-07-22 21:29:01,810 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: FechaBaja -> FechaBaja, type: DateTime
+2012-07-22 21:29:01,810 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: CodBaja -> CodMotivoBaja, type: Int32
+2012-07-22 21:29:01,810 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Moroso -> Moroso, type: Boolean
+2012-07-22 21:29:01,810 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Tope -> TopeImporte, type: Int32
+2012-07-22 21:29:01,818 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Domicilio -> Domicilio, type: String
+2012-07-22 21:29:01,818 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: CodigoPostal -> CodPostal, type: String
+2012-07-22 21:29:01,818 [10] DEBUG NHibernate.Tuple.Component.AbstractComponentTuplizer [(null)] &lt;(null)&gt; - No custom accessors found for component: FileProccesor.Dtos.ValueTypes.Direccion, FileProccesor
+2012-07-22 21:29:01,818 [10] DEBUG NHibernate.Tuple.Component.AbstractComponentTuplizer [(null)] &lt;(null)&gt; - No custom accessors found for component: FileProccesor.Dtos.ValueTypes.Direccion, FileProccesor
+2012-07-22 21:29:01,818 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: DireccionEmpresa -> Domicilio, CodPostal, type: component[Domicilio,CodigoPostal]
+2012-07-22 21:29:01,825 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Nombre -> NombreContacto, type: String
+2012-07-22 21:29:01,825 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Telefono -> TelefonoContacto, type: String
+2012-07-22 21:29:01,825 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Email -> email, type: String
+2012-07-22 21:29:01,825 [10] DEBUG NHibernate.Tuple.Component.AbstractComponentTuplizer [(null)] &lt;(null)&gt; - No custom accessors found for component: FileProccesor.Dtos.ValueTypes.Contacto, FileProccesor
+2012-07-22 21:29:01,825 [10] DEBUG NHibernate.Tuple.Component.AbstractComponentTuplizer [(null)] &lt;(null)&gt; - No custom accessors found for component: FileProccesor.Dtos.ValueTypes.Contacto, FileProccesor
+2012-07-22 21:29:01,825 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: ContactoEmpresa -> NombreContacto, TelefonoContacto, email, type: component[Nombre,Telefono,Email]
+2012-07-22 21:29:01,825 [10] DEBUG NHibernate.Cfg.Configuration [(null)] &lt;(null)&gt; - Mapping XML:
+<?xml version="1.0" encoding="utf-16"?>
+<hibernate-mapping  auto-import="true" default-lazy="false" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="FileProccesor.Dtos.CodigoPostalDto, FileProccesor" table="CodigosPostales">
+    <id name="CodPostal" access="property" column="CodPostal" type="String" length="8">
+      <generator class="assigned">
+      </generator>
+    </id>
+    <property name="Localidad" access="property" type="String">
+      <column name="Localidad" length="50"/>
+    </property>
+    <property name="Provincia" access="property" type="String">
+      <column name="Provincia" length="50"/>
+    </property>
+    <property name="FechaBaja" access="property" type="System.DateTime, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+      <column name="FechaBaja"/>
+    </property>
+    <property name="MotivoBaja" access="property" type="System.Int32, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+      <column name="CodMotivoBaja"/>
+    </property>
+  </class>
+</hibernate-mapping>
+
+2012-07-22 21:29:01,849 [10] INFO  NHibernate.Dialect.Dialect [(null)] &lt;(null)&gt; - Using dialect: NHibernate.Dialect.MsSql2005Dialect
+2012-07-22 21:29:01,857 [10] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapping class: FileProccesor.Dtos.CodigoPostalDto -> CodigosPostales
+2012-07-22 21:29:01,857 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: CodPostal -> CodPostal, type: String
+2012-07-22 21:29:01,857 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Localidad -> Localidad, type: String
+2012-07-22 21:29:01,857 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Provincia -> Provincia, type: String
+2012-07-22 21:29:01,857 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: FechaBaja -> FechaBaja, type: DateTime
+2012-07-22 21:29:01,857 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: MotivoBaja -> CodMotivoBaja, type: Int32
+2012-07-22 21:29:01,857 [10] DEBUG NHibernate.Cfg.Configuration [(null)] &lt;(null)&gt; - Mapping XML:
+<?xml version="1.0" encoding="utf-16"?>
+<hibernate-mapping  auto-import="true" default-lazy="false" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="FileProccesor.Dtos.CuentaCorrienteDto, FileProccesor" table="Cuentas_Corrientes">
+    <composite-id name="Key" class="FileProccesor.Keys.KeyCuenta, FileProccesor" unsaved-value="none" access="property">
+      <key-property name="CodEmpresa" access="property" column="CodEmpresa" type="Int32" />
+      <key-property name="NumeroComprobante" access="property" column="nrocomprobante" type="String" length="50" />
+    </composite-id>
+    <property name="NumeroCuenta" access="property" type="Int32">
+      <column name="Cuenta"/>
+    </property>
+    <property name="FechaCompra" access="property" type="System.DateTime">
+      <column name="fecha_compra"/>
+    </property>
+    <property name="HoraCompra" access="property" type="System.DateTime">
+      <column name="hora_compra"/>
+    </property>
+    <property name="NumeroDocumento" access="property" type="String">
+      <column name="NroDoc" length="9"/>
+    </property>
+    <property name="Sucursal" access="property" type="Int32">
+      <column name="codSucursal"/>
+    </property>
+    <property name="Usuario" access="property" type="String">
+      <column name="codUsuario" length="9"/>
+    </property>
+    <property name="MontoCompra" access="property" type="Double">
+      <column name="montoCompra"/>
+    </property>
+    <property name="Puntos" access="property" type="Double">
+      <column name="cantidadPuntos"/>
+    </property>
+    <property name="Secretaria" access="property" type="String">
+      <column name="Secretaria"/>
+    </property>
+    <property name="Coeficiente" access="property" type="String">
+      <column name="Coeficiente"/>
+    </property>
+    <property name="Programa" access="property" type="String">
+      <column name="Programa"/>
+    </property>
+    <many-to-one name="Movimiento" access="property" class="FileProccesor.Dtos.MovimientoDto, FileProccesor" column="Movimiento" lazy="proxy" />
+  </class>
+</hibernate-mapping>
+
+2012-07-22 21:29:01,880 [10] INFO  NHibernate.Dialect.Dialect [(null)] &lt;(null)&gt; - Using dialect: NHibernate.Dialect.MsSql2005Dialect
+2012-07-22 21:29:01,880 [10] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapping class: FileProccesor.Dtos.CuentaCorrienteDto -> Cuentas_Corrientes
+2012-07-22 21:29:01,888 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: CodEmpresa -> CodEmpresa, type: Int32
+2012-07-22 21:29:01,888 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: NumeroComprobante -> nrocomprobante, type: String
+2012-07-22 21:29:01,888 [10] DEBUG NHibernate.Tuple.Component.AbstractComponentTuplizer [(null)] &lt;(null)&gt; - No custom accessors found for component: FileProccesor.Keys.KeyCuenta, FileProccesor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+2012-07-22 21:29:01,888 [10] DEBUG NHibernate.Tuple.Component.AbstractComponentTuplizer [(null)] &lt;(null)&gt; - No custom accessors found for component: FileProccesor.Keys.KeyCuenta, FileProccesor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+2012-07-22 21:29:01,888 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Key -> CodEmpresa, nrocomprobante, type: component[CodEmpresa,NumeroComprobante]
+2012-07-22 21:29:01,888 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: NumeroCuenta -> Cuenta, type: Int32
+2012-07-22 21:29:01,888 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: FechaCompra -> fecha_compra, type: DateTime
+2012-07-22 21:29:01,888 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: HoraCompra -> hora_compra, type: DateTime
+2012-07-22 21:29:01,888 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: NumeroDocumento -> NroDoc, type: String
+2012-07-22 21:29:01,888 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Sucursal -> codSucursal, type: Int32
+2012-07-22 21:29:01,896 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Usuario -> codUsuario, type: String
+2012-07-22 21:29:01,896 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: MontoCompra -> montoCompra, type: Double
+2012-07-22 21:29:01,896 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Puntos -> cantidadPuntos, type: Double
+2012-07-22 21:29:01,896 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Secretaria -> Secretaria, type: String
+2012-07-22 21:29:01,896 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Coeficiente -> Coeficiente, type: String
+2012-07-22 21:29:01,896 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Programa -> Programa, type: String
+2012-07-22 21:29:01,896 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Movimiento -> Movimiento, type: FileProccesor.Dtos.MovimientoDto
+2012-07-22 21:29:01,896 [10] DEBUG NHibernate.Cfg.Configuration [(null)] &lt;(null)&gt; - Mapping XML:
+<?xml version="1.0" encoding="utf-16"?>
+<hibernate-mapping  auto-import="true" default-lazy="false" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="FileProccesor.Dtos.PersonaDto, FileProccesor" table="Personas">
+    <composite-id name="Key" class="FileProccesor.Keys.KeyPersona, FileProccesor" unsaved-value="none" access="property">
+      <key-property name="NroDocumento" access="property" column="NroDocumento" type="String" length="9" />
+      <key-property name="EmpresaPersona" access="property" column="CodEmpresa" type="Int32" />
+      <key-property name="TipoDocumento" access="property" column="TipoDocumento" type="String" length="3" />
+    </composite-id>
+    <property name="Nombre" access="property" type="String">
+      <column name="Nombre"/>
+    </property>
+    <property name="Apellido" access="property" type="String">
+      <column name="Apellido"/>
+    </property>
+    <property name="Domicilio" access="property" type="String">
+      <column name="Domicilio" length="50"/>
+    </property>
+    <property name="Telefono" access="property" type="String">
+      <column name="Telefono" length="14"/>
+    </property>
+    <property name="Celular" access="property" type="String">
+      <column name="celular" length="16"/>
+    </property>
+    <property name="Fax" access="property" type="String">
+      <column name="fax" length="14"/>
+    </property>
+    <property name="Email" access="property" type="String">
+      <column name="email" length="50"/>
+    </property>
+    <property name="Sexo" access="property" type="String">
+      <column name="sexo" length="9"/>
+    </property>
+    <property name="ActividadPersona" access="property" type="String">
+      <column name="actividad"/>
+    </property>
+    <property name="FechaBaja" access="property" type="System.DateTime, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+      <column name="FechaBaja"/>
+    </property>
+    <property name="MotivoBaja" access="property" type="Int32">
+      <column name="CodMotivoBaja"/>
+    </property>
+    <property name="Cuenta" access="property" type="String">
+      <column name="Cuenta" length="10"/>
+    </property>
+    <many-to-one name="CodPostal" access="property" class="FileProccesor.Dtos.CodigoPostalDto, FileProccesor" column="CodPostal" lazy="proxy" />
+    <component name="FechaNacimientoPersona" class="FileProccesor.Dtos.ValueTypes.FechaNacimiento, FileProccesor" access="property">
+      <property name="Dia" access="property" type="String">
+        <column name="DiaNacimiento" length="2"/>
+      </property>
+      <property name="Mes" access="property" type="String">
+        <column name="MesNacimiento" length="2"/>
+      </property>
+      <property name="Año" access="property" type="String">
+        <column name="AnoNacimiento" length="4"/>
+      </property>
+    </component>
+  </class>
+</hibernate-mapping>
+
+2012-07-22 21:29:01,919 [10] INFO  NHibernate.Dialect.Dialect [(null)] &lt;(null)&gt; - Using dialect: NHibernate.Dialect.MsSql2005Dialect
+2012-07-22 21:29:01,927 [10] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapping class: FileProccesor.Dtos.PersonaDto -> Personas
+2012-07-22 21:29:01,927 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: NroDocumento -> NroDocumento, type: String
+2012-07-22 21:29:01,927 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: EmpresaPersona -> CodEmpresa, type: Int32
+2012-07-22 21:29:01,927 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: TipoDocumento -> TipoDocumento, type: String
+2012-07-22 21:29:01,927 [10] DEBUG NHibernate.Tuple.Component.AbstractComponentTuplizer [(null)] &lt;(null)&gt; - No custom accessors found for component: FileProccesor.Keys.KeyPersona, FileProccesor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+2012-07-22 21:29:01,927 [10] DEBUG NHibernate.Tuple.Component.AbstractComponentTuplizer [(null)] &lt;(null)&gt; - No custom accessors found for component: FileProccesor.Keys.KeyPersona, FileProccesor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+2012-07-22 21:29:01,927 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Key -> NroDocumento, CodEmpresa, TipoDocumento, type: component[NroDocumento,EmpresaPersona,TipoDocumento]
+2012-07-22 21:29:01,927 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Nombre -> Nombre, type: String
+2012-07-22 21:29:01,927 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Apellido -> Apellido, type: String
+2012-07-22 21:29:01,927 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Domicilio -> Domicilio, type: String
+2012-07-22 21:29:01,927 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Telefono -> Telefono, type: String
+2012-07-22 21:29:01,935 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Celular -> celular, type: String
+2012-07-22 21:29:01,935 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Fax -> fax, type: String
+2012-07-22 21:29:01,935 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Email -> email, type: String
+2012-07-22 21:29:01,935 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Sexo -> sexo, type: String
+2012-07-22 21:29:01,935 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: ActividadPersona -> actividad, type: String
+2012-07-22 21:29:01,935 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: FechaBaja -> FechaBaja, type: DateTime
+2012-07-22 21:29:01,935 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: MotivoBaja -> CodMotivoBaja, type: Int32
+2012-07-22 21:29:01,935 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Cuenta -> Cuenta, type: String
+2012-07-22 21:29:01,935 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: CodPostal -> CodPostal, type: FileProccesor.Dtos.CodigoPostalDto
+2012-07-22 21:29:01,935 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Dia -> DiaNacimiento, type: String
+2012-07-22 21:29:01,935 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Mes -> MesNacimiento, type: String
+2012-07-22 21:29:01,935 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Año -> AnoNacimiento, type: String
+2012-07-22 21:29:01,935 [10] DEBUG NHibernate.Tuple.Component.AbstractComponentTuplizer [(null)] &lt;(null)&gt; - No custom accessors found for component: FileProccesor.Dtos.ValueTypes.FechaNacimiento, FileProccesor
+2012-07-22 21:29:01,935 [10] DEBUG NHibernate.Tuple.Component.AbstractComponentTuplizer [(null)] &lt;(null)&gt; - No custom accessors found for component: FileProccesor.Dtos.ValueTypes.FechaNacimiento, FileProccesor
+2012-07-22 21:29:01,935 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: FechaNacimientoPersona -> DiaNacimiento, MesNacimiento, AnoNacimiento, type: component[Dia,Mes,Año]
+2012-07-22 21:29:01,935 [10] DEBUG NHibernate.Cfg.Configuration [(null)] &lt;(null)&gt; - Mapping XML:
+<?xml version="1.0" encoding="utf-16"?>
+<hibernate-mapping  auto-import="true" default-lazy="false" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="FileProccesor.Dtos.ConsumoDto, FileProccesor" table="registros_archivos">
+    <id name="Id" access="property" column="Id" type="System.Guid" unsaved-value="00000000-0000-0000-0000-000000000000">
+      <generator class="guid.comb">
+      </generator>
+    </id>
+    <timestamp name="LastOperation" access="property" column="LastOperation" />
+    <property name="Cuit" access="property" type="String">
+      <column name="Cuit"/>
+    </property>
+    <property name="RazonSocial" access="property" type="String">
+      <column name="RazonSocial"/>
+    </property>
+    <property name="NroDocumento" access="property" type="String">
+      <column name="NroDocumento"/>
+    </property>
+    <property name="NombrePersona" access="property" type="String">
+      <column name="NombrePersona"/>
+    </property>
+    <property name="TipoCliente" access="property" type="String">
+      <column name="TipoCliente"/>
+    </property>
+    <property name="NroComprobante" access="property" type="String">
+      <column name="NroComprobante"/>
+    </property>
+    <property name="FechaHoraComprobante" access="property" type="System.DateTime">
+      <column name="FechaHoraComprobante"/>
+    </property>
+    <property name="ImportePesosNetoImpuestos" access="property" type="Double">
+      <column name="ImportePesosNetoImpuestos"/>
+    </property>
+    <property name="Procesado" access="property" type="Boolean">
+      <column name="Procesado"/>
+    </property>
+    <property name="Archivo" access="property" type="String">
+      <column name="Archivo"/>
+    </property>
+    <property name="Empresa" access="property" type="Int32">
+      <column name="Empresa"/>
+    </property>
+    <property name="Secretaria" access="property" type="String">
+      <column name="Secretaria"/>
+    </property>
+    <property name="Coeficiente" access="property" type="String">
+      <column name="Coeficiente"/>
+    </property>
+    <property name="Programa" access="property" type="String">
+      <column name="Programa"/>
+    </property>
+  </class>
+</hibernate-mapping>
+
+2012-07-22 21:29:01,966 [10] INFO  NHibernate.Dialect.Dialect [(null)] &lt;(null)&gt; - Using dialect: NHibernate.Dialect.MsSql2005Dialect
+2012-07-22 21:29:01,989 [10] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapping class: FileProccesor.Dtos.ConsumoDto -> registros_archivos
+2012-07-22 21:29:01,989 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Id -> Id, type: Guid
+2012-07-22 21:29:01,997 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: LastOperation -> LastOperation, type: Timestamp
+2012-07-22 21:29:01,997 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Cuit -> Cuit, type: String
+2012-07-22 21:29:01,997 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: RazonSocial -> RazonSocial, type: String
+2012-07-22 21:29:01,997 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: NroDocumento -> NroDocumento, type: String
+2012-07-22 21:29:01,997 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: NombrePersona -> NombrePersona, type: String
+2012-07-22 21:29:01,997 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: TipoCliente -> TipoCliente, type: String
+2012-07-22 21:29:01,997 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: NroComprobante -> NroComprobante, type: String
+2012-07-22 21:29:01,997 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: FechaHoraComprobante -> FechaHoraComprobante, type: DateTime
+2012-07-22 21:29:01,997 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: ImportePesosNetoImpuestos -> ImportePesosNetoImpuestos, type: Double
+2012-07-22 21:29:01,997 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Procesado -> Procesado, type: Boolean
+2012-07-22 21:29:01,997 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Archivo -> Archivo, type: String
+2012-07-22 21:29:01,997 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Empresa -> Empresa, type: Int32
+2012-07-22 21:29:01,997 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Secretaria -> Secretaria, type: String
+2012-07-22 21:29:01,997 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Coeficiente -> Coeficiente, type: String
+2012-07-22 21:29:01,997 [10] DEBUG NHibernate.Cfg.XmlHbmBinding.Binder [(null)] &lt;(null)&gt; - Mapped property: Programa -> Programa, type: String
+2012-07-22 21:29:28,999 [10] WARN  Front.Form1 [(null)] &lt;(null)&gt; - Un Archivo 'CAMBIO_200712.txt' en 'C:\Temp\' ha sido eliminado el dom , 22-jul-2012 09:29 p.m.
+2012-07-22 21:29:34,329 [10] WARN  Front.Form1 [(null)] &lt;(null)&gt; - Un Archivo 'CAMBIO_200712.txt' en 'C:\Temp\' ha sido creado el dom , 22-jul-2012 09:29 p.m.

@@ -31,8 +31,14 @@ namespace FileProccesor.Schemes
 
         public string TipoCliente;
 
+        public string Secretaria;
+
+        public string Coeficiente;
+
         [FieldConverter(typeof(MoneyConverter))] 
         public double ImportePesosNetoImpuestos;
+
+        public string Programa;      
 
         
         public void Save()

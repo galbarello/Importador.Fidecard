@@ -36,5 +36,14 @@ namespace FileProccesor.Dtos
 
         [Property("cantidadPuntos")]
         public double Puntos { get; set; }
+
+        [Property]
+        public string Secretaria { get; set; }
+
+        [Property]
+        public string Coeficiente { get; set; }
+
+        [Property]
+        public string Programa { get; set; }
     }
 }

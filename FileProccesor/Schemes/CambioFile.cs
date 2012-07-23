@@ -24,7 +24,6 @@ namespace FileProccesor.Schemes
 
         public string NroComprobante;
 
-        [FieldConverter(ConverterKind.Date, "yyyy-MM-dd")]
         public DateTime FechaHoraComprobante;
 
         public string Origen;

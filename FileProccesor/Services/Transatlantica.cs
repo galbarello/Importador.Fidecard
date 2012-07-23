@@ -29,7 +29,10 @@ namespace FileProccesor.Services
                                         RazonSocial = archivo.Consumo[0].RazonSocial,
                                         TipoCliente = archivo.Consumo[0].TipoCliente,
                                         Archivo = file,
-                                        Empresa=Empresa
+                                        Empresa=Empresa,
+                                        Coeficiente = archivo.Consumo[0].Coeficiente,
+                                        Secretaria =archivo.Consumo[0].Secretaria,
+                                        Programa = archivo.Consumo[0].Programa
                                     };
                 consumoDb.Save();
             }

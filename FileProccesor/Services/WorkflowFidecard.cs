@@ -29,6 +29,9 @@ namespace FileProccesor.Services
                         {
                             var puntos = HelperPuntos.GetPuntos(archivo.Empresa, archivo.FechaHoraComprobante,
                                                             archivo.ImportePesosNetoImpuestos);
+
+                            double acelerador = Double.Parse(archivo.Coeficiente) / 100;
+                            puntos =  acelerador >0? acelerador* puntos : puntos;
                            
                             var cuenta = new CuentaCorrienteDto
                             {
@@ -40,12 +43,15 @@ namespace FileProccesor.Services
                                     NumeroComprobante = archivo.NroComprobante
                                 },
                                 MontoCompra = archivo.ImportePesosNetoImpuestos,
-                                Movimiento = puntos>=0 ? HelperMovimiento.FindMovimiento("SumaPuntos") : HelperMovimiento.FindMovimiento("AnulaPuntos"),
+                                Movimiento = puntos >= 0 ? HelperMovimiento.FindMovimiento("Suma De Puntos") : HelperMovimiento.FindMovimiento("Anulación Carga"),
                                 NumeroDocumento = documento,
                                 NumeroCuenta = cliente,
                                 Puntos = puntos,
                                 Sucursal = HelperSucursal.GetSucursal(),
-                                Usuario = "web"
+                                Usuario = "web",
+                                Programa=archivo.Programa,
+                                Secretaria=archivo.Secretaria,
+                                Coeficiente=archivo.Coeficiente
                             };
                             cuenta.Save();
                             archivo.Procesado = true;

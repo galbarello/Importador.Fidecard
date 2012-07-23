@@ -18,3 +18,43 @@ D:\Documents and Settings\u187620\Desktop\Importador.Fidecard\FileProccesor\bin\
 D:\Documents and Settings\u187620\Desktop\Importador.Fidecard\FileProccesor\obj\Release\ResolveAssemblyReference.cache
 D:\Documents and Settings\u187620\Desktop\Importador.Fidecard\FileProccesor\obj\Release\FileProccesor.dll
 D:\Documents and Settings\u187620\Desktop\Importador.Fidecard\FileProccesor\obj\Release\FileProccesor.pdb
+C:\Documents and Settings\Guillermo\Mis documentos\Proyectos\Importador.Fidecard\FileProccesor\bin\Release\FileProccesor.dll
+C:\Documents and Settings\Guillermo\Mis documentos\Proyectos\Importador.Fidecard\FileProccesor\bin\Release\FileProccesor.pdb
+C:\Documents and Settings\Guillermo\Mis documentos\Proyectos\Importador.Fidecard\FileProccesor\bin\Release\Castle.ActiveRecord.dll
+C:\Documents and Settings\Guillermo\Mis documentos\Proyectos\Importador.Fidecard\FileProccesor\bin\Release\FileHelpers.dll
+C:\Documents and Settings\Guillermo\Mis documentos\Proyectos\Importador.Fidecard\FileProccesor\bin\Release\log4net.dll
+C:\Documents and Settings\Guillermo\Mis documentos\Proyectos\Importador.Fidecard\FileProccesor\bin\Release\NHibernate.dll
+C:\Documents and Settings\Guillermo\Mis documentos\Proyectos\Importador.Fidecard\FileProccesor\bin\Release\Retlang.dll
+C:\Documents and Settings\Guillermo\Mis documentos\Proyectos\Importador.Fidecard\FileProccesor\bin\Release\NHibernate.Search.dll
+C:\Documents and Settings\Guillermo\Mis documentos\Proyectos\Importador.Fidecard\FileProccesor\bin\Release\Castle.DynamicProxy2.dll
+C:\Documents and Settings\Guillermo\Mis documentos\Proyectos\Importador.Fidecard\FileProccesor\bin\Release\Castle.Components.Validator.dll
+C:\Documents and Settings\Guillermo\Mis documentos\Proyectos\Importador.Fidecard\FileProccesor\bin\Release\NHibernate.ByteCode.Castle.dll
+C:\Documents and Settings\Guillermo\Mis documentos\Proyectos\Importador.Fidecard\FileProccesor\bin\Release\Iesi.Collections.dll
+C:\Documents and Settings\Guillermo\Mis documentos\Proyectos\Importador.Fidecard\FileProccesor\bin\Release\Antlr3.Runtime.dll
+C:\Documents and Settings\Guillermo\Mis documentos\Proyectos\Importador.Fidecard\FileProccesor\bin\Release\Castle.Core.dll
+C:\Documents and Settings\Guillermo\Mis documentos\Proyectos\Importador.Fidecard\FileProccesor\bin\Release\Lucene.Net.dll
+C:\Documents and Settings\Guillermo\Mis documentos\Proyectos\Importador.Fidecard\FileProccesor\bin\Release\Castle.ActiveRecord.xml
+C:\Documents and Settings\Guillermo\Mis documentos\Proyectos\Importador.Fidecard\FileProccesor\bin\Release\FileHelpers.xml
+C:\Documents and Settings\Guillermo\Mis documentos\Proyectos\Importador.Fidecard\FileProccesor\obj\Release\ResolveAssemblyReference.cache
+C:\Documents and Settings\Guillermo\Mis documentos\Proyectos\Importador.Fidecard\FileProccesor\obj\Release\FileProccesor.dll
+C:\Documents and Settings\Guillermo\Mis documentos\Proyectos\Importador.Fidecard\FileProccesor\obj\Release\FileProccesor.pdb
+C:\Users\Guillermo\Projectos\Importador.Fidecard\FileProccesor\bin\Release\FileProccesor.dll
+C:\Users\Guillermo\Projectos\Importador.Fidecard\FileProccesor\bin\Release\FileProccesor.pdb
+C:\Users\Guillermo\Projectos\Importador.Fidecard\FileProccesor\bin\Release\Castle.ActiveRecord.dll
+C:\Users\Guillermo\Projectos\Importador.Fidecard\FileProccesor\bin\Release\FileHelpers.dll
+C:\Users\Guillermo\Projectos\Importador.Fidecard\FileProccesor\bin\Release\log4net.dll
+C:\Users\Guillermo\Projectos\Importador.Fidecard\FileProccesor\bin\Release\NHibernate.dll
+C:\Users\Guillermo\Projectos\Importador.Fidecard\FileProccesor\bin\Release\Retlang.dll
+C:\Users\Guillermo\Projectos\Importador.Fidecard\FileProccesor\bin\Release\Castle.Components.Validator.dll
+C:\Users\Guillermo\Projectos\Importador.Fidecard\FileProccesor\bin\Release\Castle.Core.dll
+C:\Users\Guillermo\Projectos\Importador.Fidecard\FileProccesor\bin\Release\Iesi.Collections.dll
+C:\Users\Guillermo\Projectos\Importador.Fidecard\FileProccesor\bin\Release\NHibernate.ByteCode.Castle.dll
+C:\Users\Guillermo\Projectos\Importador.Fidecard\FileProccesor\bin\Release\NHibernate.Search.dll
+C:\Users\Guillermo\Projectos\Importador.Fidecard\FileProccesor\bin\Release\Antlr3.Runtime.dll
+C:\Users\Guillermo\Projectos\Importador.Fidecard\FileProccesor\bin\Release\Castle.DynamicProxy2.dll
+C:\Users\Guillermo\Projectos\Importador.Fidecard\FileProccesor\bin\Release\Lucene.Net.dll
+C:\Users\Guillermo\Projectos\Importador.Fidecard\FileProccesor\bin\Release\Castle.ActiveRecord.xml
+C:\Users\Guillermo\Projectos\Importador.Fidecard\FileProccesor\bin\Release\FileHelpers.xml
+C:\Users\Guillermo\Projectos\Importador.Fidecard\FileProccesor\obj\Release\ResolveAssemblyReference.cache
+C:\Users\Guillermo\Projectos\Importador.Fidecard\FileProccesor\obj\Release\FileProccesor.dll
+C:\Users\Guillermo\Projectos\Importador.Fidecard\FileProccesor\obj\Release\FileProccesor.pdb

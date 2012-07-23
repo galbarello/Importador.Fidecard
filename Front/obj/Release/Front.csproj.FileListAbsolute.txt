@@ -29,3 +29,67 @@ D:\Documents and Settings\u187620\Desktop\Importador.Fidecard\Front\obj\Release\
 D:\Documents and Settings\u187620\Desktop\Importador.Fidecard\Front\obj\Release\Front.csproj.GenerateResource.Cache
 D:\Documents and Settings\u187620\Desktop\Importador.Fidecard\Front\obj\Release\Front.exe
 D:\Documents and Settings\u187620\Desktop\Importador.Fidecard\Front\obj\Release\Front.pdb
+C:\Documents and Settings\Guillermo\Mis documentos\Proyectos\Importador.Fidecard\Front\bin\Release\Front.exe.config
+C:\Documents and Settings\Guillermo\Mis documentos\Proyectos\Importador.Fidecard\Front\obj\Release\Front.exe
+C:\Documents and Settings\Guillermo\Mis documentos\Proyectos\Importador.Fidecard\Front\obj\Release\Front.pdb
+C:\Documents and Settings\Guillermo\Mis documentos\Proyectos\Importador.Fidecard\Front\bin\Release\Front.exe
+C:\Documents and Settings\Guillermo\Mis documentos\Proyectos\Importador.Fidecard\Front\bin\Release\Front.pdb
+C:\Documents and Settings\Guillermo\Mis documentos\Proyectos\Importador.Fidecard\Front\bin\Release\Castle.ActiveRecord.dll
+C:\Documents and Settings\Guillermo\Mis documentos\Proyectos\Importador.Fidecard\Front\bin\Release\FileProccesor.dll
+C:\Documents and Settings\Guillermo\Mis documentos\Proyectos\Importador.Fidecard\Front\bin\Release\Growl.Connector.dll
+C:\Documents and Settings\Guillermo\Mis documentos\Proyectos\Importador.Fidecard\Front\bin\Release\Growl.CoreLibrary.dll
+C:\Documents and Settings\Guillermo\Mis documentos\Proyectos\Importador.Fidecard\Front\bin\Release\log4net.dll
+C:\Documents and Settings\Guillermo\Mis documentos\Proyectos\Importador.Fidecard\Front\bin\Release\Quartz.dll
+C:\Documents and Settings\Guillermo\Mis documentos\Proyectos\Importador.Fidecard\Front\bin\Release\Retlang.dll
+C:\Documents and Settings\Guillermo\Mis documentos\Proyectos\Importador.Fidecard\Front\bin\Release\Common.Logging.dll
+C:\Documents and Settings\Guillermo\Mis documentos\Proyectos\Importador.Fidecard\Front\bin\Release\Castle.DynamicProxy2.dll
+C:\Documents and Settings\Guillermo\Mis documentos\Proyectos\Importador.Fidecard\Front\bin\Release\Castle.Components.Validator.dll
+C:\Documents and Settings\Guillermo\Mis documentos\Proyectos\Importador.Fidecard\Front\bin\Release\NHibernate.ByteCode.Castle.dll
+C:\Documents and Settings\Guillermo\Mis documentos\Proyectos\Importador.Fidecard\Front\bin\Release\Iesi.Collections.dll
+C:\Documents and Settings\Guillermo\Mis documentos\Proyectos\Importador.Fidecard\Front\bin\Release\Castle.Core.dll
+C:\Documents and Settings\Guillermo\Mis documentos\Proyectos\Importador.Fidecard\Front\bin\Release\Antlr3.Runtime.dll
+C:\Documents and Settings\Guillermo\Mis documentos\Proyectos\Importador.Fidecard\Front\bin\Release\NHibernate.dll
+C:\Documents and Settings\Guillermo\Mis documentos\Proyectos\Importador.Fidecard\Front\bin\Release\NHibernate.Search.dll
+C:\Documents and Settings\Guillermo\Mis documentos\Proyectos\Importador.Fidecard\Front\bin\Release\FileHelpers.dll
+C:\Documents and Settings\Guillermo\Mis documentos\Proyectos\Importador.Fidecard\Front\bin\Release\Lucene.Net.dll
+C:\Documents and Settings\Guillermo\Mis documentos\Proyectos\Importador.Fidecard\Front\bin\Release\Quartz.xml
+C:\Documents and Settings\Guillermo\Mis documentos\Proyectos\Importador.Fidecard\Front\bin\Release\FileProccesor.pdb
+C:\Documents and Settings\Guillermo\Mis documentos\Proyectos\Importador.Fidecard\Front\bin\Release\FileHelpers.xml
+C:\Documents and Settings\Guillermo\Mis documentos\Proyectos\Importador.Fidecard\Front\bin\Release\Castle.ActiveRecord.xml
+C:\Documents and Settings\Guillermo\Mis documentos\Proyectos\Importador.Fidecard\Front\obj\Release\ResolveAssemblyReference.cache
+C:\Documents and Settings\Guillermo\Mis documentos\Proyectos\Importador.Fidecard\Front\obj\Release\Front.Form1.resources
+C:\Documents and Settings\Guillermo\Mis documentos\Proyectos\Importador.Fidecard\Front\obj\Release\Front.Properties.Resources.resources
+C:\Documents and Settings\Guillermo\Mis documentos\Proyectos\Importador.Fidecard\Front\obj\Release\Front.csproj.GenerateResource.Cache
+C:\Users\Guillermo\Projectos\Importador.Fidecard\Front\bin\Release\Front.exe.config
+C:\Users\Guillermo\Projectos\Importador.Fidecard\Front\obj\Release\Front.exe
+C:\Users\Guillermo\Projectos\Importador.Fidecard\Front\obj\Release\Front.pdb
+C:\Users\Guillermo\Projectos\Importador.Fidecard\Front\bin\Release\Front.exe
+C:\Users\Guillermo\Projectos\Importador.Fidecard\Front\bin\Release\Front.pdb
+C:\Users\Guillermo\Projectos\Importador.Fidecard\Front\bin\Release\Castle.ActiveRecord.dll
+C:\Users\Guillermo\Projectos\Importador.Fidecard\Front\bin\Release\FileProccesor.dll
+C:\Users\Guillermo\Projectos\Importador.Fidecard\Front\bin\Release\Growl.Connector.dll
+C:\Users\Guillermo\Projectos\Importador.Fidecard\Front\bin\Release\Growl.CoreLibrary.dll
+C:\Users\Guillermo\Projectos\Importador.Fidecard\Front\bin\Release\log4net.dll
+C:\Users\Guillermo\Projectos\Importador.Fidecard\Front\bin\Release\mysql.data.dll
+C:\Users\Guillermo\Projectos\Importador.Fidecard\Front\bin\Release\Quartz.dll
+C:\Users\Guillermo\Projectos\Importador.Fidecard\Front\bin\Release\Retlang.dll
+C:\Users\Guillermo\Projectos\Importador.Fidecard\Front\bin\Release\FileHelpers.dll
+C:\Users\Guillermo\Projectos\Importador.Fidecard\Front\bin\Release\Castle.Components.Validator.dll
+C:\Users\Guillermo\Projectos\Importador.Fidecard\Front\bin\Release\NHibernate.dll
+C:\Users\Guillermo\Projectos\Importador.Fidecard\Front\bin\Release\Castle.Core.dll
+C:\Users\Guillermo\Projectos\Importador.Fidecard\Front\bin\Release\Iesi.Collections.dll
+C:\Users\Guillermo\Projectos\Importador.Fidecard\Front\bin\Release\NHibernate.ByteCode.Castle.dll
+C:\Users\Guillermo\Projectos\Importador.Fidecard\Front\bin\Release\NHibernate.Search.dll
+C:\Users\Guillermo\Projectos\Importador.Fidecard\Front\bin\Release\Common.Logging.dll
+C:\Users\Guillermo\Projectos\Importador.Fidecard\Front\bin\Release\Antlr3.Runtime.dll
+C:\Users\Guillermo\Projectos\Importador.Fidecard\Front\bin\Release\Castle.DynamicProxy2.dll
+C:\Users\Guillermo\Projectos\Importador.Fidecard\Front\bin\Release\Lucene.Net.dll
+C:\Users\Guillermo\Projectos\Importador.Fidecard\Front\bin\Release\FileProccesor.pdb
+C:\Users\Guillermo\Projectos\Importador.Fidecard\Front\bin\Release\Castle.ActiveRecord.xml
+C:\Users\Guillermo\Projectos\Importador.Fidecard\Front\bin\Release\Quartz.xml
+C:\Users\Guillermo\Projectos\Importador.Fidecard\Front\bin\Release\FileHelpers.xml
+C:\Users\Guillermo\Projectos\Importador.Fidecard\Front\obj\Release\ResolveAssemblyReference.cache
+C:\Users\Guillermo\Projectos\Importador.Fidecard\Front\obj\Release\Front.Form1.resources
+C:\Users\Guillermo\Projectos\Importador.Fidecard\Front\obj\Release\Front.Properties.Resources.resources
+C:\Users\Guillermo\Projectos\Importador.Fidecard\Front\obj\Release\GenerateResource-ResGen.read.1.tlog
+C:\Users\Guillermo\Projectos\Importador.Fidecard\Front\obj\Release\GenerateResource-ResGen.write.1.tlog

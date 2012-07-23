@@ -46,6 +46,17 @@ namespace FileProccesor.Dtos
         [Property]
         public int Empresa{ get; set; }
 
+        [Property]
+        public string Secretaria { get; set; }
+
+        [Property]
+        public string Coeficiente { get; set; }
+
+        [Property]
+        public string Programa { get; set; }
+
+
+
         public static implicit operator ConsumoDto(TransatlanticaFile file)
         {
 
@@ -60,7 +71,10 @@ namespace FileProccesor.Dtos
                            RazonSocial = file.RazonSocial,
                            TipoCliente = file.TipoCliente,
                            Procesado = false,
-                           Archivo = ""
+                           Archivo = "",
+                           Coeficiente=file.Coeficiente,
+                           Secretaria=file.Secretaria,
+                           Programa=file.Programa
                        };
         }
 
@@ -78,7 +92,10 @@ namespace FileProccesor.Dtos
                 RazonSocial = file.RazonSocial,
                 TipoCliente = file.TipoCliente,
                 Procesado = false,
-                Archivo = ""
+                Archivo = "",
+                Coeficiente = "100",
+                Secretaria = "",
+                Programa = ""
             };
         }
     }

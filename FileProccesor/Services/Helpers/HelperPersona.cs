@@ -83,13 +83,20 @@ namespace FileProccesor.Services.Helpers
 
         public static string CuitToDni(string dni)
         {
-            if (dni.Length <= 9) 
-                return dni;
             if (string.IsNullOrEmpty(dni))
                 return "000000000";
+
+            if (dni.Length <= 9) 
+                return RemoveZeroLeft(dni);
+            
             return dni.Contains("-") 
-                       ? dni.Split(new[] {"-"}, StringSplitOptions.RemoveEmptyEntries)[1] 
-                       : dni.Substring(2, 8);
+                       ? RemoveZeroLeft(dni.Split(new[] {"-"}, StringSplitOptions.RemoveEmptyEntries)[1]) 
+                       : RemoveZeroLeft(dni.Substring(2, 8));
+        }
+
+        private static string RemoveZeroLeft(string dni)
+        {
+            return Int32.Parse(dni).ToString();
         }
 
         private static CodigoPostalDto GetCp()

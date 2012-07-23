@@ -1,0 +1,16 @@
+obj
+bin
+packages
+_ReSharper.*
+*.csproj.user
+*.resharper.user
+*.resharper
+*.suo
+*.cache
+*~
+*.swp
+*.resharper.user
+*.rptproj.user
+*.db
+*_log.LDF
+*.mdf
