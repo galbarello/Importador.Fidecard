@@ -60,3 +60,6 @@ D:\Documents and Settings\u187620\Desktop\Importador.Fidecard\Front\obj\Debug\Re
 D:\Documents and Settings\u187620\Desktop\Importador.Fidecard\Front\obj\Debug\Front.Form1.resources
 D:\Documents and Settings\u187620\Desktop\Importador.Fidecard\Front\obj\Debug\Front.Properties.Resources.resources
 D:\Documents and Settings\u187620\Desktop\Importador.Fidecard\Front\obj\Debug\Front.csproj.GenerateResource.Cache
+C:\Users\Virtual7\Documents\GitHub\Importador.Fidecard\Front\bin\Debug\Front.exe.config
+C:\Users\Virtual7\Documents\GitHub\Importador.Fidecard\Front\obj\Debug\Front.exe
+C:\Users\Virtual7\Documents\GitHub\Importador.Fidecard\Front\obj\Debug\Front.pdb

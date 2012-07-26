@@ -24,14 +24,22 @@ namespace FileProccesor.Schemes
 
         public string NroComprobante;
 
+        [FieldConverter(ConverterKind.Date, "dd/MM/yyyy")]
         public DateTime FechaHoraComprobante;
 
         public string Origen;
 
         public string TipoCliente;
 
+        public string Secretaria;
+
+        public string Coeficiente;
+
         [FieldConverter(typeof(MoneyConverter))]
         public double ImportePesosNetoImpuestos;
+
+        [FieldNullValue("")]
+        public string Programa;
 
 
         public void Save()
