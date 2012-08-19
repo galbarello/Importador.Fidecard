@@ -52,6 +52,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\lib\AR 2.1.1\NHibernate.dll</HintPath>
     </Reference>
+    <Reference Include="RestSharp">
+      <HintPath>..\packages\RestSharp.103.4\lib\net35\RestSharp.dll</HintPath>
+    </Reference>
     <Reference Include="Retlang, Version=0.4.4.0, Culture=neutral, PublicKeyToken=a99b3bce1dc72e93, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\lib\retlang\Retlang.dll</HintPath>
@@ -77,6 +80,7 @@
     <Compile Include="Services\Cambio.cs" />
     <Compile Include="Schemes\CambioFile.cs" />
     <Compile Include="Services\Helpers\HelperMovimiento.cs" />
+    <Compile Include="Services\MailService.cs" />
     <Compile Include="Services\WorkflowFidecard.cs" />
     <Compile Include="Services\Helpers\HelperAggregator.cs" />
     <Compile Include="Services\Helpers\HelperCuenta.cs" />
@@ -101,6 +105,9 @@
     <Compile Include="Services\NullFile.cs" />
     <Compile Include="Services\TipoDocumento.cs" />
     <Compile Include="Services\Transatlantica.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -60,7 +60,7 @@ namespace FileProccesor.Services
                         }
                         catch (Exception ex)
                         {
-                            Log.Error(ex.Message);
+                            Log.Fatal(ex);
                             transac.VoteRollBack();
                         }
                 }

@@ -64,15 +64,24 @@ namespace Front
 
         private void Work(string filepath)
         {
-            var archivo = filepath.Split(new[] { @"\" }, StringSplitOptions.RemoveEmptyEntries);
-            ShowMessageBox(string.Format("importando {0}", archivo[archivo.GetUpperBound(0)]), "Importando");
+            try
+            {
+                var archivo = filepath.Split(new[] { @"\" }, StringSplitOptions.RemoveEmptyEntries);
+                ShowMessageBox(string.Format("importando {0}", archivo[archivo.GetUpperBound(0)]), "Importando");
 
-            var importador = ImportadorFactory.ReturnImportador(filepath);
+                var importador = ImportadorFactory.ReturnImportador(filepath);
 
-            importador.Persistir(filepath);
-            WorkflowFidecard.Registro();
+                importador.Persistir(filepath);
+                WorkflowFidecard.Registro();
 
-            ShowMessageBox(string.Format("importado {0}", archivo[archivo.GetUpperBound(0)]), "Finalizado");
+                ShowMessageBox(string.Format("importado {0}", archivo[archivo.GetUpperBound(0)]), "Finalizado");
+                MailService.SendOk(archivo[archivo.GetUpperBound(0)]);
+            }
+            catch (Exception ex)
+            {
+                Log.Fatal(ex);
+                MailService.SendError("importador.Log");
+            }
         }
 
         private static void GrowlNotificationCallback(Response response, CallbackData callbackdata)
@@ -82,7 +91,7 @@ namespace Front
 
         private static void SaveChangesToFile(string content)
         {
-            Log.Warn(content);
+            Log.Fatal(content);
         }
 
         private void FolderWatchDeleted(object sender, FileSystemEventArgs e)

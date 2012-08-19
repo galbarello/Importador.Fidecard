@@ -24,8 +24,10 @@ namespace FileProccesor.Services
         private static void MoverArchivo(string file)
         {
             var lista = file.Split(new[] { @"\" }, StringSplitOptions.RemoveEmptyEntries);
-            var archivoBack=string.Format(@"{0}\{1}", PathBackUp, lista[lista.GetUpperBound(0)]);
-            File.Move(file, archivoBack);
+            var backup=string.Format("{0}_{1}",DateTime.Now.Ticks,lista[lista.GetUpperBound(0)]);
+            var archivoBack=string.Format(@"{0}\{1}", PathBackUp,backup );
+            File.Copy(file, archivoBack);
+            File.Delete(file);
         }
 
         public virtual void Persistir(string filepath)

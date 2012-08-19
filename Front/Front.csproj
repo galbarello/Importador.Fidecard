@@ -75,6 +75,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\lib\Quartz\Quartz.dll</HintPath>
     </Reference>
+    <Reference Include="RestSharp, Version=103.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\RestSharp.103.4\lib\net35\RestSharp.dll</HintPath>
+    </Reference>
     <Reference Include="Retlang, Version=0.4.4.0, Culture=neutral, PublicKeyToken=a99b3bce1dc72e93, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\lib\retlang\Retlang.dll</HintPath>

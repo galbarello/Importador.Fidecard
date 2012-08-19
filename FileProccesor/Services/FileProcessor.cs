@@ -32,7 +32,7 @@ namespace FileProccesor.Services
                 var message = ex.Message;
                 if (message.Contains("El proceso no puede obtener acceso al archivo"))
                     return true;
-                throw;
+               return  false;
             }
         }
     }

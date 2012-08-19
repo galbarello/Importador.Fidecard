@@ -124,3 +124,5 @@ C:\Users\Virtual7\Documents\GitHub\Importador.Fidecard\Front\obj\Release\Front.c
 C:\Users\Virtual7\Documents\GitHub\Importador.Fidecard\Front\obj\Release\Front.Form1.resources
 C:\Users\Virtual7\Documents\GitHub\Importador.Fidecard\Front\obj\Release\Front.Properties.Resources.resources
 C:\Users\Virtual7\Documents\GitHub\Importador.Fidecard\Front\obj\Release\Front.csproj.GenerateResource.Cache
+C:\Users\Virtual7\Documents\GitHub\Importador.Fidecard\Front\bin\Release\RestSharp.dll
+C:\Users\Virtual7\Documents\GitHub\Importador.Fidecard\Front\bin\Release\RestSharp.xml
