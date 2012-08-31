@@ -20,34 +20,35 @@ namespace FileProccesor.Services
 
         public override void Persistir(string file)
         {
-            try
+
+
+            foreach (var archivo in HelperAggregator.Agrupar(FileProcessor<TransatlanticaFile>.GetData(file)))
             {
-                foreach (var archivo in HelperAggregator.Agrupar(FileProcessor<TransatlanticaFile>.GetData(file)))
-                {
-                    var consumoDb = new ConsumoDto
-                                        {
-                                            Cuit = archivo.Consumo[0].Cuit,
-                                            FechaHoraComprobante = archivo.Consumo[0].FechaHoraComprobante,
-                                            ImportePesosNetoImpuestos = archivo.ImportePesosNetoImpuestos,
-                                            NombrePersona = archivo.Consumo[0].NombrePersona,
-                                            NroComprobante = archivo.NroComprobante,
-                                            NroDocumento = archivo.Consumo[0].NroDocumento,
-                                            RazonSocial = archivo.Consumo[0].RazonSocial,
-                                            TipoCliente = archivo.Consumo[0].TipoCliente,
-                                            Archivo = file,
-                                            Empresa = Empresa,
-                                            Coeficiente = archivo.Consumo[0].Coeficiente,
-                                            Secretaria = archivo.Consumo[0].Secretaria,
-                                            Programa = archivo.Consumo[0].Programa
-                                        };
+
+                var consumoDb = new ConsumoDto
+                                     {
+                                         Cuit = archivo.Consumo[0].Cuit,
+                                         FechaHoraComprobante = archivo.Consumo[0].FechaHoraComprobante,
+                                         ImportePesosNetoImpuestos = archivo.ImportePesosNetoImpuestos,
+                                         NombrePersona = archivo.Consumo[0].NombrePersona,
+                                         NroComprobante = archivo.NroComprobante,
+                                         NroDocumento = archivo.Consumo[0].NroDocumento,
+                                         RazonSocial = archivo.Consumo[0].RazonSocial,
+                                         TipoCliente = archivo.Consumo[0].TipoCliente,
+                                         Archivo = file,
+                                         Empresa = Empresa,
+                                         Coeficiente = archivo.Consumo[0].Coeficiente,
+                                         Secretaria = archivo.Consumo[0].Secretaria,
+                                         Programa = archivo.Consumo[0].Programa
+                                     };
+
+                if (consumoDb.Validate())
                     consumoDb.Save();
-                }
+                else
+                    MailService.SendError(consumoDb);
+
+            }      
                 base.Persistir(file);
-            }
-            catch (Exception ex)
-            {            
-                Log.Fatal(ex);
-            }
         }
     }
 }

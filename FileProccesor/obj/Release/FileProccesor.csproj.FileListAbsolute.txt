@@ -75,7 +75,6 @@ C:\Users\Virtual7\Documents\GitHub\Importador.Fidecard\FileProccesor\bin\Release
 C:\Users\Virtual7\Documents\GitHub\Importador.Fidecard\FileProccesor\bin\Release\Lucene.Net.dll
 C:\Users\Virtual7\Documents\GitHub\Importador.Fidecard\FileProccesor\bin\Release\Castle.ActiveRecord.xml
 C:\Users\Virtual7\Documents\GitHub\Importador.Fidecard\FileProccesor\bin\Release\FileHelpers.xml
-C:\Users\Virtual7\Documents\GitHub\Importador.Fidecard\FileProccesor\obj\Release\FileProccesor.csprojResolveAssemblyReference.cache
 C:\Users\Virtual7\Documents\GitHub\Importador.Fidecard\FileProccesor\obj\Release\FileProccesor.dll
 C:\Users\Virtual7\Documents\GitHub\Importador.Fidecard\FileProccesor\obj\Release\FileProccesor.pdb
 C:\Users\Virtual7\Documents\GitHub\Importador.Fidecard\FileProccesor\bin\Release\RestSharp.dll

@@ -1,6 +1,8 @@
 using System;
 using Castle.ActiveRecord;
+using FileProccesor.Keys;
 using FileProccesor.Schemes;
+using FileProccesor.Services.Helpers;
 
 namespace FileProccesor.Dtos
 {
@@ -95,10 +97,59 @@ namespace FileProccesor.Dtos
                 Archivo = "",
                 Coeficiente = "100",
                 Secretaria = "",
-                Programa = ""
+                Programa = "",
+                Error=string.Empty
             };
         }
+
+        [Property]
+        public string Error { get; set; }
+
+        internal bool Validate()
+        {
+            try
+            {
+                var documento = HelperPersona.GetPersona(
+                        Cuit, TipoCliente,
+                        RazonSocial, NombrePersona,
+                        NroDocumento, Empresa);
+
+                var cliente = HelperCuenta.GetCuenta(
+                    Cuit, NroDocumento, Empresa);
+
+
+                var puntos = HelperPuntos.GetPuntos(Empresa, FechaHoraComprobante,
+                                                ImportePesosNetoImpuestos);
+
+                double acelerador = Double.Parse(Coeficiente) / 100;
+                puntos = acelerador > 0 ? acelerador * puntos : puntos;
+
+                var cuenta = new CuentaCorrienteDto
+                {
+                    FechaCompra = FechaHoraComprobante.Date,
+                    HoraCompra = DateTime.Now,
+                    Key = new KeyCuenta
+                    {
+                        CodEmpresa = Empresa,
+                        NumeroComprobante = NroComprobante
+                    },
+                    MontoCompra = ImportePesosNetoImpuestos,
+                    Movimiento = puntos >= 0 ? HelperMovimiento.FindMovimiento("Suma De Puntos") : HelperMovimiento.FindMovimiento("Anulación Carga"),
+                    NumeroDocumento = documento,
+                    NumeroCuenta = cliente,
+                    Puntos = puntos,
+                    Sucursal = HelperSucursal.GetSucursal(),
+                    Usuario = "web",
+                    Programa = Programa,
+                    Secretaria = Secretaria,
+                    Coeficiente = Coeficiente
+                };
+                return true;
+            }
+            catch { return false; }
+        }
+        
     }
 }
 
-    
+   

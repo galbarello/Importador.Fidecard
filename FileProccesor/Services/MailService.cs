@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using FileProccesor.Dtos;
 using RestSharp;
 
 namespace FileProccesor.Services
 {
     public class MailService
     {
-        public static IRestResponse SendError(string file)  
+        public static IRestResponse SendError(ConsumoDto record)  
         {
         
            var client = new RestClient();
@@ -26,9 +27,24 @@ namespace FileProccesor.Services
            //request.AddParameter("to", "carlosditzel@yahoo.com.ar");
            request.AddParameter("to", "galbarello@gmail.com");
            request.AddParameter("subject", "Error en importador");
-           request.AddParameter("text", "Ha ocurrido un error en el proceso de importación");
-           request.AddParameter("html", "<html>Revise el archivo adjuto</html>");
-           request.AddFile("attachment", file);           
+
+           var errorFile = string.Format("{0};{1};{2};{3};{4};{5};{6};{7};{8};{9};{10};{11};{12};{13};{14}", 
+                record.Archivo, 
+                record.Coeficiente, 
+                record.Cuit, 
+                record.Empresa, 
+                record.FechaHoraComprobante, 
+                record.ImportePesosNetoImpuestos, 
+                record.LastOperation, 
+                record.NombrePersona, 
+                record.NroComprobante, 
+                record.NroDocumento, 
+                record.Programa, 
+                record.RazonSocial, 
+                record.Secretaria, 
+                record.TipoCliente);
+           request.AddParameter("html", "<html>Revise el proceso</html>");
+           request.AddParameter("text", "Registro" + errorFile);
            request.Method = Method.POST;
            return client.Execute(request);
         }

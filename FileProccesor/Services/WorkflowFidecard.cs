@@ -31,8 +31,8 @@ namespace FileProccesor.Services
                                                             archivo.ImportePesosNetoImpuestos);
 
                             double acelerador = Double.Parse(archivo.Coeficiente) / 100;
-                            puntos =  acelerador >0? acelerador* puntos : puntos;
-                           
+                            puntos = acelerador > 0 ? acelerador * puntos : puntos;
+
                             var cuenta = new CuentaCorrienteDto
                             {
                                 FechaCompra = archivo.FechaHoraComprobante.Date,
@@ -49,21 +49,22 @@ namespace FileProccesor.Services
                                 Puntos = puntos,
                                 Sucursal = HelperSucursal.GetSucursal(),
                                 Usuario = "web",
-                                Programa=archivo.Programa,
-                                Secretaria=archivo.Secretaria,
-                                Coeficiente=archivo.Coeficiente
+                                Programa = archivo.Programa,
+                                Secretaria = archivo.Secretaria,
+                                Coeficiente = archivo.Coeficiente
                             };
                             cuenta.Save();
-                            archivo.Procesado = true;
-                            archivo.Save();
                             transac.VoteCommit();
                         }
                         catch (Exception ex)
                         {
+                            archivo.Error = ex.Message;
                             Log.Fatal(ex);
                             transac.VoteRollBack();
                         }
-                }
+                    archivo.Procesado = true;
+                    archivo.Save();
+                } 
             }
         }
     }

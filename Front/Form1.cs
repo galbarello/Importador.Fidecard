@@ -79,8 +79,7 @@ namespace Front
             }
             catch (Exception ex)
             {
-                Log.Fatal(ex);
-                MailService.SendError("importador.Log");
+                Log.Fatal(ex);               
             }
         }
 

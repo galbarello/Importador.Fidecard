@@ -96,7 +96,7 @@ namespace FileProccesor.Services.Helpers
 
         private static string RemoveZeroLeft(string dni)
         {
-            return Int32.Parse(dni).ToString();
+            return int.Parse(dni).ToString();
         }
 
         private static CodigoPostalDto GetCp()
