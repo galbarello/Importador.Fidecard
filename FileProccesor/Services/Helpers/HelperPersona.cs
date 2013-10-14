@@ -20,9 +20,12 @@ namespace FileProccesor.Services.Helpers
 
         private static string GetParticular(string cuit, int empresa, string apellidoynombre, string dni)
         {
-            var persona = ActiveRecordBase<PersonaDto>.TryFind(new KeyPersona(empresa, CuitToDni(dni), TipoDocumento.DocumentoUnico));
 
-            if (persona == null)
+            var documento= CuitToDni(dni);
+            var persona = ActiveRecordBase<PersonaDto>.TryFind(new KeyPersona(empresa,documento , TipoDocumento.DocumentoUnico));
+            var corporativo = ActiveRecordBase<PersonaDto>.TryFind(new KeyPersona(empresa, documento, TipoDocumento.Cuit));
+
+            if (persona == null && corporativo== null)
             {
                 var tipoDoc = TipoDocumento.DocumentoUnico;
                 var componentes = apellidoynombre.Split(new[] { " " }, StringSplitOptions.RemoveEmptyEntries);
@@ -38,14 +41,15 @@ namespace FileProccesor.Services.Helpers
 
                 CrearParticular(cuit,dni,apellido,nombre,empresa,tipoDoc);
             }
-            return CuitToDni(dni);
+            return documento;
         }
 
         private static string GetCorporativo(string cuit,int empresa,string razon)
         {
             var documento = CuitToDni(cuit);
             var corporativo = ActiveRecordBase<PersonaDto>.TryFind(new KeyPersona(empresa, documento, TipoDocumento.Cuit));
-            if (corporativo == null)
+            var persona = ActiveRecordBase<PersonaDto>.TryFind(new KeyPersona(empresa, documento, TipoDocumento.DocumentoUnico));
+            if (corporativo == null && persona== null)
                 CrearCorporativo(cuit,razon,empresa);
             return documento;
 
